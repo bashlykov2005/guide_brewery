@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Moyenage';
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src:
+        url('../Moyenage/ofont.ru_Moyenage.ttf') format('truetype');
+}

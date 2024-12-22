@@ -1,0 +1,151 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block content %}
+      <section class="route2" id="route2">
+        <!-- <div class="breadcrumbmiddle">
+          <div class="container-fluid">
+            <div class="row">
+              <nav class="breadcrumb-arrow" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="./index.html#main">Главная</a></li>
+                  <li class="breadcrumb-item"><a href="./index.html#route">Маршруты</a></li>
+                  <li class="breadcrumb-item"><a href="./route.html">Маршрут</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Базовый город</li>
+                  <li>
+                  </li>
+                  <div class="center div-width">
+                    <h1 class="text-second3"><img class="svg2" src="img/svg/орнамент-обрезан.svg" alt="узор"> Ауфзес <img class="svg2" src="img/svg/орнамент правый обрезан.svg" alt="узор"></h1>
+                  </div>
+                </ol>
+              </nav>
+            </div>
+          </div>
+        </div> -->
+        <div class="breadcrumblittle">
+          <div class="container-fluid">
+            <div class="row">
+              <nav class="breadcrumb-arrow" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="{% url "main:index" %}">Главная</a></li>
+                  <li class="breadcrumb-item"><a href="{% url "main:index" %}#route">Маршруты</a></li>
+                  <li class="breadcrumb-item"><a href="{% url "route:route_index" route.slug %}">Маршрут</a></li>
+                  <li class="breadcrumb-item"><a href="{% url "route:route_city" route.slug %}">Базовый город</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Второй базовый город</li>
+                </ol>
+              </nav>
+              <div class="accordion-width">
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingOne">
+                      <button class="accordion-button collapsed d-block text-center" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        <h1 class="text-center text-second3"><img class="svg4" src="img/svg/стрелки/стрелка вниз2.svg" alt="узор"><img class="svg2" src="img/svg/орнамент-обрезан.svg" alt="узор">
+                          {{route.base_city_2 }}
+                            {% if route.base_city_3 %} / {% endif %}
+                          {{route.base_city_3 |default_if_none:" "}}
+                        <img class="svg2" src="img/svg/орнамент правый обрезан.svg" alt="узор">   <img class="svg3" src="img/svg/стрелки/стрелка вниз6.svg" alt="узор"></h1>
+                      </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse text-center collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body"><p class="col-12">{{route.city_desc_2 | safe }}</a></p></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="carouselExampleCaptions1" class="carousel slide carousel-fade">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide-to="5" aria-label="Slide 6"></button>
+          </div>
+          <div class="carousel-inner my-carousel">
+            <div class="carousel-item active">
+              {% if route.image_city7 %}
+              <img src="{{ route.image_city7.url }}" class="d-block mx-auto d-block" alt="...">
+              {% endif %}
+              {% if route.base_city_3 %}
+              <div class="carousel-caption d-flex flex-column align-items-center">
+                <p class="bg-dark bg-opacity-10 py-1 px-3">{{route.base_city_2}} </p>
+              </div>
+              {% endif %}
+            </div>
+            <div class="carousel-item">
+              {% if route.image_city8 %}
+              <img src="{{ route.image_city8.url }}" class="d-block mx-auto d-block" alt="...">
+              {% endif %}
+              {% if route.base_city_3 %}
+              <div class="carousel-caption d-flex flex-column align-items-center">
+                <p class="bg-dark bg-opacity-10 py-1 px-3">{{route.base_city_2}} </p>
+              </div>
+              {% endif %}
+            </div>
+            <div class="carousel-item">
+              {% if route.image_city9 %}
+              <img src="{{ route.image_city9.url }}" class="d-block mx-auto d-block" alt="...">
+              {% endif %}
+              {% if route.base_city_3 %}
+              <div class="carousel-caption d-flex flex-column align-items-center">
+                <p class="bg-dark bg-opacity-10 py-1 px-3">{{route.base_city_2}} </p>
+              </div>
+              {% endif %}
+            </div>
+            <div class="carousel-item">
+              {% if route.image_city10 %}
+              <img src="{{ route.image_city10.url }}" class="d-block mx-auto d-block" alt="...">
+              {% endif %}
+              {% if route.base_city_3 %}
+              <div class="carousel-caption d-flex flex-column align-items-center">
+                <p class="bg-dark bg-opacity-10 py-1 px-3">{{route.base_city_2}} </p>
+              </div>>
+              {% endif %}
+            </div>
+            <div class="carousel-item">
+              {% if route.image_city11 %}
+              <img src="{{ route.image_city11.url }}" class="d-block mx-auto d-block" alt="...">
+              {% endif %}
+              {% if route.base_city_3 %}
+              <div class="carousel-caption d-flex flex-column align-items-center">
+                <p class="bg-dark bg-opacity-10 py-1 px-3">{{route.base_city_3}} </p>
+              </div>
+              {% endif %}
+            </div>
+            <div class="carousel-item">
+              {% if route.image_city12 %}
+              <img src="{{ route.image_city12.url }}" class="d-block mx-auto d-block" alt="...">
+              {% endif %}
+              {% if route.base_city_3 %}
+              <div class="carousel-caption d-flex flex-column align-items-center">
+                <p class="bg-dark bg-opacity-10 py-1 px-3">{{route.base_city_3}} </p>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions1" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        <!-- <div class="container-fluid p-0 m-0">
+          <div class="row">
+            <div class="col">
+            </div>
+            <div class="text-little col-9">
+              <h3 class="text-third4">Ауфзес — маленький городок в Баварии, в знаменитой области Франкония, которая славится своими красивыми пейзажами и традиционной культурой. Это идеальное место для тех, кто хочет насладиться тихой и спокойной атмосферой, насыщенной историей и красивыми видами. Имеется исторический замок Ауфзес, построенный в 14 веке</h3>
+            </div>
+            <div class="col">
+            </div>
+          </div>
+        </div> -->
+      </section>
+      <div class="line" style="border-bottom: solid 5px #8e4c0a;"></div>
+{% endblock content %}

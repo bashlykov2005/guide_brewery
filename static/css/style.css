@@ -869,10 +869,6 @@ textarea {
 .div-padding {
     margin-top: 100px;
 }
-/* _________________MEDIA!!!!!!!!_____________________________ */
-.div-padding {
-    margin-top: 100px;
-}
 
 /* _________________MEDIA!!!!!!!!_____________________________ */
 /* M */
@@ -883,21 +879,19 @@ article>img:hover {
     transform: scale(2);
     margin-left: 150px;
 } */
-.section-row>a {
+.article>a {
     text-decoration: none;
-    color: #FFE5CC;
+    color: #d2cac2;
     font-size: 18px;
     padding: 10px;
 }
 
-.section-row>a:hover {
+.article>a:hover {
     color: #C78547;
 }
 
-.section-row {
-    /* font-family: 'Moyenage', arial; */
-    width: 1150px;
-    /* M */
+.article {
+    width: 1150px;   /* M */
     margin-left: auto;
     margin-right: auto;
     margin-top: 25px;
@@ -957,8 +951,7 @@ body:not(.mobile) .hover-title:hover+.hover-image1 {
 
 .hover-image1 {
     position: fixed;
-    top: 53%;
-    /* M */
+    top: 53%; /* M */
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
@@ -972,16 +965,12 @@ body:not(.mobile) .hover-title:hover+.hover-image1 {
 .hover-image1 img {
     /* max-width: 100% !important;
     max-height: 100% !important; */
-    height: 650px;
-    /* M */
-    width: 500px;
-    /* M */
+    height: 650px; /* M */
+    width: 500px; /* M */
     margin-bottom: 0;
-    border: 2px solid #ce711a;
-    padding: 10px;
-    /* Толщина рамки */
-    background: #e7b17f;
-    /* Цвет рамки */
+    border: 1px solid #ce711a;
+    padding: 5px;/* Толщина рамки */
+    background: #e7b17f;/* Цвет рамки */
     transition: transform 5.0s ease;
 }
 
@@ -1228,7 +1217,7 @@ body:not(.mobile) .hover-title:hover+.hover-image2 {
     cursor: pointer;
 }
 
-/* увеличение изобоажения 1 в описании маршрута*/
+/* увеличение изобоажения 3 в описании маршрута*/
 #myImg2 {
     border-radius: 5px;
     cursor: pointer;
@@ -1347,7 +1336,7 @@ body:not(.mobile) .hover-title:hover+.hover-image2 {
     font-family: 'Roboto', sans-serif;
 } */
 
-.cursor {
+/* .cursor {
     position: fixed;
     border-radius: 0%;
     transform: translateX(-50%) translateY(-50%);
@@ -1397,10 +1386,8 @@ body:not(.mobile) .hover-title:hover+.hover-image2 {
     bottom: 0;
     left: -10px;
     width: calc(100% + 20px);
-    /* border-radius: 1px; */
     display: block;
     background-color: #BFE2FF;
-    /* transition: height 250ms ease; */
     transition: transform 0.4s ease-in-out;
     mix-blend-mode: multiply;
     opacity: 0.6;
@@ -1413,4 +1400,4 @@ body:not(.mobile) .hover-title:hover+.hover-image2 {
 
 .hover-img:hover:before {
     height: 100%;
-}
+} */

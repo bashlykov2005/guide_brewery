@@ -1,0 +1,891 @@
+/* (<=429.5px) */
+@media (max-width: 429.5px) {
+   section {
+      padding: 0 0 80px 0;
+      min-height: 1200px;
+   }
+/* ---Каталог--- */
+   .largescreen {
+      display: none;
+   }
+   .middlescreen {
+      display: none;
+   }
+   .bigscreen {
+      display: none;
+   }
+   .mediumscreen {
+      display: none;
+   }
+   .littlescreen2 {
+      display: none;
+   }
+   .breadcrumbmiddle {
+      display: none;
+   }
+   .route-block {
+      width: 100%;
+   }
+   .route-block:nth-child(odd) {
+      margin-left: 40px;
+   }
+   .route-block:nth-child(even) {
+      margin-left: 40px;
+   }
+   .brewery_block>ul>li {
+      width: 100%;
+   }
+   .brewery_block>ul>li {
+      margin-left: 40px;
+   }
+   .text-main {
+      padding: 90px 120px 0px 120px;
+   }
+   .text-second {
+      padding: 20px 0 5px 0px;
+   }
+   .text-third {
+      padding: 70px 0px 90px 0;
+   }
+   .col-6 {
+      padding: 0 0 30px 0;
+   }
+   .navbar {
+      font-size: 24px;
+   }
+   .top-menu {
+      font-size: 24px;
+   }
+   .navbar-brand {
+      font-size: 24px;
+   }
+   .btn-outline-success {
+      font-size: 23px;
+   }
+   .form-control {
+      font-size: 23px;
+   }
+ /* ----About---- */
+ /* Форма (правая колонка) будет сверху, а элементы (левая колонка) снизу */
+ .content {
+    height: 100%;
+    flex-direction: column-reverse;
+    margin-left: 10px;
+    /* располагаем в колонку и реверсивно */
+   }
+   /* Внутри левой колонки внутренние элементы располагаем в ряд */
+   .left-side {
+      margin-top: 50px;
+      flex-direction: row;
+      /* располагаем элементы (адрес, телефон, email) в ряд */
+      width: 100%;
+      /* левая колонка на всю ширину */
+      justify-content: center;
+      flex-wrap: wrap;
+      /* перенос элементов, если не хватит места */
+   }
+   .details {
+      margin-right: 20px;
+   }
+   .details:last-child {
+      margin-right: 0;
+   }
+   /* Убираем разделительную линию */
+   .left-side::before {
+      display: none;
+   }
+   /* Правая колонка на всю ширину и не имеет отступа слева */
+   .right-side {
+      width: 100%;
+      margin-left: 0;
+   }
+/* ----Route---- */
+   .col-5 {
+      padding: 20px;
+   }
+/* ----Base city---- */
+   .breadcrumb-arrow {
+      padding-bottom: 0;
+   }
+   .text-second3 {
+      padding-top: 25px;
+      line-height: 40px;
+      font-size: 38px;
+   }
+   .text-third3 {
+      font-size: 17px;
+      font-weight: 400;
+      Word-spacing: 4px;
+   }
+   .text-third4 {
+      font-size: 21px;
+      padding: 40px 0 0 0;
+   }
+   /* --Карусель-- */
+   /* .carousel-caption p {
+      font-size: 14px;
+      padding: 120px 5px 10px 5px;
+   } */
+   .my-carousel .carousel-item img {
+      width: 610px;
+      height: 430px;
+      margin: 30px 0 0 0;
+   }
+   .my-carousel-route .carousel-item img {
+      max-width: 560px;
+      height: 430px;
+      margin: 30px 0 0 0;
+   }
+}
+/* (>=430 и <=767.5) */
+@media (min-width: 430px) and (max-width: 767.5px) {
+   section {
+      padding: 0 0 60px 0;
+      min-height: 800px;
+   }
+   h2 {
+      font-size: 25px;
+   }
+/* ---Каталог--- */
+   .largescreen {
+      display: none;
+   }
+   .middlescreen {
+      display: none;
+   }
+   .bigscreen {
+      display: none;
+   }
+   .mediumscreen {
+      display: none;
+   }
+   .littlescreen2 {
+      display: none;
+   }
+   .breadcrumbmiddle {
+      display: none;
+   }
+
+   .text-main {
+      padding: 35px 120px 20px 120px;
+   }
+   .text-second {
+      padding: 20px 0 5px 0px;
+   }
+   .route-block {
+         width: 100%;
+      }
+   .route-block:nth-child(odd) {
+      margin-left: 30px;
+   }
+   .route-block:nth-child(even) {
+      margin-left: 30px;
+   }
+   .brewery_block>ul>li {
+      width: 49%;
+   }
+   /* ----Route---- */
+   .col-5 {
+      padding: 15px 0;
+   }
+   .text-third2 {
+      padding-bottom: 60px;
+   }
+   /* ----About---- */
+   /* Форма (правая колонка) будет сверху, а элементы (левая колонка) снизу */
+   .container {
+      max-height: 700px;
+      }
+   .content {
+      height: 100%;
+      flex-direction: column-reverse;
+      /* располагаем в колонку и реверсивно */
+   }
+   /* Внутри левой колонки внутренние элементы располагаем в ряд */
+   .left-side {
+      margin-top: 50px;
+      flex-direction: row;
+      /* располагаем элементы (адрес, телефон, email) в ряд */
+      width: 100%;
+      /* левая колонка на всю ширину */
+      justify-content: center;
+      flex-wrap: wrap;
+      /* перенос элементов, если не хватит места */
+   }
+   .details {
+      margin-right: 20px;
+   }
+   .details:last-child {
+      margin-right: 0;
+   }
+   /* Убираем разделительную линию */
+   .left-side::before {
+      display: none;
+   }
+   /* Правая колонка на всю ширину и не имеет отступа слева */
+   .right-side {
+      width: 100%;
+      margin-left: 0;
+   }
+/* ----Base city---- */
+   .svg2 {
+      width: 60px;
+      height: 20px;
+   }
+   .breadcrumb-arrow {
+      padding-bottom: 0;
+   }
+   .text-second3 {
+      padding-bottom: 5px;
+      line-height: 40px;
+      padding-top: 15px;
+   }
+   .text-third3 {
+      font-size: 14px;
+      font-weight: 400;
+      Word-spacing: 4px;
+   }
+/* --Карусель-- */
+   /* .carousel-caption p {
+      font-size: 15px;
+      padding: 130px 5px 10px 5px;
+   }*/
+   .my-carousel .carousel-item img {
+      width: 550px;
+      height: 400px;
+      margin: 10px 0 0 0;
+   }
+   .my-carousel-route .carousel-item img {
+      margin: 15px 0 0 0;
+      max-width: 600px;
+      height: auto;
+   }
+}
+/* (>=768 и <=1024) */
+@media (min-width: 768px) and (max-width: 1023.5px) {
+   section {
+      padding: 0 0 35px 0;
+      min-height: 800px;
+   }
+   h2 {
+      font-size: 26px;
+   }
+   /* ---Каталог--- */
+   /* .main {
+      background-image: url(../img/11.jpg);
+   } */
+   .col-3 {
+      width: 30%;
+      padding: 0;
+   }
+   .text-main {
+      padding: 35px 120px 20px 120px;
+   }
+   .largescreen {
+      display: none;
+   }
+   .smallscreen {
+      display: none;
+   }
+   .bigscreen {
+      display: none;
+   }
+   .littlescreen {
+      display: none;
+   }
+   .littlescreen2 {
+      display: none;
+   }
+   .breadcrumbmiddle {
+      display: none;
+   }
+   .text-little {
+      display: none;
+   }
+   .text-main {
+   padding: 50px 120px 50px 120px;
+   }
+   .text-third2 {
+      padding-bottom: 80px;
+   }
+   .route-block {
+      width: 100%;
+   }
+   .route-block:nth-child(odd) {
+      margin-left: 30px;
+   }
+   .route-block:nth-child(even) {
+      margin-left: 30px;
+   }
+   .country-block {
+   width: 300px;
+   margin-left: 60px;
+   }
+   .brewery_block>ul>li {
+      width: 49%;
+   }
+/* ----Base city---- */
+   .svg2 {
+      width: 60px;
+      height: 20px;
+   }
+   .breadcrumb-arrow {
+      padding-bottom: 0;
+   }
+   .text-second3 {
+      padding-bottom: 5px;
+      line-height: 40px;
+      padding-top: 5px;
+   }
+   .text-third3 {
+      font-size: 15px;
+      font-weight: 400;
+      Word-spacing: 4px;
+   }
+/* ----Base-city---- */
+   .carousel-caption p {
+      font-size: 14px;
+      padding: 140px 5px 15px 5px;
+   }
+   .accordion-body p {
+      font-size: 14px;
+   }
+/* --Карусель-- */
+   .my-carousel .carousel-item img {
+      width: 620px;
+      height: 410px;
+      margin: 10px 0 0 0;
+   }
+   .my-carousel-route .carousel-item img {
+      margin: 15px 0 0 0;
+      max-width: 600px;
+      height: auto;
+   }
+}
+
+/* (>=1024 и <=1199) */
+@media (min-width: 1024px) and (max-width: 1199.5px) {
+   section {
+      padding: 0 0 80px 0;
+      min-height: 650px;
+   }
+   a {
+      padding: 7px;
+   }
+   #route h2 {
+      font-size: 22px;
+   }
+   #country-route h2 {
+       font-size: 22px;
+   }
+   .route-block {
+      height: 34px;
+      padding: 5px 0;
+   }
+   h2 {
+      font-size: 26px;
+   }
+/* ----Route---- */
+   .col-3 {
+      width: 29%;
+   }
+   /* ---Каталог--- */
+   .col-4 {
+      width: 31.33333333%;
+   }
+   .largescreen {
+      display: none;
+   }
+   .smallscreen {
+      display: none;
+   }
+   .bigscreen {
+      display: none;
+   }
+   .littlescreen {
+      display: none;
+   }
+   .littlescreen2 {
+      display: none;
+   }
+   /* .breadcrumblittle {
+      display: none;
+   } */
+   .text-little {
+      display: none;
+   }
+   .text-third2 {
+      padding-bottom: 80px;
+   }
+   .route-block {
+      width: 49%;
+   }
+   .route-block:nth-child(even) {
+      margin-left: 1px;
+   }
+   .text-main {
+      padding: 70px 50px 50px 50px;
+   }
+   /* ----Base city---- */
+   .div-width {
+      width: 30vw;
+   }
+   .text-second3 {
+      line-height: 0;
+   }
+   .svg2 {
+      width: 60px;
+      height: 20px;
+   }
+   .carousel-caption p {
+      font-size: 17px;
+      padding: 140px 5px 15px 5px;
+   }
+   .accordion-body p {
+      font-size: 17px;
+   }
+   /* --Карусель-- */
+   .my-carousel .carousel-item img {
+      width: 750px;
+      height: 490px;
+      margin: 20px 0 0 0;
+   }
+   .my-carousel-route .carousel-item img {
+      margin: 20px 0 0 0;
+      max-width: 720px;
+      height: auto;
+   }
+}
+
+@media (min-width: 1200px) and (max-width: 1366.5px) {
+   section {
+      padding: 0 0 90px 0;
+      min-height: 650px;
+   }
+   #route h2 {
+      font-size: 25px;
+   }
+   #country-route h2 {
+      font-size: 25px;
+   }
+   .route-block {
+      height: 37px;
+      padding: 5px 0;
+   }
+   h2 {
+      font-size: 30px;
+   }
+   /* ---Каталог--- */
+   .largescreen {
+      display: none;
+   }
+   .smallscreen {
+      display: none;
+   }
+   .bigscreen {
+      display: none;
+   }
+   .littlescreen {
+      display: none;
+   }
+   .littlescreen2 {
+      display: none;
+   }
+   /* .breadcrumblittle {
+      display: none;
+   } */
+   .text-little {
+      display: none;
+   }
+   .text-main {
+      padding: 100px 121px 50px 121px;
+   }
+   /* ----Base city---- */
+   .div-width {
+      width: 39vw;
+   }
+/* ----Base-city---- */
+   .carousel-caption p {
+      /* font-size: 22px; */
+      padding: 140px 5px 15px 5px;
+   }
+   /* .accordion-body p {
+      font-size: 14px;
+   } */
+   /* --Карусель-- */
+   .my-carousel .carousel-item img {
+      width: 800px;
+      height: 550px;
+      margin: 10px 0 0 0;
+   }
+   .my-carousel-route .carousel-item img {
+      margin: 20px 0 0 0;
+      max-width: 770px;
+      height: auto;
+   }
+/* ----Breweri---- */
+   /* .container1>#image1 {
+      margin: 20px;
+      width: 280px;
+      height: 190px;
+   }
+   .container1 .carousel-item img {
+      border-radius: 12px;
+      width: 280px;
+      height: 195px;
+   } */
+}
+
+@media (min-width: 1367px) and (max-width: 1499.5px) {
+   section {
+      padding: 0 0 150px 0;
+      min-height: 650px !important;
+      max-height: 720px !important;
+   }
+   #route h2 {
+      font-size: 30px !important;
+   }
+   #country-route h2 {
+      font-size: 27px;
+   }
+   .route-block {
+      height: 39px;
+      padding: 5px 0;
+   }
+   h2 {
+      font-size: 30px;
+   }
+   /* ---Каталог--- */
+   .middlescreen {
+      display: none;
+   }
+   .smallscreen {
+      display: none;
+   }
+   .mediumscreen {
+      display: none;
+   }
+   .littlescreen {
+      display: none;
+   }
+   .littlescreen2 {
+      display: none;
+   }
+   /* .breadcrumblittle {
+      display: none;
+   } */
+   .text-little {
+      display: none;
+   }
+   /* ----Base city---- */
+   .div-width {
+      width: 45vw;
+   }
+/* ----Base-city---- */
+   .my-carousel .carousel-item img {
+      margin: 5px 0 0 0;
+   }
+   .carousel-caption p {
+      padding: 150px 5px 20px 5px;
+   }
+   .text-second3 {
+      line-height: 45px;
+      padding-top: 5px;
+   }
+   /* ----Breweri---- */
+   .container1>#image1 {
+      margin: 25px;
+      width: 290px;
+      height: 195px;
+   }
+
+   .container1 .carousel-item img {
+      border-radius: 12px;
+      width: 290px;
+      height: 195px;
+   }
+}
+
+@media (min-width: 1500px) and (max-width: 1549.5px) {
+   /* ---Каталог--- */
+   .middlescreen {
+      display: none;
+   }
+   .smallscreen {
+      display: none;
+   }
+   .mediumscreen {
+      display: none;
+   }
+   .littlescreen {
+      display: none;
+   }
+   .littlescreen2 {
+      display: none;
+   }
+   /* .breadcrumblittle {
+      display: none;
+   } */
+   .text-little {
+      display: none;
+   }
+/* ----Base-city---- */
+   .text-second3 {
+      line-height: 50px;
+      padding-top: 5px;
+   }
+/* --Карусель-- */
+   .my-carousel .carousel-item img {
+      margin: 10px 0 0 0;
+   }
+}
+
+@media (min-width: 1550px) and (max-width: 1919.5px) {
+   /* section {
+         padding: 0 0 50px 0;
+         min-height: 700px;
+      } */
+   /* ---Каталог--- */
+   /* .middlescreen {
+      display: none;
+   }
+   .smallscreen {
+      display: none;
+   }
+   .mediumscreen {
+      display: none;
+   }
+   .littlescreen {
+      display: none;
+   }
+   .littlescreen2 {
+      display: none;
+   } */
+   /* .breadcrumblittle {
+      display: none;
+   } */
+   /* .text-little {
+      display: none;
+   }
+   .carousel-item img {
+      height: 280px;
+      width: 520px;
+   }
+   .text-main {
+      padding: 60px 250px 60px 250px;
+      font-size: 44px;
+   }
+   .text-second {
+      font-size: 44px;
+   }
+   .text-third {
+      font-size: 30px;
+      padding-bottom: 75px;
+   }
+   .text-second2 {
+      padding: 0 0 35px 0px;
+      font-size: 37px;
+   }
+   .text-third2 {
+      font-size: 24px;
+      padding-bottom: 155px;
+   }
+   .image_text>a>h3 {
+      font-size: 34px;
+      padding: 60px 0;
+   }
+   .image_text {
+      top: -5%;
+   }
+   .navbar {
+      font-size: 20px;
+      padding: 3px;
+      }
+   .navbar-brand {
+      font-size: 22px;
+   }
+   .route-block {
+      padding: 5px 0 5px 105px;
+   }
+   .country-block {
+      margin-left: 200px;
+   }
+   .brewery_block>ul>li {
+      padding: 5px 0 5px 110px;
+   }
+   /* ----Base city---- */
+   .div-width {
+      width: 55vw;
+   } */
+/* ----Base-city---- */
+   .my-carousel .carousel-item img {
+      border-radius: 12px;
+      width: 1000px;
+      height: 700px;
+      margin: 10px 0 0 0;
+   }
+   .carousel-caption p {
+      font-size: 20px;
+      padding: 170px 5px 45px 5px;
+   }
+   .accordion-body p {
+      font-size: 20px;
+   }
+   .text-second3 {
+      line-height: 60px;
+      font-size: 32px;
+      font-weight: 600;
+      padding-top: 10px;
+   }
+   .my-carousel-route .carousel-item img {
+      margin: 25px 0 0 0;
+      max-width: 60vw;
+      height: auto;
+   }
+/* ----Breweri---- */
+   .text-brewery {
+      font-size: 39px;
+   }
+   .text-brewery2 {
+      font-size: 32px;
+      padding-bottom: 25px;
+   }
+   .container1>#image1 {
+      margin: 35px;
+      width: 320px;
+      height: 220px;
+   }
+   .container1 .carousel-item img {
+      border-radius: 15px;
+      width: 320px;
+      height: 220px;
+   }
+}
+/* (>=1920) */
+@media (min-width: 1920px) {
+   section {
+      padding: 0 0 150px 0;
+      min-height: 1054px;
+   }
+   /* ---Каталог--- */
+   .middlescreen {
+      display: none;
+   }
+   .smallscreen {
+      display: none;
+   }
+   .mediumscreen {
+      display: none;
+   }
+   .littlescreen {
+      display: none;
+   }
+   .littlescreen2 {
+      display: none;
+   }
+   /* .breadcrumblittle {
+      display: none;
+   } */
+   .text-little {
+      display: none;
+   }
+   .carousel-item img {
+      height: 300px;
+      width: 600px;
+   }
+   .text-main {
+      padding: 60px 550px 60px 550px;
+      font-size: 52px;
+   }
+   .text-second {
+      font-size: 52px;
+   }
+   .text-third {
+      font-size: 35px;
+      padding-bottom: 75px;
+   }
+   .text-second2 {
+      padding: 0 0 35px 0px;
+      font-size: 42px;
+   }
+   .text-third2 {
+      font-size: 29px;
+      padding-bottom: 155px;
+   }
+   .image_text>a>h3 {
+      font-size: 39px;
+      /* padding: 0; */
+   }
+   .image_text {
+      top: 0%;
+   }
+   .navbar {
+      font-size: 22px;
+      padding: 3px;
+   }
+   .navbar-brand {
+      font-size: 24px;
+   }
+   .route-block {
+      padding: 5px 0 5px 255px;
+   }
+   .country-block {
+      margin-left: 350px;
+   }
+   .brewery_block>ul>li {
+      padding: 5px 0 5px 240px;
+   }
+   /* ----Base city---- */
+   .div-width {
+      width: 65vw;
+   }
+/* ----Base-city---- */
+   .my-carousel .carousel-item img {
+      border-radius: 15px;
+      width: 1300px;
+      height: 800px;
+      margin: 50px 0 0 0;
+   }
+   .carousel-caption p {
+      font-size: 24px;
+      width: 1500px;
+      padding: 170px 5px 45px 5px;
+   }
+   .accordion-body p {
+      font-size: 24px;
+   }
+   .carousel-caption {
+      /* left: 14%; */
+   }
+   .text-second3 {
+      line-height: 60px;
+      font-size: 39px;
+      font-weight: 600;
+      padding-top: 20px;
+   }
+   .my-carousel-route .carousel-item img {
+      margin: 25px 0 0 0;
+      max-width: 70vw;
+      height: auto;
+   }
+/* ----Breweri---- */
+   .text-brewery {
+      font-size: 42px;
+   }
+
+   .text-brewery2 {
+      font-size: 34px;
+      padding-bottom: 40px;
+   }
+   .container1>#image1 {
+      margin: 45px;
+      width: 386px;
+      height: 280px;
+   }
+
+   .container1 .carousel-item img {
+      border-radius: 18px;
+      width: 400px;
+      height: 300px;
+   }
+}

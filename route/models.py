@@ -80,6 +80,12 @@ class Route(models.Model):
     image_route12 = models.ImageField(
         upload_to="route_images/route", blank=True, null=True, default="100.jpeg"
     )
+    image_route13 = models.ImageField(
+        upload_to="route_images/route", blank=True, null=True, default="100.jpeg"
+    )
+    image_route14 = models.ImageField(
+        upload_to="route_images/route", blank=True, null=True, default="100.jpeg"
+    )
     image_city1 = models.ImageField(
         upload_to="route_images/city",
         blank=True,

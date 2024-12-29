@@ -44,5 +44,6 @@ class BreweryAdmin(admin.ModelAdmin):
     )
     list_filter = ("title",)
     prepopulated_fields = {"slug": ("title",)}
-
+    save_on_top = True
+    
 admin.site.register(Brewery, BreweryAdmin)

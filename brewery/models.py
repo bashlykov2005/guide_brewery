@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.core.paginator import Paginator
 
 from country.models import Сountry
 from route.models import Route
@@ -9,7 +10,7 @@ class Brewery(models.Model):
         db_table = "breweries"
         verbose_name = "Пивоварни"
         verbose_name_plural = "Пивоварни"
-        ordering = ["title"]
+        ordering = ["id"]
 
     title = models.CharField(
         verbose_name="Название пивоварни",

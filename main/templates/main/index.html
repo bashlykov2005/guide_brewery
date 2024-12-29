@@ -225,21 +225,20 @@
 
                  {% for route in routes %}
                   {% if route.id in route_dark %}
-                    <h2 class="d-inline-block route-block dark"><img class="svg" src="img/svg/1-3.svg" alt="узор" width="50" height="40"><a href="{% url "route:route_index" route.slug %}" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="{{route.id}} - {{route.link}}">{{route.name}}</a></h2>
+                    <h2 class="d-inline-block route-block dark"><img class="svg" src="{% static 'img/svg/1-3.svg' %}" alt="узор" width="50" height="40"><a href="{% url "route:route_index" route.slug %}" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="{{route.id}} - {{route.link}}">{{route.name}}</a></h2>
                   {% endif %}
                   {% if route.id in route_light %}
-                    <h2 class="d-inline-block route-block light"><img class="svg" src="img/svg/1-3.svg" alt="узор" width="50" height="40"><a href="{% url "route:route_index" route.slug %}" class="route-name color1" data-bs-toggle="tooltip" title="{{route.id}} - {{route.link}}">{{route.name}}</a></h2>
+                    <h2 class="d-inline-block route-block light"><img class="svg" src="{% static 'img/svg/1-3.svg' %}" alt="узор" width="50" height="40"><a href="{% url "route:route_index" route.slug %}" class="route-name color1" data-bs-toggle="tooltip" title="{{route.id}} - {{route.link}}">{{route.name}}</a></h2>
                   {% endif %}
                   {% if route.id in route_disabled %}
-                    <h2 class="d-inline-block route-block"><span tabindex="0" data-bs-toggle="tooltip" title="{{route.id}} - {{route.link}}"><img class="svg" src="img/svg/1-3.svg" alt="узор" width="50" height="40"><a href="#" class="route-name color1 disabled">{{route.name}}</a></span></h2>
+                    <h2 class="d-inline-block route-block"><span tabindex="0" data-bs-toggle="tooltip" title="{{route.id}} - {{route.link}}"><img class="svg" src="{% static 'img/svg/1-3.svg' %}" alt="узор" width="50" height="40"><a href="#" class="route-name color1 disabled">{{route.name}}</a></span></h2>
                   {% endif %}
                 {% endfor %}
-
             </div>
           </div>
           <!-- Пагинация -->
           <nav aria-label="Page navigation example">
-            <ul class="pagination pagination-sm justify-content-center mt-5 mb-0">
+            <ul class="pagination pagination-sm justify-content-center mt-5 mb-0 pb-0">
               <div style="text-shadow: none; border-width: 0; border-radius: 20%; border-color: #894c0f;" class="d-flex">
                 {% if not routes.has_previous %}
                   <li class="page-item disabled">
@@ -334,18 +333,10 @@
             </div>
             <div class="col-12 brewery_block">
               <ul p-0 m-0>
-                <li class="d-inline-block"><h2><img class="svg" src="img/svg/Знак 1.svg" alt="узор" width="30" height="30"><a href="./brewery.html" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="Пивоваренный маршрут - 7 пивоварен">Brauerei Hönig</a></h2></li>
-                <li class="d-inline-block"><h2><img class="svg" src="img/svg/Знак 1.svg" alt="узор" width="30" height="30"><a href="./brewery.html" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="Пивоваренный маршрут - 7 пивоварен">Privatbrauerei Reh</a></h2></li>
-                <li class="d-inline-block"><h2><img class="svg" src="img/svg/Знак 1.svg" alt="узор" width="30" height="30"><a href="./brewery.html" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="Пивоваренный маршрут - 7 пивоварен">Brauerei Hölzlein</a></h2></li>
-                <li class="d-inline-block"><h2><img class="svg" src="img/svg/Знак 1.svg" alt="узор" width="30" height="30"><a href="./brewery.html" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="Пивоваренный маршрут - 7 пивоварен">Bräuhaus Melkendorf</a></h2></li>
-                <li class="d-inline-block"><h2><img class="svg" src="img/svg/Знак 1.svg" alt="узор" width="30" height="30"><a href="./brewery.html" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="Пивоваренный маршрут - 7 пивоварен">Brauerei Griess</a></h2></li>
-                <li class="d-inline-block"><h2><img class="svg" src="img/svg/Знак 1.svg" alt="узор" width="30" height="30"><a href="./brewery.html" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="Пивоваренный маршрут - 7 пивоварен">Stefan Krug Brewery</a></h2></li>
-                <li class="d-inline-block"><h2><img class="svg" src="img/svg/Знак 1.svg" alt="узор" width="30" height="30"><a href="./brewery.html" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="Пивоваренный маршрут - 7 пивоварен">Brauerei Sauer</a></h2></li>
-                <li class="d-inline-block"><h2><img class="svg" src="img/svg/Знак 1.svg" alt="узор" width="30" height="30"><a href="./brewery.html" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="Пивоваренный маршрут - Ауфзес и рекорд в Книге рекордов Гиннесса">Aufsesser Brauerei</a></h2></li>
-                <li class="d-inline-block"><h2><img class="svg" src="img/svg/Знак 1.svg" alt="узор" width="30" height="30"><a href="./brewery.html" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="Пивоваренный маршрут - Ауфзес и рекорд в Книге рекордов Гиннесса">Benedikt Stadter Brauerei</a></h2></li>
-                <li class="d-inline-block"><h2><img class="svg" src="img/svg/Знак 1.svg" alt="узор" width="30" height="30"><a href="./brewery.html" class="route-name color1"  data-bs-toggle="tooltip" data-bs-placement="top" title="Пивоваренный маршрут - Ауфзес и рекорд в Книге рекордов Гиннесса">Brauerei Reichold</a></h2></li>
-                <li class="d-inline-block"><h2><img class="svg" src="img/svg/Знак 1.svg" alt="узор" width="30" height="30"><a href="./brewery.html" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="Пивоваренный маршрут - Ауфзес и рекорд в Книге рекордов Гиннесса">Kathi Bräu Heckenhof</a></h2></li>
-                <li class="d-inline-block"><h2><img class="svg" src="img/svg/Знак 1.svg" alt="узор" width="30" height="30"><a href="./brewery.html" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="Пивоваренный маршрут - Гёзоварни Брюсселя">Brasserie Cantillon</a></h2></li>
+                {% for brewery in page_obj %}
+                  <li class="d-inline-block"><h2><img class="svg" src="{% static 'img/svg/Знак 1.svg' %}" alt="узор" width="30" height="30"><a href="./brewery.html" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="{{brewery.link}}">{{brewery}}</a></h2></li>
+                {% endfor %}
+                {% comment %} <li class="d-inline-block"><h2><img class="svg" src="img/svg/Знак 1.svg" alt="узор" width="30" height="30"><a href="./brewery.html" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="Пивоваренный маршрут - Гёзоварни Брюсселя">Brasserie Cantillon</a></h2></li>
                 <li class="d-inline-block"><h2><img class="svg" src="img/svg/Знак 1.svg" alt="узор" width="30" height="30"><a href="./brewery.html" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="Пивоваренный маршрут - Гёзоварни Брюсселя">A la Bécasse</a></h2></li>
                 <li class="d-inline-block"><h2><img class="svg" src="img/svg/Знак 1.svg" alt="узор" width="30" height="30"><a href="./brewery.html" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="Пивоваренный маршрут - Гёзоварни Брюсселя">A la Mort Subtite</a></h2></li>
                 <li class="d-inline-block"><h2><img class="svg" src="img/svg/Знак 1.svg" alt="узор" width="30" height="30"><a href="./brewery.html" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="Пивоваренный маршрут - Гёзоварни Брюсселя">Boon Brewery</a></h2></li>
@@ -355,29 +346,69 @@
                 <li class="d-inline-block"><h2><img class="svg" src="img/svg/Знак 1.svg" alt="узор" width="30" height="30"><a href="./brewery.html" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="Пивоваренный маршрут - Традиционный Зальцбург">Die Weisse</a></h2></li>
                 <li class="d-inline-block"><h2><img class="svg" src="img/svg/Знак 1.svg" alt="узор" width="30" height="30"><a href="./brewery.html" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="Пивоваренный маршрут - Традиционный Зальцбург">S Kloane Brauhaus</a></h2></li>
                 <li class="d-inline-block"><h2><img class="svg" src="img/svg/Знак 1.svg" alt="узор" width="30" height="30"><a href="./brewery.html" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="Пивоваренный маршрут - Традиционный Зальцбург">Fuxn</a></h2></li>
-                <li class="d-inline-block"><h2><img class="svg" src="img/svg/Знак 1.svg" alt="узор" width="30" height="30"><a href="./brewery.html" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="Пивоваренный маршрут - Традиционный Зальцбург">Аugustinerbräu-Kloster Mülln</a></h2></li>
+                <li class="d-inline-block"><h2><img class="svg" src="img/svg/Знак 1.svg" alt="узор" width="30" height="30"><a href="./brewery.html" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="Пивоваренный маршрут - Традиционный Зальцбург">Аugustinerbräu-Kloster Mülln</a></h2></li> {% endcomment %}
               </ul>
-              <!-- Пагинация -->
-              <nav aria-label="Page navigation example">
-                <ul class="pagination pagination-sm justify-content-center mt-5" style="margin-bottom: 130px;">
-                  <div style="text-shadow: none; border-width: 0; border-radius: 20%; border-color: #894c0f;" class="d-flex">
-                    <li class="page-item disabled">
-                      <a style="background: rgb(207, 190, 190); border: 2px solid #C78547;" class="page-link color3" href="#">Предыдущая</a>
-                    </li>
-                    <li class="page-item active"><a style="background: #C78547; border: 2px solid #C78547;" class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a style="border: 2px solid #C78547; background: #FFE5CC; color: #A46526;" onpointerenter="this.setAttribute('style', 'color: #894c0f; background: #d2a276')"
-                      onpointerleave="this.setAttribute('style', 'border: 2px solid #C78547; color: #A46526; background: #FFE5CC')" class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a style="border: 2px solid #C78547; background: #FFE5CC; color: #A46526;" onpointerenter="this.setAttribute('style', 'color: #894c0f; background: #d2a276')"
-                      onpointerleave="this.setAttribute('style', 'border: 2px solid #C78547; color: #A46526; background: #FFE5CC')" class="page-link" href="#">3</a></li>
-                    <li class="page-item ">
-                      <a style="border: 2px solid #C78547; background: #f0c396; color: #A46526;" onpointerenter="this.setAttribute('style', 'color: #894c0f; background: #d2a276')"
-                      onpointerleave="this.setAttribute('style', 'border: 2px solid #C78547; color: #A46526; background: #f0c396')" class="page-link" href="#">Следующая</a>
-                    </li>
-                  </div>
-                </ul>
-              </nav>
             </div>
-            <div style="position: absolute; bottom: 0;"><img class="svg" src="img/svg/бариноф3.svg" alt="узор" width="1000" height="70"></div>
+              <!-- Пагинация -->
+            <nav aria-label="Page navigation example">
+              <ul class="pagination pagination-sm justify-content-center mt-5 mb-0 pb-0">
+                <div style="text-shadow: none; border-width: 0; border-radius: 20%; border-color: #894c0f;" class="d-flex">
+                  {% if not page_obj.has_previous %}
+                    <li class="page-item disabled">
+                        <a style="background: rgb(207, 190, 190); border: 2px solid #C78547;" class="page-link color3"
+                        href="{% if page_obj.has_previous %}?page={{ page_obj.previous_page_number }}#brewery
+                        {% else %}
+                        #
+                        {% endif %}">Предыдущая</a>
+                    </li>
+                  {% else %}
+                    <li class="page-item">
+                      <a style="border: 2px solid #C78547; background: #f0c396; color: #A46526;" onpointerenter="this.setAttribute('style', 'color: #894c0f; background: #d2a276')"
+                      onpointerleave="this.setAttribute('style', 'border: 2px solid #C78547; color: #A46526; background: #f0c396')" class="page-link"
+                      href="{% if page_obj.has_previous %}?page={{ page_obj.previous_page_number }}#brewery
+                        {% else %}
+                        #
+                        {% endif %}">Предыдущая</a>
+                    </li>
+                  {% endif %}
+
+                  {% for page in page_obj.paginator.page_range %}
+                    {% if page >= page_obj.number|add:-2 and page <= page_obj.number|add:2 %}
+                      {% if page_obj.number == page %}
+                        <li class="page-item active"><a style="background: #C78547; border: 2px solid #C78547;" class="page-link"
+                          href="?page={{ page }}#brewery">{{ page }}</a>
+                        </li>
+                      {% else %}
+                        <li class="page-item"><a style="border: 2px solid #C78547; background: #FFE5CC; color: #A46526;" onpointerenter="this.setAttribute('style', 'color: #894c0f; background: #d2a276')"
+                          onpointerleave="this.setAttribute('style', 'border: 2px solid #C78547; color: #A46526; background: #FFE5CC')" class="page-link"
+                          href="?page={{ page }}#brewery">{{ page }}</a>
+                        </li>
+                      {% endif %}
+                    {% endif %}
+                  {% endfor %}
+
+                  {% if not page_obj.has_next %}
+                    <li class="page-item disabled">
+                        <a style="background: rgb(207, 190, 190); border: 2px solid #C78547;" class="page-link color3"
+                        href="{% if page_obj.has_next %}?page={{ page_obj.next_page_number }}#brewery
+                        {% else %}
+                        #
+                        {% endif %}">Следующая</a>
+                    </li>
+                  {% else %}
+                    <li class="page-item">
+                      <a style="border: 2px solid #C78547; background: #f0c396; color: #A46526;" onpointerenter="this.setAttribute('style', 'color: #894c0f; background: #d2a276')"
+                      onpointerleave="this.setAttribute('style', 'border: 2px solid #C78547; color: #A46526; background: #f0c396')" class="page-link"
+                      href="{% if page_obj.has_next %}?page={{ page_obj.next_page_number }}#brewery
+                        {% else %}
+                        #
+                        {% endif %}">Следующая</a>
+                    </li>
+                  {% endif %}
+                </div>
+              </ul>
+            </nav>
+            <div style="position: absolute; bottom: 0;"><img class="svg" src="{% static 'img/svg/бариноф3.svg' %}" alt="узор" width="1000" height="70"></div>
           </div>
         </div>
       </section>

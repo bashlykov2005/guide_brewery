@@ -538,12 +538,11 @@
 
 @media (min-width: 1367px) and (max-width: 1499.5px) {
    section {
-      padding: 0 0 150px 0;
+      padding: 0 0 50px 0;
       min-height: 650px !important;
-      max-height: 720px !important;
    }
    #route h2 {
-      font-size: 30px !important;
+      font-size: 27px !important;
    }
    #country-route h2 {
       font-size: 27px;
@@ -641,12 +640,15 @@
 }
 
 @media (min-width: 1550px) and (max-width: 1919.5px) {
-   /* section {
-         padding: 0 0 50px 0;
-         min-height: 700px;
-      } */
+   section {
+      padding: 0 0 50px 0;
+      min-height: 700px;
+   }
+   .route-block:nth-child(even) {
+      margin-left: 0px;
+   }
    /* ---Каталог--- */
-   /* .middlescreen {
+   .middlescreen {
       display: none;
    }
    .smallscreen {
@@ -660,11 +662,11 @@
    }
    .littlescreen2 {
       display: none;
-   } */
+   }
    /* .breadcrumblittle {
       display: none;
    } */
-   /* .text-little {
+   .text-little {
       display: none;
    }
    .carousel-item img {
@@ -716,7 +718,7 @@
    /* ----Base city---- */
    .div-width {
       width: 55vw;
-   } */
+   }
 /* ----Base-city---- */
    .my-carousel .carousel-item img {
       border-radius: 12px;
@@ -765,7 +767,7 @@
 @media (min-width: 1920px) {
    section {
       padding: 0 0 150px 0;
-      min-height: 1054px;
+      min-height: 900px;
    }
    /* ---Каталог--- */
    .middlescreen {

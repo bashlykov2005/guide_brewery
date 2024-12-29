@@ -153,6 +153,7 @@ li>.d-inline-block {
 }
 .brewery_block>ul {
     margin-bottom: 30px;
+    padding: 5px 0 5px 60px;
 }
 /* margin для блоков левого ряда - один блок через два блока*/
 /* .brewery_block > ul > li:nth-child(3n+1) {

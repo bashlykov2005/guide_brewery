@@ -9,10 +9,9 @@
               <nav class="breadcrumb-arrow" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><a href="{% url "main:index" %}">Главная</a></li>
-                  <li class="breadcrumb-item"><a href="{% url "main:index" %}#brewery">Пивоварни</a></li>
-                  {% comment %} <li class="breadcrumb-item"><a href="{% url "main:index" %}#route">Маршруты</a></li>
+                  <li class="breadcrumb-item"><a href="{% url "main:index" %}#route">Маршруты</a></li>
                   <li class="breadcrumb-item"><a href="{% url "route:route_index" route.slug %}">Маршрут</a></li>
-                  <li class="breadcrumb-item"><a href="{% url "route:route_descr" route.slug %}">Описание маршрута</a></li> {% endcomment %}
+                  <li class="breadcrumb-item"><a href="{% url "route:route_breweries" route.slug %}">Пивоварни на маршруте</a></li>
                   <li class="breadcrumb-item active" aria-current="page">Описание пивоварни</li>
                 </ol>
               </nav>
@@ -26,15 +25,6 @@
                     </h2>
                     <div id="flush-collapseOne" class="accordion-collapse text-center collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                       <div class="accordion-body"><p class="col-12 text-center"> <span>Адрес пивоварни:</span> <a href="https://maps.app.goo.gl/PMqvGEzBtSMAWh4d9">Im Tal 70B, 91347 Aufseß, Германия</a><a href="./route-description.html">  (показать на карте)</a>. <span>Часы работы:</span> с 07:00 до 15:30; Сб.Вск- выходной.  <span>Сайт пивоварни:</span> <a href="https://aufsesser.de/"> https://aufsesser.de/</a><br> Старинный  пивоваренный завод с 1886 года. Выпускает традиционные для франконии сорта пива: hell, kellerbier (zwickl), dunkel, hefe weizen, bock. Есть ресторан франконской кухни (работает до вечера), известный своим жареным мясом по старинным рецептам и свежей форелью, а также тенистый пивной сад. При пивоварне есть гостиница, можно заказать туры на производство. Для коллекционеров продаются сувенирные стаканы</p></div>
-                    </div>
-                    <div class="col-12 brewery_block mt-4">
-                      <ul p-0 mt-5>
-
-                        {% for brewery in breweries %}
-                          <li class="d-inline-block"><h2><img class="svg" src="{% static 'img/svg/Знак 1.svg' %}" alt="узор" width="30" height="30"><a href="{% url "brewery:brewery_index" brewery.slug %}" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="{{brewery.link}}">{{brewery.title}}</a></h2></li>
-                        {% endfor %}
-
-                      </ul>
                     </div>
                   </div>
                 </div>

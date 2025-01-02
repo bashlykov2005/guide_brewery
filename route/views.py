@@ -1,10 +1,9 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.template import context
-from django.utils.safestring import mark_safe
-from django.template import Template, Context
 
 
+from brewery.models import Brewery
 from route.models import Route
 
 
@@ -34,7 +33,6 @@ def route_descr(request, route_slug):
     return render(request, "route/route-description.html", context=context)
 
 
-
 def route_city(request, route_slug):
 
     route = Route.objects.get(slug=route_slug)
@@ -56,3 +54,29 @@ def route_city_2(request, route_slug, route_base_city):
         "route": route,
     }
     return render(request, "route/route-base-city_2.html", context=context)
+
+
+def route_breweries(request, route_slug):
+
+    route = Route.objects.get(slug=route_slug)
+
+    context = {
+        "title": "Пивоварни на маршруте",
+        "route": route,
+        "breweries": route.brewery_set.all(),
+    }
+    return render(request, "route/route-breweries.html", context=context)
+
+
+def route_brewery(request, route_slug, brewery_slug):
+
+    route = Route.objects.get(slug=route_slug)
+    brewery = Brewery.objects.get(slug=brewery_slug)
+
+    context = {
+        "title": "Пивоварня",
+        "route": route,
+        "brewery": brewery,
+        # "breweries": route.brewery_set.all(),
+    }
+    return render(request, "route/route-brewery.html", context=context)

@@ -1,0 +1,36 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block content %}
+      <section class="route2" id="route2">
+        <div class="breadcrumblittle">
+          <div class="container-fluid">
+            <div class="row">
+              <nav class="breadcrumb-arrow" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="{% url "main:index" %}">Главная</a></li>
+                  <li class="breadcrumb-item"><a href="{% url "main:index" %}#route">Маршруты</a></li>
+                  <li class="breadcrumb-item"><a href="{% url "route:route_index" route.slug %}">Маршрут</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Пивоварни на маршруте</li>
+                  {% comment %} <li class="breadcrumb-item active" aria-current="page">Описание пивоварни</li> {% endcomment %}
+                </ol>
+              </nav>
+
+              <div class="col-12">
+                <h1 class="text-center text-second3"><img class="svg" src="{% static "img/svg/1-3.svg" %}" alt="узор" width="60" height="40"> {{route.name}} <img class="svg" src="{% static "./img/svg/1-4.svg" %}" alt="узор" width="60" height="40"></h1>
+              </div>
+              <div class="col-12">
+                <h1 class="text-center text-second3 mt-2 mb-3"><img class="svg" src="{% static 'img/svg/круг/вселенная.svg' %}" alt="узор" width="30" height="30"> Пивоварни на маршруте <img class="svg" src="{% static 'img/svg/круг/вселенная.svg' %}" alt="узор" width="30" height="30"></h1>
+              </div>
+              <div class="col-12 brewery_block mt-4">
+                <ul p-0 mt-5>
+
+                  {% for brewery in breweries %}
+                    <li class="d-inline-block"><h2><img class="svg" src="{% static 'img/svg/Знак 1.svg' %}" alt="узор" width="30" height="30"><a href="{% url "route:route_brewery" route.slug brewery.slug %}" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="{{brewery.description}}">{{brewery.title}}</a></h2></li>
+                  {% endfor %}
+
+                </ul>
+              </div>
+      </section>
+      <div class="line" style="border-bottom: solid 5px #8e4c0a;"></div>
+    {% endblock content %}

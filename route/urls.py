@@ -16,5 +16,15 @@ urlpatterns = [
         views.route_city_2,
         name="route_city_2",
     ),
+    path(
+        "<slug:route_slug>/route_breweries/",
+        views.route_breweries,
+        name="route_breweries",
+    ),
+    path(
+        "<slug:route_slug>/<slug:brewery_slug>/",
+        views.route_brewery,
+        name="route_brewery",
+    ),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += staticfiles_urlpatterns()

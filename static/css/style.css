@@ -153,7 +153,9 @@ li>.d-inline-block {
 }
 .brewery_block>ul {
     margin-bottom: 30px;
-    padding: 5px 0 5px 60px;
+}
+.brewery_block>ul>li {
+    padding: 5px 0 5px 40px;
 }
 /* margin для блоков левого ряда - один блок через два блока*/
 /* .brewery_block > ul > li:nth-child(3n+1) {
@@ -224,7 +226,7 @@ li>.d-inline-block {
 .text-third {
     font-size: 28px;
     color: #edb176;
-    font-weight: 700;
+    font-weight: 500;
     Word-spacing: 5px;
     Letter-spacing: 2px;
     text-shadow: 4px 4px 4px black;
@@ -538,7 +540,7 @@ textarea {
     Word-spacing: 4px;
     Letter-spacing: 1px;
     text-shadow: 4px 4px 4px black;
-    padding-bottom: 125px;
+    padding-bottom: 90px;
 }
 
 .text-brewery {
@@ -966,8 +968,8 @@ body:not(.mobile) .hover-title:hover+.hover-image1 {
 .hover-image1 img {
     /* max-width: 100% !important;
     max-height: 100% !important; */
-    height: 650px; /* M */
-    width: 500px; /* M */
+    height: 700px; /* M */
+    width: 560px; /* M */
     margin-bottom: 0;
     border: 1px solid #ce711a;
     padding: 5px;/* Толщина рамки */
@@ -1000,8 +1002,8 @@ body:not(.mobile) .hover-title:hover+.hover-image2 {
 .hover-image2 img {
     /* max-width: 100% !important;
     max-height: 100% !important; */
-    height: 500px;
-    width: 1000px;
+    height: 630px;
+    width: 1100px;
     margin-bottom: 0;
     border: 2px solid #ce711a;
     padding: 10px;
@@ -1030,7 +1032,7 @@ body:not(.mobile) .hover-title:hover+.hover-image2 {
     /* Stay in place */
     z-index: 1;
     /* Sit on top */
-    padding-top: 65px;
+    padding-top: 90px;
     /* M */
     /* Location of the box */
     left: 0;
@@ -1052,7 +1054,7 @@ body:not(.mobile) .hover-title:hover+.hover-image2 {
     margin: auto;
     display: block;
     width: 80%;
-    max-width: 800px;
+    max-width: 850px;
 }
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
@@ -1060,7 +1062,7 @@ body:not(.mobile) .hover-title:hover+.hover-image2 {
     margin: auto;
     display: block;
     width: 80%;
-    max-width: 800px;
+    max-width: 850px;
     text-align: center;
     color: #ccc;
     padding: 10px 0;
@@ -1134,7 +1136,7 @@ body:not(.mobile) .hover-title:hover+.hover-image2 {
     /* Stay in place */
     z-index: 1;
     /* Sit on top */
-    padding-top: 65px;
+    padding-top: 90px;
     /* Location of the box */
     left: 0;
     top: 0;
@@ -1155,7 +1157,7 @@ body:not(.mobile) .hover-title:hover+.hover-image2 {
     margin: auto;
     display: block;
     width: 80%;
-    max-width: 800px;
+    max-width: 850px;
 }
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
@@ -1163,7 +1165,7 @@ body:not(.mobile) .hover-title:hover+.hover-image2 {
     margin: auto;
     display: block;
     width: 80%;
-    max-width: 800px;
+    max-width: 850px;
     text-align: center;
     color: #ccc;
     padding: 10px 0;
@@ -1237,7 +1239,7 @@ body:not(.mobile) .hover-title:hover+.hover-image2 {
     /* Stay in place */
     z-index: 1;
     /* Sit on top */
-    padding-top: 55px;
+    padding-top: 90px;
     /* Location of the box */
     left: 0;
     top: 0;
@@ -1258,7 +1260,7 @@ body:not(.mobile) .hover-title:hover+.hover-image2 {
     margin: auto;
     display: block;
     width: 80%;
-    max-width: 800px;
+    max-width: 850px;
 }
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
@@ -1266,7 +1268,7 @@ body:not(.mobile) .hover-title:hover+.hover-image2 {
     margin: auto;
     display: block;
     width: 80%;
-    max-width: 800px;
+    max-width: 850px;
     text-align: center;
     color: #ccc;
     padding: 10px 0;

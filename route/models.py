@@ -134,5 +134,3 @@ class Route(models.Model):
     def __str__(self):
         return f"{self.name}"
 
-    def get_absolute_url(self):
-        return reverse("route", kwargs={"route_slug": self.slug})

@@ -189,7 +189,7 @@
       padding: 15px 0;
    }
    .text-third2 {
-      padding-bottom: 60px;
+      padding-bottom: 50px;
    }
    /* ----About---- */
    /* Форма (правая колонка) будет сверху, а элементы (левая колонка) снизу */
@@ -306,7 +306,7 @@
    padding: 50px 120px 50px 120px;
    }
    .text-third2 {
-      padding-bottom: 80px;
+      padding-bottom: 70px;
    }
    .route-block {
       width: 100%;
@@ -415,7 +415,7 @@
       display: none;
    }
    .text-third2 {
-      padding-bottom: 80px;
+      padding-bottom: 70px;
    }
    .route-block {
       width: 49%;
@@ -690,14 +690,14 @@
    }
    .text-third2 {
       font-size: 24px;
-      padding-bottom: 155px;
+      padding-bottom: 90px;
    }
    .image_text>a>h3 {
       font-size: 34px;
       padding: 60px 0;
    }
    .image_text {
-      top: -5%;
+      top: 10%;
    }
    .navbar {
       font-size: 20px;
@@ -707,7 +707,7 @@
       font-size: 22px;
    }
    .route-block {
-      padding: 5px 0 5px 105px;
+      padding: 5px 0 5px 70px;
    }
    .country-block {
       margin-left: 200px;
@@ -736,7 +736,7 @@
    .text-second3 {
       line-height: 60px;
       font-size: 32px;
-      font-weight: 600;
+      font-weight: 500;
       padding-top: 10px;
    }
    .my-carousel-route .carousel-item img {
@@ -812,7 +812,7 @@
    }
    .text-third2 {
       font-size: 29px;
-      padding-bottom: 155px;
+      padding-bottom: 120px;
    }
    .image_text>a>h3 {
       font-size: 39px;
@@ -829,13 +829,13 @@
       font-size: 24px;
    }
    .route-block {
-      padding: 5px 0 5px 255px;
+      padding: 5px 0 5px 200px;
    }
    .country-block {
       margin-left: 350px;
    }
    .brewery_block>ul>li {
-      padding: 5px 0 5px 200px;
+      padding: 5px 0 5px 150px;
    }
    /* ----Base city---- */
    .div-width {
@@ -862,7 +862,7 @@
    .text-second3 {
       line-height: 60px;
       font-size: 39px;
-      font-weight: 600;
+      font-weight: 500;
       padding-top: 20px;
    }
    .my-carousel-route .carousel-item img {

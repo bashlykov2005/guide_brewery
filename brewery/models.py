@@ -48,7 +48,10 @@ class Brewery(models.Model):
         max_length=100, blank=True, null=True, verbose_name="Ссылка при наведении"
     )
     description = models.TextField(
-        max_length=5000, blank=True, null=True, verbose_name="Описание пивоварни"
+        max_length=500, blank=True, null=True, verbose_name="Описание пивоварни"
+    )
+    descript_full = models.TextField(
+        max_length=5000, blank=True, null=True, verbose_name="Описание пивоварни полное"
     )
     image1 = models.ImageField(
         upload_to="brewery_images", blank=True, null=True, default="100.jpeg"
@@ -66,6 +69,18 @@ class Brewery(models.Model):
         upload_to="brewery_images", blank=True, null=True, default="100.jpeg"
     )
     image6 = models.ImageField(
+        upload_to="brewery_images", blank=True, null=True, default="100.jpeg"
+    )
+    image7 = models.ImageField(
+        upload_to="brewery_images", blank=True, null=True, default="100.jpeg"
+    )
+    image8 = models.ImageField(
+        upload_to="brewery_images", blank=True, null=True, default="100.jpeg"
+    )
+    image9 = models.ImageField(
+        upload_to="brewery_images", blank=True, null=True, default="100.jpeg"
+    )
+    image10 = models.ImageField(
         upload_to="brewery_images", blank=True, null=True, default="100.jpeg"
     )
     route_id = models.ForeignKey(

@@ -179,7 +179,7 @@
                 </div>
               </div>
               {% endif %}
-              {% if "Фюнф" or "Зальцбург" or "Брюсселя" or "Ауфзес" or "7 пивоварен" not in route.name %}
+              {% if route.id in route_light %}
               <div class="col">
                 <div id="carouselExample3" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3250">
                   <div class="carousel-inner">
@@ -216,9 +216,9 @@
         <div class="mediumscreen">
           <div class="container-fluid p-0 m-0">
             <div class="row">
-              <div class="col-1" style="margin: -15px;">
-              </div>
               <div class="col">
+              </div>
+              <div class="col-3">
                 <div id="carouselExample" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3250">
                   <div class="carousel-inner">
                     <div class="carousel-item active"> <img src="{{ route.image_city1.url }}" class="d-block" alt="...">
@@ -233,13 +233,12 @@
                     <div class="carousel-item"><img src="{{ route.image_city4.url }}" class="d-block " alt="...">
                       <div class="image_text"><a href="{% url "route:route_city" route.slug %}"><h3>Базовый город</h3></a></div>
                     </div>
-
                   </div>
                 </div>
               </div>
-              <div class="col-1" style="margin: -15px;">
-              </div>
               <div class="col">
+              </div>
+              <div class="col-3">
                 <div id="carouselExample2" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2350">
                   <div class="carousel-inner">
                     <div class="carousel-item active"><img src="{% static "img/route-carousel-route/1.jpg" %}" class="d-block w-100" alt="...">
@@ -266,10 +265,10 @@
                   </div>
                 </div>
               </div>
-              <div class="col-1" style="margin: -15px;">
+              <div class="col">
               </div>
               {% if "7 пивоварен" in route.name %}
-              <div class="col">
+              <div class="col-3">
                 <div id="carouselExample3" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3250">
                   <div class="carousel-inner">
                     <div class="carousel-item active"><img src="{% static "img/route-carousel-brewery/7_breweries/1.jpg" %}" class="d-block w-100" alt="...">
@@ -289,7 +288,7 @@
               </div>
               {% endif %}
               {% if "Ауфзес" in route.name %}
-              <div class="col">
+              <div class="col-3">
                 <div id="carouselExample3" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3250">
                   <div class="carousel-inner">
                     <div class="carousel-item active"><img src="{% static "img/route-carousel-brewery/Aufzes/1.jpg" %}" class="d-block w-100" alt="...">
@@ -309,7 +308,7 @@
               </div>
               {% endif %}
               {% if "Брюсселя" in route.name %}
-              <div class="col">
+              <div class="col-3">
                 <div id="carouselExample3" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3250">
                   <div class="carousel-inner">
                     <div class="carousel-item active"><img src="{% static "img/route-carousel-brewery/brasseles/1.jpg" %}" class="d-block w-100" alt="...">
@@ -329,7 +328,7 @@
               </div>
               {% endif %}
               {% if "Зальцбург" in route.name %}
-              <div class="col">
+              <div class="col-3">
                 <div id="carouselExample3" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3250">
                   <div class="carousel-inner">
                     <div class="carousel-item active"><img src="{% static "img/route-carousel-brewery/salzburg/1.jpg" %}" class="d-block w-100" alt="...">
@@ -349,7 +348,7 @@
               </div>
               {% endif %}
               {% if "Фюнф" in route.name %}
-              <div class="col">
+              <div class="col-3">
                 <div id="carouselExample3" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3250">
                   <div class="carousel-inner">
                     <div class="carousel-item active"><img src="{% static "img/route-carousel-brewery/funf-seidla/1.jpg" %}" class="d-block w-100" alt="...">
@@ -368,8 +367,8 @@
                 </div>
               </div>
               {% endif %}
-              {% if "Фюнф" or "Зальцбург" or "Брюсселя" or "Ауфзес" or "7 пивоварен" not in route.name %}
-              <div class="col">
+              {% if route.id in route_light %}
+              <div class="col-3">
                 <div id="carouselExample3" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3250">
                   <div class="carousel-inner">
                     <div class="carousel-item active"><img src="{% static "img/route-carousel-brewery/other/1.jpg" %}" class="d-block w-100" alt="...">
@@ -397,7 +396,7 @@
                 </div>
               </div>
               {% endif %}
-              <div class="col-1" style="margin: -15px;">
+              <div class="col">
               </div>
             </div>
           </div>
@@ -405,9 +404,9 @@
         <div class="littlescreen">
           <div class="container-fluid p-0 m-0">
             <div class="row">
-              <div class="col-1" style="margin: -15px;">
-              </div>
               <div class="col">
+              </div>
+              <div class="col-5">
                 <div id="carouselExample" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3250">
                   <div class="carousel-inner">
                     <div class="carousel-item active"> <img src="{{ route.image_city1.url }}" class="d-block" alt="...">
@@ -422,13 +421,12 @@
                     <div class="carousel-item"><img src="{{ route.image_city4.url }}" class="d-block " alt="...">
                       <div class="image_text"><a href="{% url "route:route_city" route.slug %}"><h3>Базовый город</h3></a></div>
                     </div>
-
                   </div>
                 </div>
               </div>
-              <div class="col-1" style="margin: -15px;">
-              </div>
               <div class="col">
+              </div>
+              <div class="col-5">
                 <div id="carouselExample2" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2350">
                   <div class="carousel-inner">
                     <div class="carousel-item active"><img src="{% static "img/route-carousel-route/1.jpg" %}" class="d-block w-100" alt="...">
@@ -455,10 +453,16 @@
                   </div>
                 </div>
               </div>
-              <div class="col-1" style="margin: -15px;">
+              <div class="col">
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid p-0 m-0">
+            <div class="row">
+              <div class="col">
               </div>
               {% if "7 пивоварен" in route.name %}
-              <div class="col">
+              <div class="col-5">
                 <div id="carouselExample3" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3250">
                   <div class="carousel-inner">
                     <div class="carousel-item active"><img src="{% static "img/route-carousel-brewery/7_breweries/1.jpg" %}" class="d-block w-100" alt="...">
@@ -478,7 +482,7 @@
               </div>
               {% endif %}
               {% if "Ауфзес" in route.name %}
-              <div class="col">
+              <div class="col-5">
                 <div id="carouselExample3" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3250">
                   <div class="carousel-inner">
                     <div class="carousel-item active"><img src="{% static "img/route-carousel-brewery/Aufzes/1.jpg" %}" class="d-block w-100" alt="...">
@@ -498,7 +502,7 @@
               </div>
               {% endif %}
               {% if "Брюсселя" in route.name %}
-              <div class="col">
+              <div class="col-5">
                 <div id="carouselExample3" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3250">
                   <div class="carousel-inner">
                     <div class="carousel-item active"><img src="{% static "img/route-carousel-brewery/brasseles/1.jpg" %}" class="d-block w-100" alt="...">
@@ -518,7 +522,7 @@
               </div>
               {% endif %}
               {% if "Зальцбург" in route.name %}
-              <div class="col">
+              <div class="col-5">
                 <div id="carouselExample3" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3250">
                   <div class="carousel-inner">
                     <div class="carousel-item active"><img src="{% static "img/route-carousel-brewery/salzburg/1.jpg" %}" class="d-block w-100" alt="...">
@@ -538,7 +542,7 @@
               </div>
               {% endif %}
               {% if "Фюнф" in route.name %}
-              <div class="col">
+              <div class="col-5">
                 <div id="carouselExample3" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3250">
                   <div class="carousel-inner">
                     <div class="carousel-item active"><img src="{% static "img/route-carousel-brewery/funf-seidla/1.jpg" %}" class="d-block w-100" alt="...">
@@ -557,8 +561,8 @@
                 </div>
               </div>
               {% endif %}
-              {% if "Фюнф" or "Зальцбург" or "Брюсселя" or "Ауфзес" or "7 пивоварен" not in route.name %}
-              <div class="col">
+              {% if route.id in route_light %}
+              <div class="col-5">
                 <div id="carouselExample3" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3250">
                   <div class="carousel-inner">
                     <div class="carousel-item active"><img src="{% static "img/route-carousel-brewery/other/1.jpg" %}" class="d-block w-100" alt="...">
@@ -586,7 +590,7 @@
                 </div>
               </div>
               {% endif %}
-              <div class="col-1" style="margin: -15px;">
+              <div class="col">
               </div>
             </div>
           </div>
@@ -594,9 +598,9 @@
         <div class="littlescreen2">
           <div class="container-fluid p-0 m-0">
             <div class="row">
-              <div class="col-1" style="margin: -15px;">
-              </div>
               <div class="col">
+              </div>
+              <div class="col-6">
                 <div id="carouselExample" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3250">
                   <div class="carousel-inner">
                     <div class="carousel-item active"> <img src="{{ route.image_city1.url }}" class="d-block" alt="...">
@@ -611,13 +615,18 @@
                     <div class="carousel-item"><img src="{{ route.image_city4.url }}" class="d-block " alt="...">
                       <div class="image_text"><a href="{% url "route:route_city" route.slug %}"><h3>Базовый город</h3></a></div>
                     </div>
-
                   </div>
                 </div>
               </div>
-              <div class="col-1" style="margin: -15px;">
-              </div>
               <div class="col">
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid p-0 m-0">
+            <div class="row">
+              <div class="col">
+              </div>
+              <div class="col-6">
                 <div id="carouselExample2" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2350">
                   <div class="carousel-inner">
                     <div class="carousel-item active"><img src="{% static "img/route-carousel-route/1.jpg" %}" class="d-block w-100" alt="...">
@@ -644,10 +653,16 @@
                   </div>
                 </div>
               </div>
-              <div class="col-1" style="margin: -15px;">
+              <div class="col">
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid p-0 m-0">
+            <div class="row">
+              <div class="col">
               </div>
               {% if "7 пивоварен" in route.name %}
-              <div class="col">
+              <div class="col-6">
                 <div id="carouselExample3" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3250">
                   <div class="carousel-inner">
                     <div class="carousel-item active"><img src="{% static "img/route-carousel-brewery/7_breweries/1.jpg" %}" class="d-block w-100" alt="...">
@@ -667,7 +682,7 @@
               </div>
               {% endif %}
               {% if "Ауфзес" in route.name %}
-              <div class="col">
+              <div class="col-6">
                 <div id="carouselExample3" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3250">
                   <div class="carousel-inner">
                     <div class="carousel-item active"><img src="{% static "img/route-carousel-brewery/Aufzes/1.jpg" %}" class="d-block w-100" alt="...">
@@ -687,7 +702,7 @@
               </div>
               {% endif %}
               {% if "Брюсселя" in route.name %}
-              <div class="col">
+              <div class="col-6">
                 <div id="carouselExample3" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3250">
                   <div class="carousel-inner">
                     <div class="carousel-item active"><img src="{% static "img/route-carousel-brewery/brasseles/1.jpg" %}" class="d-block w-100" alt="...">
@@ -707,7 +722,7 @@
               </div>
               {% endif %}
               {% if "Зальцбург" in route.name %}
-              <div class="col">
+              <div class="col-6">
                 <div id="carouselExample3" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3250">
                   <div class="carousel-inner">
                     <div class="carousel-item active"><img src="{% static "img/route-carousel-brewery/salzburg/1.jpg" %}" class="d-block w-100" alt="...">
@@ -727,7 +742,7 @@
               </div>
               {% endif %}
               {% if "Фюнф" in route.name %}
-              <div class="col">
+              <div class="col-6">
                 <div id="carouselExample3" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3250">
                   <div class="carousel-inner">
                     <div class="carousel-item active"><img src="{% static "img/route-carousel-brewery/funf-seidla/1.jpg" %}" class="d-block w-100" alt="...">
@@ -746,8 +761,8 @@
                 </div>
               </div>
               {% endif %}
-              {% if "Фюнф" or "Зальцбург" or "Брюсселя" or "Ауфзес" or "7 пивоварен" not in route.name %}
-              <div class="col">
+              {% if route.id in route_light %}
+              <div class="col-6">
                 <div id="carouselExample3" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3250">
                   <div class="carousel-inner">
                     <div class="carousel-item active"><img src="{% static "img/route-carousel-brewery/other/1.jpg" %}" class="d-block w-100" alt="...">
@@ -775,7 +790,7 @@
                 </div>
               </div>
               {% endif %}
-              <div class="col-1" style="margin: -15px;">
+              <div class="col">
               </div>
             </div>
           </div>

@@ -1,0 +1,102 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block content %}
+      <section class="country-route" id="country-route">
+        <div class="container-fluid center">
+          <div class="row center">
+            <nav class="breadcrumb-arrow" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="{% url "main:index" %}">Главная</a></li>
+                  <li class="breadcrumb-item"><a href="{% url "main:index" %}#country">Страны</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Маршруты по странам</li>
+              </ol>
+            </nav>
+            <div class="col-12 center">
+              <h1 class="text-center text-second2"><img class="svg" src="img/svg/роза/151855-edb176.svg" alt="узор" width="30" height="30">  {{ country }} - Пивоваренные маршруты  <img class="svg" src="img/svg/роза/151855-edb176.svg" alt="узор" width="30" height="30"></h1>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <ol class="breadcrumb">
+                 {% for route in routes %}
+                  {% if route.id in route_dark %}
+                    <h2 class="d-inline-block route-block dark"><img class="svg" src="{% static 'img/svg/1-3.svg' %}" alt="узор" width="50" height="40"><a href="{% url "route:route_index" route.slug %}" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="{{route.id}} - {{route.link}}">{{route.name}}</a></h2>
+                  {% endif %}
+                  {% if route.id in route_light %}
+                    <h2 class="d-inline-block route-block light"><img class="svg" src="{% static 'img/svg/1-3.svg' %}" alt="узор" width="50" height="40"><a href="{% url "route:route_index" route.slug %}" class="route-name color1" data-bs-toggle="tooltip" title="{{route.id}} - {{route.link}}">{{route.name}}</a></h2>
+                  {% endif %}
+                  {% if route.id in route_disabled %}
+                    <h2 class="d-inline-block route-block"><span tabindex="0" data-bs-toggle="tooltip" title="{{route.id}} - {{route.link}}"><img class="svg" src="{% static 'img/svg/1-3.svg' %}" alt="узор" width="50" height="40"><a href="#" class="route-name color1 disabled">{{route.name}}</a></span></h2>
+                  {% endif %}
+                {% endfor %}
+            </div>
+          </div>
+        </div>
+                      <!-- Пагинация -->
+        <nav aria-label="Page navigation example">
+          <ul class="pagination pagination-sm justify-content-center mt-4 mb-0 pb-0">
+            <div style="text-shadow: none; border-width: 0; border-radius: 20%; border-color: #894c0f;" class="d-flex">
+              {% if not page_obj.has_previous %}
+                <li class="page-item disabled">
+                    <a style="background: rgb(207, 190, 190); border: 2px solid #C78547;" class="page-link color3"
+                    href="{% if page_obj.has_previous %}?page={{ page_obj.previous_page_number }}#brewery
+                    {% else %}
+                    #
+                    {% endif %}">Предыдущая</a>
+                </li>
+              {% else %}
+                <li class="page-item">
+                  <a style="border: 2px solid #C78547; background: #f0c396; color: #A46526;" onpointerenter="this.setAttribute('style', 'color: #894c0f; background: #d2a276')"
+                  onpointerleave="this.setAttribute('style', 'border: 2px solid #C78547; color: #A46526; background: #f0c396')" class="page-link"
+                  href="{% if page_obj.has_previous %}?page={{ page_obj.previous_page_number }}#brewery
+                    {% else %}
+                    #
+                    {% endif %}">Предыдущая</a>
+                </li>
+              {% endif %}
+
+              {% for page in page_obj.paginator.page_range %}
+                {% if page >= page_obj.number|add:-2 and page <= page_obj.number|add:2 %}
+                  {% if page_obj.number == page %}
+                    <li class="page-item active"><a style="background: #C78547; border: 2px solid #C78547;" class="page-link"
+                      href="?page={{ page }}#brewery">{{ page }}</a>
+                    </li>
+                  {% else %}
+                    <li class="page-item"><a style="border: 2px solid #C78547; background: #FFE5CC; color: #A46526;" onpointerenter="this.setAttribute('style', 'color: #894c0f; background: #d2a276')"
+                      onpointerleave="this.setAttribute('style', 'border: 2px solid #C78547; color: #A46526; background: #FFE5CC')" class="page-link"
+                      href="?page={{ page }}#brewery">{{ page }}</a>
+                    </li>
+                  {% endif %}
+                {% endif %}
+              {% endfor %}
+
+              {% if not page_obj.has_next %}
+                <li class="page-item disabled">
+                    <a style="background: rgb(207, 190, 190); border: 2px solid #C78547;" class="page-link color3"
+                    href="{% if page_obj.has_next %}?page={{ page_obj.next_page_number }}#brewery
+                    {% else %}
+                    #
+                    {% endif %}">Следующая</a>
+                </li>
+              {% else %}
+                <li class="page-item">
+                  <a style="border: 2px solid #C78547; background: #f0c396; color: #A46526;" onpointerenter="this.setAttribute('style', 'color: #894c0f; background: #d2a276')"
+                  onpointerleave="this.setAttribute('style', 'border: 2px solid #C78547; color: #A46526; background: #f0c396')" class="page-link"
+                  href="{% if page_obj.has_next %}?page={{ page_obj.next_page_number }}#brewery
+                    {% else %}
+                    #
+                    {% endif %}">Следующая</a>
+                </li>
+              {% endif %}
+            </div>
+          </ul>
+        </nav>
+      </section>
+      <div class="line" style="border-bottom: solid 5px #8e4c0a;"></div>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -15,6 +15,7 @@ def index(request):
     routes = Route.objects.all()
     breweries = Brewery.objects.all()
     countries = Сountry.objects.all()
+    # country = Сountry.objects.get(slug=country_slug)
 
     route_dark = range(1, 6)
     route_light = range(6, 59)
@@ -24,7 +25,7 @@ def index(request):
     paginator = Paginator(routes, 20)
     current_page = paginator.page(int(page))
 
-    paginator = Paginator(breweries, 18)
+    paginator = Paginator(breweries, 15)
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
 
@@ -38,6 +39,7 @@ def index(request):
         "breweries": breweries,
         "page_obj": page_obj,
         "countries": countries,
+        # "country": country,
     }
     return render(request, "main/index.html", context=context)
 

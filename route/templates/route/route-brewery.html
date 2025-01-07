@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-      <section class="route2" id="route2">
+      <section class="brewery" id="brewery">
         <div class="breadcrumblittle">
           <div class="container-fluid">
             <div class="row">
@@ -12,7 +12,7 @@
                   <li class="breadcrumb-item"><a href="{% url "main:index" %}#route">Маршруты</a></li>
                   <li class="breadcrumb-item"><a href="{% url "route:route_index" route.slug %}">Маршрут</a></li>
                   <li class="breadcrumb-item"><a href="{% url "route:route_breweries" route.slug %}">Пивоварни на маршруте</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">Описание пивоварни</li>
+                  <li class="breadcrumb-item active" aria-current="page">Описание {{brewery.title}}</li>
                 </ol>
               </nav>
               <div class="accordion-width">
@@ -20,7 +20,8 @@
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingOne">
                       <button class="accordion-button collapsed d-block text-center" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                        <h1 class="text-center text-second3"><img class="svg4" src="img/svg/стрелки/стрелка вниз2.svg" alt="узор"><img class="svg" src="img/svg/Знак 1.svg" alt="узор" width="30" height="30"> {{brewery.title}} <img class="svg" src="img/svg/Знак 1.svg" alt="узор" width="30" height="30">   <img class="svg3" src="img/svg/стрелки/стрелка вниз6.svg" alt="узор"></h1>
+                        <h1 class="text-center text-second3"><img class="svg4" src="{% static 'img/svg/стрелки/стрелка вниз2.svg' %}" alt="узор"><img class="svg6" src="{{ brewery.image1.url }}" alt="узор"> {{brewery.title}}    <img class="svg3" src="{% static 'img/svg/стрелки/стрелка вниз6.svg' %}" alt="узор"></h1>
+                        {% comment %} <img class="svg" src="{% static 'img/svg/Знак 1.svg' %}" alt="узор" width="30" height="30"> {% endcomment %}
                       </button>
                     </h2>
                     <div id="flush-collapseOne" class="accordion-collapse text-center collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">

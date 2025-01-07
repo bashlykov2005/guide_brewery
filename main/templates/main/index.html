@@ -306,7 +306,60 @@
               <h1 class="text-center text-uppercase color1 text-second text-margin"><img class="svg" src="{% static 'img/svg/1-2.svg' %}" alt="узор" width="60" height="40">  Страны  <img class="svg" src="{% static 'img/svg/1-1.svg' %}" alt="узор" width="60" height="40"></h1>
 
               {% for country in countries %}
-              <h2 class="d-inline-block country-block"><img class="svg" src="{% static 'img/svg/роза/151855-edb176.svg'%}" alt="узор" width="30" height="30"><a href="./country_route.html" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="{{country.link}}">{{country.name}}</a></h2>
+              <h2 class="d-inline-block country-block">
+                {% if "Германия" in country.name %}
+                <img class="svg7" src="{% static 'img/svg/символ/brandenburg_gate.svg'%}" alt="узор">
+                {% endif %}
+                {% if "Бельгия" in country.name %}
+                <img class="svg7" src="{% static 'img/svg/символ/manneken_pis.svg'%}" alt="узор">
+                {% endif %}
+                {% if "Австрия" in country.name %}
+                <img class="svg7" src="{% static 'img/svg/символ/mountain1.svg'%}" alt="узор">
+                {% endif %}
+                {% if "Чехия" in country.name %}
+                <img class="svg7" src="{% static 'img/svg/символ/charles_bridge.svg'%}" alt="узор">
+                {% endif %}
+                {% if "Россия" in country.name %}
+                <img class="svg7" src="{% static 'img/svg/символ/kremlin2.svg'%}" alt="узор">
+                {% endif %}
+                {% if "Испания" in country.name %}
+                <img class="svg7" src="{% static 'img/svg/символ/sagrada_familia.svg'%}" alt="узор">
+                {% endif %}
+                {% if "Голландия" in country.name %}
+                <img class="svg7" src="{% static 'img/svg/символ/windmill.svg'%}" alt="узор">
+                {% endif %}
+                {% if "Хорватия" in country.name %}
+                <img class="svg7" src="{% static 'img/svg/символ/croatian.svg'%}" alt="узор">
+                {% endif %}
+                {% if "Словакия" in country.name %}
+                <img class="svg7" src="{% static 'img/svg/символ/download.svg'%}" alt="узор">
+                {% endif %}
+                {% if "Италия" in country.name %}
+                <img class="svg7" src="{% static 'img/svg/символ/coliseum.svg'%}" alt="узор">
+                {% endif %}
+                {% if "Польша" in country.name %}
+                <img class="svg7" src="{% static 'img/svg/символ/poland.svg'%}" alt="узор">
+                {% comment %} <img class="svg7" src="{% static 'img/svg/символ/poland1.svg'%}" alt="узор"> {% endcomment %}
+                {% endif %}
+                {% if "Англия" in country.name %}
+                <img class="svg7" src="{% static 'img/svg/символ/double_bus.svg'%}" alt="узор">
+                {% endif %}
+                {% if "Шотландия" in country.name %}
+                <img class="svg7" src="{% static 'img/svg/символ/bagpipes2.svg'%}" alt="узор">
+                {% endif %}
+                {% if "Ирландия" in country.name %}
+                <img class="svg7" src="{% static 'img/svg/символ/scotland2.svg'%}" alt="узор">
+                {% endif %}
+                {% if "Венгрия" in country.name %}
+                <img class="svg7" src="{% static 'img/svg/символ/hungary2.svg'%}" alt="узор">
+                {% endif %}
+                {% if "Дания" in country.name %}
+                <img class="svg7" src="{% static 'img/svg/символ/viking.svg'%}" alt="узор">
+                {% endif %}
+                {% if "Швеция" in country.name %}
+                <img class="svg7" src="{% static 'img/svg/символ/herring.svg'%}" alt="узор">
+                {% endif %}
+                <a href="{% url "country:country_routes" %}" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="{{country.link}}">{{country.name}}</a></h2>
               {% endfor %}
 
             </div>
@@ -320,18 +373,18 @@
             <div class="col-12">
               <h1 class="text-center text-uppercase color1 text-second"><img class="svg" src="{% static 'img/svg/1-2.svg' %}" alt="узор" width="60" height="40">  Пивоварни  <img class="svg" src="{% static 'img/svg/1-1.svg' %}" alt="узор" width="60" height="40"></h1>
             </div>
-            <div class="col-12 brewery_block mt-4">
+            <div class="col-12 brewery_block">
               <ul p-0 mt-5>
 
                 {% for brewery in page_obj %}
-                  <li class="d-inline-block"><h2><img class="svg" src="{% static 'img/svg/Знак 1.svg' %}" alt="узор" width="30" height="30"><a href="{% url "brewery:brewery_index" brewery.slug %}" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="{{brewery.link}}">{{brewery.title}}</a></h2></li>
+                  <li class="d-inline-block"><h2><img class="svg8" src="{{ brewery.image1.url }}" alt="узор" width="60" height="60"><a href="{% url "brewery:brewery_index" brewery.slug %}" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="{{brewery.link}}">{{brewery.title}}</a></h2></li>
                 {% endfor %}
 
               </ul>
             </div>
               <!-- Пагинация -->
             <nav aria-label="Page navigation example">
-              <ul class="pagination pagination-sm justify-content-center mt-5 mb-0 pb-0">
+              <ul class="pagination pagination-sm justify-content-center mt-4 mb-0 pb-0">
                 <div style="text-shadow: none; border-width: 0; border-radius: 20%; border-color: #894c0f;" class="d-flex">
                   {% if not page_obj.has_previous %}
                     <li class="page-item disabled">

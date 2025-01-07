@@ -5,14 +5,14 @@ from django.template import context
 
 from route.models import Route
 from country.models import Сountry
-from brewery.models import Brewery
 
 
 def country_routes(request, country_slug):
 
-    routes = Route.objects.all()
-    # breweries = Brewery.objects.all()
+    page = request.GET.get("page", 1)
+
     country = Сountry.objects.get(slug=country_slug)
+    routes =  country.routes.all()
 
     route_dark = range(1, 6)
     route_light = range(6, 59)
@@ -20,8 +20,8 @@ def country_routes(request, country_slug):
     route_20 = range(1, 21)
 
     paginator = Paginator(routes, 20)
-    page_number = request.GET.get("page")
-    page_obj = paginator.get_page(page_number)
+    current_page = paginator.page(int(page))
+
 
     context = {
         "title": "Маршруты",
@@ -29,10 +29,9 @@ def country_routes(request, country_slug):
         "route_light": route_light,
         "route_disabled": route_disabled,
         "route_20": route_20,
-        # "breweries": breweries,
         "country": country,
-        "routes": country.routes.all(),
-        "page_obj": page_obj,
+        # "routes": routes,
+        "routes": current_page,
     }
     return render(request, "country/country-route.html", context=context)
 

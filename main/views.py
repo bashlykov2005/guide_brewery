@@ -15,7 +15,6 @@ def index(request):
     routes = Route.objects.all()
     breweries = Brewery.objects.all()
     countries = Сountry.objects.all()
-    # country = Сountry.objects.get(slug=country_slug)
 
     route_dark = range(1, 6)
     route_light = range(6, 59)

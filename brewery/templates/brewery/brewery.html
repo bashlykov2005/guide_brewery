@@ -21,20 +21,12 @@
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingOne">
                       <button class="accordion-button collapsed d-block text-center" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                        <h1 class="text-center text-second3"><img class="svg4" src="img/svg/стрелки/стрелка вниз2.svg" alt="узор"><img class="svg" src="img/svg/Знак 1.svg" alt="узор" width="30" height="30"> {{brewery.title}} <img class="svg" src="img/svg/Знак 1.svg" alt="узор" width="30" height="30">   <img class="svg3" src="img/svg/стрелки/стрелка вниз6.svg" alt="узор"></h1>
+                        <h1 class="text-center text-second3"><img class="svg4" src="{% static 'img/svg/стрелки/стрелка вниз2.svg' %}" alt="узор"><img class="svg6" src="{{ brewery.image1.url }}" alt="узор"> {{brewery.title}}    <img class="svg3" src="{% static 'img/svg/стрелки/стрелка вниз6.svg' %}" alt="узор"></h1>
+                        {% comment %} <img class="svg" src="{% static 'img/svg/Знак 1.svg' %}" alt="узор" width="30" height="30"> {% endcomment %}
                       </button>
                     </h2>
                     <div id="flush-collapseOne" class="accordion-collapse text-center collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                       <div class="accordion-body"><p class="col-12 text-center"> <span>Адрес пивоварни:</span> <a href="https://maps.app.goo.gl/PMqvGEzBtSMAWh4d9">Im Tal 70B, 91347 Aufseß, Германия</a><a href="./route-description.html">  (показать на карте)</a>. <span>Часы работы:</span> с 07:00 до 15:30; Сб.Вск- выходной.  <span>Сайт пивоварни:</span> <a href="https://aufsesser.de/"> https://aufsesser.de/</a><br> Старинный  пивоваренный завод с 1886 года. Выпускает традиционные для франконии сорта пива: hell, kellerbier (zwickl), dunkel, hefe weizen, bock. Есть ресторан франконской кухни (работает до вечера), известный своим жареным мясом по старинным рецептам и свежей форелью, а также тенистый пивной сад. При пивоварне есть гостиница, можно заказать туры на производство. Для коллекционеров продаются сувенирные стаканы</p></div>
-                    </div>
-                    <div class="col-12 brewery_block mt-4">
-                      <ul p-0 mt-5>
-
-                        {% for brewery in breweries %}
-                          <li class="d-inline-block"><h2><img class="svg" src="{% static 'img/svg/Знак 1.svg' %}" alt="узор" width="30" height="30"><a href="{% url "brewery:brewery_index" brewery.slug %}" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="{{brewery.link}}">{{brewery.title}}</a></h2></li>
-                        {% endfor %}
-
-                      </ul>
                     </div>
                   </div>
                 </div>

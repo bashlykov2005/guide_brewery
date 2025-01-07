@@ -25,7 +25,7 @@
             </div>
           </div>
         </div>
-        <div class="bigscreen">
+        <div class="bigscreen mb-4">
           <div class="container-fluid p-0 m-0">
             <div class="row">
               <div class="col-2">
@@ -88,7 +88,7 @@
             </div>
           </div>
         </div>
-        <div class="mediumscreen">
+        <div class="mediumscreen mb-3">
           <div class="container-fluid p-0 m-0">
             <div class="row">
               <div class="col">
@@ -151,7 +151,7 @@
             </div>
           </div>
         </div>
-        <div class="littlescreen">
+        <div class="littlescreen mb-3">
           <div class="container-fluid p-0 m-0">
             <div class="row">
               <div class="col">
@@ -359,7 +359,7 @@
                 {% if "Швеция" in country.name %}
                 <img class="svg7" src="{% static 'img/svg/символ/herring.svg'%}" alt="узор">
                 {% endif %}
-                <a href="{% url "country:country_routes" %}" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="{{country.link}}">{{country.name}}</a></h2>
+                <a href="{% url "country:country_routes" country.slug %}" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="{{country.link}}">{{country.name}}</a></h2>
               {% endfor %}
 
             </div>
@@ -377,7 +377,7 @@
               <ul p-0 mt-5>
 
                 {% for brewery in page_obj %}
-                  <li class="d-inline-block"><h2><img class="svg8" src="{{ brewery.image1.url }}" alt="узор" width="60" height="60"><a href="{% url "brewery:brewery_index" brewery.slug %}" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="{{brewery.link}}">{{brewery.title}}</a></h2></li>
+                  <li class="d-inline-block"><h2><img class="svg9" src="{{ brewery.image1.url }}" alt="узор" width="60" height="60"><a href="{% url "brewery:brewery_index" brewery.slug %}" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="{{brewery.link}}">{{brewery.title}}</a></h2></li>
                 {% endfor %}
 
               </ul>

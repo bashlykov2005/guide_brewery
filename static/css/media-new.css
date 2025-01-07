@@ -45,7 +45,7 @@
       padding: 20px 0 5px 0px;
    }
    .text-third {
-      padding: 70px 0px 90px 0;
+      padding: 50px 0px 70px 0;
    }
    .col-6 {
       padding: 0 0 30px 0;
@@ -189,7 +189,7 @@
       padding: 15px 0;
    }
    .text-third2 {
-      padding-bottom: 50px;
+      padding-bottom: 35px;
    }
    /* ----About---- */
    /* Форма (правая колонка) будет сверху, а элементы (левая колонка) снизу */
@@ -264,7 +264,7 @@
 /* (>=768 и <=1024) */
 @media (min-width: 768px) and (max-width: 1023.5px) {
    section {
-      padding: 0 0 35px 0;
+      padding: 0 0 25px 0;
       min-height: 800px;
    }
    h2 {
@@ -306,7 +306,7 @@
    padding: 50px 120px 50px 120px;
    }
    .text-third2 {
-      padding-bottom: 70px;
+      padding-bottom: 40px;
    }
    .route-block {
       width: 100%;
@@ -366,7 +366,7 @@
 /* (>=1024 и <=1199) */
 @media (min-width: 1024px) and (max-width: 1199.5px) {
    section {
-      padding: 0 0 80px 0;
+      padding: 0 0 60px 0;
       min-height: 650px;
    }
    a {
@@ -415,7 +415,7 @@
       display: none;
    }
    .text-third2 {
-      padding-bottom: 70px;
+      padding-bottom: 50px;
    }
    .route-block {
       width: 49%;
@@ -459,7 +459,7 @@
 
 @media (min-width: 1200px) and (max-width: 1366.5px) {
    section {
-      padding: 0 0 90px 0;
+      padding: 0 0 60px 0;
       min-height: 650px;
    }
    #route h2 {
@@ -538,7 +538,7 @@
 
 @media (min-width: 1367px) and (max-width: 1499.5px) {
    section {
-      padding: 0 0 50px 0;
+      padding: 0 0 40px 0;
       min-height: 650px !important;
    }
    #route h2 {
@@ -641,7 +641,7 @@
 
 @media (min-width: 1550px) and (max-width: 1919.5px) {
    section {
-      padding: 0 0 50px 0;
+      padding: 0 0 30px 0;
       min-height: 700px;
    }
    .route-block:nth-child(even) {
@@ -682,7 +682,7 @@
    }
    .text-third {
       font-size: 30px;
-      padding-bottom: 75px;
+      padding-bottom: 55px;
    }
    .text-second2 {
       padding: 0 0 35px 0px;
@@ -690,7 +690,7 @@
    }
    .text-third2 {
       font-size: 24px;
-      padding-bottom: 90px;
+      padding-bottom: 70px;
    }
    .image_text>a>h3 {
       font-size: 34px;
@@ -804,7 +804,7 @@
    }
    .text-third {
       font-size: 35px;
-      padding-bottom: 75px;
+      padding-bottom: 65px;
    }
    .text-second2 {
       padding: 0 0 35px 0px;
@@ -812,7 +812,7 @@
    }
    .text-third2 {
       font-size: 29px;
-      padding-bottom: 120px;
+      padding-bottom: 90px;
    }
    .image_text>a>h3 {
       font-size: 39px;

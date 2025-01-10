@@ -35,6 +35,7 @@ def route_descr(request, route_slug):
     context = {
         "title": "Описание маршрута",
         "route": route,
+        "breweries": route.brewery_set.all(),
         # "route.route_desc": mark_safe('<img src="{{ route.image_route1.url }}" width="300" height="200" alt="Иллюстрация" class="leftfoto">')
     }
     return render(request, "route/route-description.html", context=context)
@@ -87,3 +88,17 @@ def route_brewery(request, route_slug, brewery_slug):
         # "breweries": route.brewery_set.all(),
     }
     return render(request, "route/route-brewery.html", context=context)
+
+
+def route_descr_brewery(request, route_slug, brewery_slug):
+
+    route = Route.objects.get(slug=route_slug)
+    brewery = Brewery.objects.get(slug=brewery_slug)
+
+    context = {
+        "title": "Пивоварня",
+        "route": route,
+        "brewery": brewery,
+        # "breweries": route.brewery_set.all(),
+    }
+    return render(request, "route/route-descr-brewery.html", context=context)

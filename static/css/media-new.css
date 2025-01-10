@@ -722,8 +722,8 @@
 /* ----Base-city---- */
    .my-carousel .carousel-item img {
       border-radius: 12px;
-      width: 1000px;
-      height: 700px;
+      width: 900px;
+      height: 650px;
       margin: 10px 0 0 0;
    }
    .carousel-caption p {
@@ -844,8 +844,8 @@
 /* ----Base-city---- */
    .my-carousel .carousel-item img {
       border-radius: 15px;
-      width: 1300px;
-      height: 800px;
+      width: 1000px;
+      height: 700px;
       margin: 50px 0 0 0;
    }
    .carousel-caption p {

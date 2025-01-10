@@ -62,6 +62,7 @@ a {
 }
 a:hover {
     color: #C78547;
+    transition: transform 5.0s ease;
 }
 /* Дезактивировали ссылки в разработке */
 a.disabled {
@@ -130,9 +131,6 @@ ol, .breadcrumb {
     padding: 6px 0;
 }
 /* Пивоварни */
-#brewery {
-    padding-bottom: 0;
-}
 .brewery {
     background-color: #3E1F00;
     background-image: url(../img/8.jpg);
@@ -761,11 +759,15 @@ textarea {
         hsla(0, 0%, 35.29%, 0) 100%); */
 /* } */
 /* --Аккордеон-- */
+.accordion-body {
+    padding: 0;
+}
+
 .accordion-body p {
     font-size: 19px;
     color: #edb176;
     /* width: 760px; */
-    padding: 0px 5px 0px 5px;
+    padding: 0px 3px 0px 3px;
     text-align: justify;
     margin: 0 auto;
     Letter-spacing: 1.5px;
@@ -960,14 +962,17 @@ figcaption {
     cursor: pointer;
 }
 
-.hover-title>a {
-    cursor: pointer;
-    z-index: 9999;
-
+a.hover-title2 {
+    color: #deb994;
+    padding: 8px;
 }
 
-.hover-title:hover {
-    z-index: 3;
+a.hover-title2:hover {
+    color: #C78547;
+    transition: transform 5.0s ease;
+}
+
+span a.hover-title2:hover {
     color: #C78547;
     transition: transform 5.0s ease;
 }

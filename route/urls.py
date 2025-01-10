@@ -12,7 +12,7 @@ urlpatterns = [
     path("<slug:route_slug>/route_descr/", views.route_descr, name="route_descr"),
     path("<slug:route_slug>/route_city/", views.route_city, name="route_city"),
     path(
-        "<slug:route_slug>/route_city/<str:route_base_city>",
+        "<slug:route_slug>/route_city/<str:route_base_city>/",
         views.route_city_2,
         name="route_city_2",
     ),
@@ -25,6 +25,11 @@ urlpatterns = [
         "<slug:route_slug>/<slug:brewery_slug>/",
         views.route_brewery,
         name="route_brewery",
+    ),
+    path(
+        "<slug:route_slug>/route_descr/<slug:brewery_slug>/",
+        views.route_descr_brewery,
+        name="route_descr_brewery",
     ),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += staticfiles_urlpatterns()

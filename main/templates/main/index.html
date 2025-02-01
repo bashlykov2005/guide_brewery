@@ -303,7 +303,7 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-12">
-              <h1 class="text-center text-uppercase color1 text-second text-margin"><img class="svg" src="{% static 'img/svg/1-2.svg' %}" alt="узор" width="60" height="40">  Страны  <img class="svg" src="{% static 'img/svg/1-1.svg' %}" alt="узор" width="60" height="40"></h1>
+              <h1 class="text-center text-uppercase color1 text-second"><img class="svg" src="{% static 'img/svg/1-2.svg' %}" alt="узор" width="60" height="40">  Страны  <img class="svg" src="{% static 'img/svg/1-1.svg' %}" alt="узор" width="60" height="40"></h1>
 
               {% for country in countries %}
               <h2 class="d-inline-block country-block">
@@ -377,14 +377,14 @@
               <ul p-0 mt-5>
 
                 {% for brewery in page_obj %}
-                  <li class="d-inline-block"><h2><img class="svg9" src="{{ brewery.image1.url }}" alt="узор" width="60" height="60"><a href="{% url "brewery:brewery_index" brewery.slug %}" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="{{brewery.link}}">{{brewery.title}}</a></h2></li>
+                  <li class="d-inline-block"><h2><img class="svg9" src="{{ brewery.image1.url }}" alt="узор" width="70" height="70"><a href="{% url "brewery:brewery_index" brewery.slug %}" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="{{brewery.link}}">{{brewery.title}}</a></h2></li>
                 {% endfor %}
 
               </ul>
             </div>
               <!-- Пагинация -->
             <nav aria-label="Page navigation example">
-              <ul class="pagination pagination-sm justify-content-center mt-4 mb-0 pb-0">
+              <ul class="pagination pagination-sm justify-content-center mt-5 mb-0 pb-0">
                 <div style="text-shadow: none; border-width: 0; border-radius: 20%; border-color: #894c0f;" class="d-flex">
                   {% if not page_obj.has_previous %}
                     <li class="page-item disabled">

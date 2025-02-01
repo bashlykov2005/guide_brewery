@@ -46,7 +46,7 @@
                         <div> <p>Бла бла</p></div>
                       {% endif %}
                       {% if "Ауфзес" in route.name %}
-                        <div style="width: 1150px; font-size: 19.5px; Letter-spacing: 1.6px; text-align: justify; text-shadow: 1.2px 0 0 #000, 0 -1.2px 0 #000, 0 1.2px 0 #000, -1.2px 0 0 #000; margin-left: auto; margin-right: auto; margin-top: 15px;">
+                        <div style="width: 1150px; font-size: 19.5px; Letter-spacing: 1.6px; text-align: justify; text-shadow: 1.2px 0 0 #000, 0 -1.2px 0 #000, 0 1.2px 0 #000, -1.2px 0 0 #000; margin-left: auto; margin-right: auto; margin-top: 5px;">
                         <figure class="leftfoto"> <img id="myImg" src="{{ route.image_route1.url }}" alt="Схема маршрута: {{route.name}}" width="500" height="350" class="leftfoto">
                         <figcaption>Схема маршрута: {{route.name}}  </figcaption>
                             </figure>
@@ -89,7 +89,7 @@
                           <img class="modal-content2" id="img03">
                           <div id="caption2"></div>
                         </div>
-                        В пивоварне рекомендуем попробовать - Sachsendorfer Landbier.<br> Далее указатели ведут немного вверх по горе над высотами франконской швейцарии -  это еще один пятикилометровый участок соединяет пивоварни Benedikt Stadter Brauerei и Brauerei Reichold (Hochstahl).<a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">Пешая прогулка</a><div class="hover-image2"><img src="{{ route.image_route9.url }}" alt="Пешая прогулка"></div> занимает около 1-1,5 часов до ресторана гостиницы Brauereigasthof Reichold при пивоварне
+                        В пивоварне рекомендуем попробовать - Sachsendorfer Landbier.<br> Далее указатели ведут немного вверх по горе над высотами франконской швейцарии -  это еще один пятикилометровый участок соединяет пивоварни Benedikt Stadter Brauerei и Brauerei Reichold (Hochstahl).<a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">Пешая прогулка</a><div class="hover-image1"><img src="{{ route.image_route9.url }}" alt="Пешая прогулка"></div> занимает около 1-1,5 часов до ресторана гостиницы Brauereigasthof Reichold при пивоварне
                         {% for brewery in breweries %}
                         {% comment %} {% if forloop.counter == 3 %} {% endcomment %}
                         {% if "Reichold" in brewery.title %}

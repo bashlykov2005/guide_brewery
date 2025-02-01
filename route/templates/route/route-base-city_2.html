@@ -39,11 +39,11 @@
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingOne">
                       <button class="accordion-button collapsed d-block text-center" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                        <h1 class="text-center text-second3"><img class="svg4" src="img/svg/стрелки/стрелка вниз2.svg" alt="узор"><img class="svg2" src="img/svg/орнамент-обрезан.svg" alt="узор">
+                        <h1 class="text-center text-second3"><img class="svg4" src="img/svg/стрелки/стрелка вниз2.svg" alt="узор"><img class="svg5" src="{% static 'img/svg/castle.svg' %}" alt="узор">
                           {{route.base_city_2 }}
                             {% if route.base_city_3 %} / {% endif %}
                           {{route.base_city_3 |default_if_none:" "}}
-                        <img class="svg2" src="img/svg/орнамент правый обрезан.svg" alt="узор">   <img class="svg3" src="img/svg/стрелки/стрелка вниз6.svg" alt="узор"></h1>
+                        <img class="svg5" src="{% static 'img/svg/castle.svg' %}" alt="узор">   <img class="svg3" src="{% static 'img/svg/стрелки/стрелка вниз6.svg' %}" alt="узор"></h1>
                       </button>
                     </h2>
                     <div id="flush-collapseOne" class="accordion-collapse text-center collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">

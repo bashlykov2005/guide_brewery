@@ -17,14 +17,14 @@ def index(request):
     countries = Сountry.objects.all()
 
     route_dark = range(1, 6)
-    route_light = range(6, 59)
-    route_disabled = range(59, 100)
+    route_light = range(6, 62)
+    route_disabled = range(62, 100)
     route_20 = range(1, 21)
 
     paginator = Paginator(routes, 20)
     current_page = paginator.page(int(page))
 
-    paginator = Paginator(breweries, 15)
+    paginator = Paginator(breweries, 12)
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)
 

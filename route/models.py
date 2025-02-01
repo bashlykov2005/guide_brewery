@@ -27,6 +27,9 @@ class Route(models.Model):
     base_city_2 = models.CharField(
         max_length=50, verbose_name="Базовый город 2", blank=True, null=True
     )
+    city_slug = models.SlugField(
+        max_length=110, verbose_name="URL_city", blank=True, null=True
+    )
     base_city_3 = models.CharField(
         max_length=50, verbose_name="Базовый город 3", blank=True, null=True
     )
@@ -133,4 +136,3 @@ class Route(models.Model):
 
     def __str__(self):
         return f"{self.name}"
-

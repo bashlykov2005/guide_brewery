@@ -128,12 +128,12 @@ ol, .breadcrumb {
 .country-block {
     width: 350px;
     margin-left: 100px;
-    padding: 6px 0;
+    padding: 10px 0;
 }
 /* Пивоварни */
 .brewery {
     background-color: #3E1F00;
-    background-image: url(../img/8.jpg);
+    background-image: url(../img/4.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -144,7 +144,7 @@ ol, .breadcrumb {
 /* Блок для назвагия пивоварни -прямой потомок элемента */
 .brewery_block > ul > li {
     width: 33%;
-    height: 65px;
+    height: 74px;
     padding: 5px 0;
     overflow: hidden;
     /* align-items: center; */
@@ -221,8 +221,8 @@ li>.d-inline-block {
 }
 /* бирдекель на index */
 .svg9 {
-    width: 45px;
-    height: 42px;
+    width: 60px;
+    height: 60px;
 }
 /* Название */
 .text-main {
@@ -238,7 +238,7 @@ li>.d-inline-block {
 }
 
 .text-second {
-    padding: 20px 0 14px 0px;
+    padding: 20px 0 30px 0px;
     font-size: 42px;
     font-weight: 900;
     Letter-spacing: 4px;
@@ -845,12 +845,12 @@ textarea {
     Letter-spacing: 1.5px;
     word-spacing: 2px;
     text-shadow: 9px 9px 9px #070707;
-    text-decoration: underline solid #edb176;
+    text-decoration: underline solid;
 }
 /* ----Brewery---- */
-.brewery {
+.brewery1 {
     background-color: #3E1F00;
-    background-image: url(../img/4.jpg);
+    background-image: url(../img/8.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;

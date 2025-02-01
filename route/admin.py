@@ -9,8 +9,9 @@ class RouteAdmin(admin.ModelAdmin):
         "name",
         "slug",
         "base_city",
-        # "base_city_2",
-        # "base_city_3",
+        "base_city_2",
+        "city_slug",
+        "base_city_3",
         # "city_desc",
         # "city_desc_2",
         "route_desc",
@@ -40,8 +41,9 @@ class RouteAdmin(admin.ModelAdmin):
         "name",
         "slug",
         "base_city",
-        # "base_city_2",
-        # "base_city_3",
+        "base_city_2",
+        "city_slug",
+        "base_city_3",
         # "city_desc",
         # "city_desc_2",
         # "base_city_3",
@@ -67,7 +69,7 @@ class RouteAdmin(admin.ModelAdmin):
         "image_city12",
     )
     list_filter = ("name", "base_city",)
-    prepopulated_fields = {"slug": ("name",)}
+    prepopulated_fields = {"slug": ("name", "base_city_2")}
     save_on_top = True
 
 admin.site.register(Route, RouteAdmin)

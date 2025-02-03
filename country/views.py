@@ -15,8 +15,8 @@ def country_routes(request, country_slug):
     routes =  country.routes.all()
 
     route_dark = range(1, 6)
-    route_light = range(6, 59)
-    route_disabled = range(59, 100)
+    route_light = range(6, 62)
+    route_disabled = range(62, 100)
     route_20 = range(1, 21)
 
     paginator = Paginator(routes, 20)

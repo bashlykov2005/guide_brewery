@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-      <section class="brewery1" id="brewery">
+      <section class="brewery1" style="background-image: url(../img/3.jpg);" id="brewery">
         <div class="breadcrumblittle">
           <div class="container-fluid">
             <div class="row">
@@ -25,7 +25,7 @@
                         </button>
                       </h2>
                       <div id="flush-collapseOne" class="accordion-collapse text-center collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body"><p class="col-12 text-center"><big>Адрес пивоварни:</big> {{brewery.address}} <a href="{{brewery.map_link}}" target="_ blank">(показать на карте)</a>. <big>Часы работы:</big> {{brewery.working_hours}}.  <big>Сайт пивоварни:</big> <a href="{{brewery.sait_link}}" target="_ blank"> {{brewery.sait_link}}</a><br> {{brewery.descript_full}}</p></div>
+                        <div class="accordion-body"><p class="col-12 text-center"><big>Адрес пивоварни:</big> <em>{{brewery.address}}</em> <a href="{{brewery.map_link}}" target="_ blank">(показать на карте)</a>. <big>Часы работы:</big>  <em>{{brewery.working_hours}}</em> &nbsp;<big>Сайт пивоварни:</big> <a href="{{brewery.sait_link}}" target="_ blank"> {{brewery.sait_link}}</a><br> {{brewery.descript_full | safe}}</p></div>
                       </div>
                     </div>
                   </div>

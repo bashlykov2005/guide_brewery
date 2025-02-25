@@ -17,8 +17,8 @@ def index(request):
     countries = Сountry.objects.all()
 
     route_dark = range(1, 6)
-    route_light = range(6, 62)
-    route_disabled = range(62, 100)
+    route_light = range(6, 70)
+    route_disabled = range(70, 100)
     route_20 = range(1, 21)
 
     paginator = Paginator(routes, 20)

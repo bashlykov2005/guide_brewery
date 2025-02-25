@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-      <section class="route2" id="route2">
+      <section class="route3" id="route3">
         <!-- <div class="breadcrumbmiddle">
           <div class="container-fluid">
             <div class="row">
@@ -42,13 +42,91 @@
                       </button>
                       {% comment %} {{route.route_desc | safe }} {% endcomment %}
                     </h2>
-                      {% if "7 пивоварен" in route.name %}
-                        <div> <p>Бла бла</p></div>
-                      {% endif %}
-                      {% if "Ауфзес" in route.name %}
-                        <div style="width: 1150px; font-size: 19.5px; Letter-spacing: 1.6px; text-align: justify; text-shadow: 1.2px 0 0 #000, 0 -1.2px 0 #000, 0 1.2px 0 #000, -1.2px 0 0 #000; margin-left: auto; margin-right: auto; margin-top: 5px;">
+
+                  {% if "7 пивоварен" in route.name %}
+                        <div class="route-desc">
                         <figure class="leftfoto"> <img id="myImg" src="{{ route.image_route1.url }}" alt="Схема маршрута: {{route.name}}" width="500" height="350" class="leftfoto">
-                        <figcaption>Схема маршрута: {{route.name}}  </figcaption>
+                        <figcaption>Схема маршрута: {{route.name}} </figcaption>
+                            </figure>
+                        <div id="myModal" class="modal">
+                          <span class="close">&#10006;</span>
+                          <img class="modal-content" id="img01">
+                          <div id="caption"></div>
+                        </div>
+                        Длина маршрута составляет около 17 км с разнообразным ландшафтом. Время прохождения маршрута (не учитывая время, проведенное в пивоварнях и осматривая местные достопримечательности - около 4,5 часов). Этот маршрут является частью более длинного 2-дневного 32 км. маршрута - 13 пивоварен, а весь этот регион также называют Франконской Тосканой. Тропа пролегает через некоторые из самых живописных ландшафтов в этом районе.  Весь пешеходный маршрут обозначен указателями «13 Brauereienweg» (см. фото ниже). На пивоваренной тропе изначально было 7 пивоварен, варящих пиво как минимум с прошлого века. К сожалению, Brauerei Winkler из Мелькендорфа (Melkendorf) в 2016г. закрылась, и сейчас на ее месте Brandholz Brauerei, но у них нет паба, и они открыты только по определенным дням (см. ниже). Privatbrauerei Reh не работает в выходные, а Brauerei Krug после пандемии работает только в субботу. Таким образом, лучшие дни для прохождения маршрута: пятница и суббота. В пятницу точно открыты 5 пивоварен, но если повезет будут открыты Brauerei Krug (хозяин часто бывает в пабе в обычные дни) и Brandholz Brauerei. В субботу также точно открыты 5 пивоварен, а также может повести с Brandholz Brauerei, а пиво Reh можно попробовать в  ресторане гостиницы «Landhaus Lohntal». Также в конце маршрута при желании можно посетить 4 пивных сада. <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Прохождение маршрута рекомендую начинать с Тифенеллерна (Tiefenellern), потому что заканчивается маршрут тогда в Штруллендорфе (Strullendorf) на ж/д станции, от которой до Бамберга каждый час ходят электрички (время в пути 6 мин.). До Тифенеллерна из Бамберга едем на автобусе №970 с остановки <a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">Bahnhof/Post.</a><div class="hover-image2"><img src="{{ route.image_route4.url }}" alt="Bahnhof/Post"></div> Остановка расположена напротив вокзала Бамберга по правую строну, на другой стороне вокзальной площади. Автобус едет примерно 20 мин. Маршрутов не так много, в пятницу и субботу с утра до 12:00 не больше 2 маршрутов. Расписание автобуса на остановке. В Тифенеллерне выходим на ост. Tiefenellern, Litzendorf, с нее начнется маршрут по 7 пивоварням. Первая остановка –
+                        {% for brewery in breweries %}
+                        {% if "Hönig" in brewery.title %}
+                        <span><a class="hover-title2" href="{% url "route:route_descr_brewery" route.slug brewery.slug %}" style="color: #deb994;">{{brewery.title}},</a></span>
+                        {% endif %}
+                        {% endfor %}
+                        а точнее пивной сад или ресторан гостиницы Gasthof Zur Post при пивоварне (работает Суб-Вск: с 10 до 22; Пн-Пт: с15-22, Чт.- вых.). В ресторане подают традиционные блюда и закуски франконской кухни: фирменное блюдо - говядина с домашним хлебом на дровах и жареные шницели. Пивоварня выпускает линейку сортов: Pils, Lager, Posthörnla (копченый лагер), Postillion Weizen (пшеничное), Zwickl (натуральное нефильтрованное). Весь маршрут разделен на 5 участков. Этап 1: Тифенеллерн — Лондорф (Lohndorf) примерно 2,5 км – время в пути около 35–40 мин. После посещения Brauerei Hönig двигаемся в сторону Лондорфа по тротуару вдоль автодороги и около <a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">часовни</a><div class="hover-image2"><img src="{{ route.image_route5.url }}" alt="часовня"></div> поворачиваем направо по пешеходной живописной тропе с прекрасными видами на долину <a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">Лонталь (Lohntal).</a><div class="hover-image2"><img src="{{ route.image_route6.url }}" alt=" Лонталь"></div> Примерно через 25 мин достигаем перекрестка троп и делаем выбор: спуститься сразу в Лондорф напрямую к пивоваренному заводу Privatbrauerei Reh или сделать небольшой крюк до гостиницы<a href="http://www.lohntal.de/" target="_blank" style="color: #deb994; padding: 4px; text-decoration: underline; text-decoration-color: #f2c79d;">Landhaus Lohntal</a>, где пиво Reh доступно в розлив.<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Вторая остановка на маршруте –
+                        {% for brewery in breweries %}
+                        {% if "Reh" in brewery.title %}
+                        <span><a class="hover-title2" href="{% url "route:route_descr_brewery" route.slug brewery.slug %}" style="color: #deb994;">{{brewery.title}},</a></span>
+                        {% endif %}
+                        {% endfor %}
+                        пивоваренный завод (с 07:30 до 18:00; Сб.Вск. - вых), выпускает следующие сорта: Zwickl (натуральное нефильтрованное), Ellertaler Landbier Hell (светлое), Pils, Ellertaler Landbier, Dunkel (темное), Ellertaler Weisse (пшеничное). На пивоварне нет ресторана, поэтому попробовать разливное пиво с крана не получится.
+                        <figure class="rightfoto">
+                            <img id="myImg1" src="{{ route.image_route2.url }}" alt="Туристы на пивной тропе " width="500" height="350" class="leftfoto">
+                            <figcaption>Туристы на пивной тропе </figcaption>
+                        </figure>
+                        <div id="myModal1" class="modal1">
+                          <span class="close1">&#10006;</span>
+                          <img class="modal-content1" id="img02">
+                          <div id="caption1"></div>
+                        </div>
+                        Есть магазин, где можно приобрести бутылочный вариант только что сваренного пива. в 5 минутах от Privatbrauerei Reh расположена 3 пивоварня –
+                         {% for brewery in breweries %}
+                        {% if "Hölzlein" in brewery.title %}
+                        <span><a class="hover-title2" href="{% url "route:route_descr_brewery" route.slug brewery.slug %}" style="color: #deb994;">{{brewery.title}},</a></span>
+                        {% endif %}
+                        {% endfor %}
+                        (с 16 до 22ч.; Сб., Вкр-с 15 ч., Вт, Ср.- вых.). Деревенская пивоварня с традиционным сельским рестораном и пивным садом. Ассортимент пива: Helles Vollbier (светлое пиво плотностью от 11 до 14%), Pilsener, Rauchbier (копченое). Фирменные блюда ресторана: жареная курица, кордон блю на сковороде, шницель на сковороде. Этап 2: Лондорф — Мелькендорф (Melkendorf) примерно 3 км – время в пути около 45 мин. От Brauerei Hölzlein двигаеся по тротуару вдоль автодороги и после автобусной остановки Lohndorf Moosweg сварачиваем по ул. Moosweg на лево и через 200 метров поворачиваем направо и покидаем Лондорф по <a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">тропе,</a><div class="hover-image2"><img src="{{ route.image_route7.url }}" alt="тропа"></div> достаточно широкой и благоустроенной, следуя указателям, примерно 25 ми, до <a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">Sängerehrenmal -</a><div class="hover-image2"><img src="{{ route.image_route8.url }}" alt="Памятник"></div> памятника певцам Франконской ассоциации певцов. Он состоит из двенадцати известняковых колонн и увековечивает память певцов ассоциации, погибших в двух мировых войнах. Оттуда открывается прекрасный вид на окрестности. С возвышенности, на которой установлен памятник, спускаемся в Мелькендорф.<br>
+                        Здесь 4 остановка –
+                        {% for brewery in breweries %}
+                        {% if "Brandholz" in brewery.title %}
+                        <span><a class="hover-title2" href="{% url "route:route_descr_brewery" route.slug brewery.slug %}" style="color: #deb994;">{{brewery.title}},</a></span>
+                        {% endif %}
+                        {% endfor %}
+                        (открыта по определенным дням, которые указываются на их веб-сайте). Пивоварня Winkler Brauerei была на этом месте с 1889г, но она закрылась в 2016 г. В 2018 г. на её месте открылась пивоварня Brandholz Brauerei. На здании пивоварни до сих пор остался логотип Winkler Brauerei. В теплое время года (в основном в выходные), во дворе пивоварни проводятся мероприятия с едой, музыкой и пивом из бочек (заранее указываются на их веб-сайте). Около пивоварни установлен автомат по продаже пива. Выпускаемые сорта пива: основное - Golden Brown (домашний лагер), Underground – франконский келлербир. <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Этап 3: Мелькендорф —Гайсфельд (Geisfeld) примерно 3 км – время в пути около 40 мин. Покидаем Мелькендорф по улице Гайсбергштрассе которая переходит в<a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">удобную тропу</a><div class="hover-image2"><img src="{{ route.image_route9.url }}" alt="тропа"></div> до Гайсфельда. Идем по ней никуда на сворачивая. В центре Гайсфельда, недалеко друг от друга находятся 5-я  –
+                        {% for brewery in breweries %}
+                        {% if "Krug" in brewery.title %}
+                        <span><a class="hover-title2" href="{% url "route:route_descr_brewery" route.slug brewery.slug %}" style="color: #deb994;">{{brewery.title}}</a></span>
+                        {% endif %}
+                        {% endfor %}
+                        и 6-я  –
+                        {% for brewery in breweries %}
+                        {% if "Griess" in brewery.title %}
+                        <span><a class="hover-title2" href="{% url "route:route_descr_brewery" route.slug brewery.slug %}" style="color: #deb994;">{{brewery.title}}</a></span>
+                        {% endif %}
+                        {% endfor %}
+                        пивоварни. Brauerei  Krug  Geisfeld располагается в старинном фахверковом доме. Выпускаемое пиво: Традиционный лагер (круглый год) и сезонные сорта (варятся осенью и весной). До пандемии работали ресторан и гостиница, сейчас они временно закрыты. После пандемии пивоварня до сих пор не перешла на обычный режим работы и работает 2 дня в неделю (Суб: с 09 до 11; Вт: с 18 до19). На сайте пивоварни указано, что в течение дня на пивоварне может кто-нибудь быть, и если повезет - вам с радость продадут их пиво. Brauerei Griess работает (с 15:00 до 22:00; Сб.Вск: с 10:00 до 22:00; Ср.- вых.). В пивоварне есть ресторан, гостиница, пивной сад во дворе. В ресторане фирменное блюдо: чесночно-сырная закуска и свинина. Выпускаемые сорта пива: Kellerbier, Leichtbier (легкий лагер), Bockbier. <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Этап 4: Гайсфельд — Россдорф (Roßdorf) примерно 2,5 км – время в пути около 30 мин. После Гайсфелда остается последняя пивоварня на маршруте, а также 4 дополнительные остановки (по желанию) – любимые немцами пивные сады при старинных пивных погребах (Keller). Раньше, погреба (подвалы) для созревания и хранения бочек с пивом, располагали недалеко в лесу, в тени деревьев, в естественных пещерах и кирпичных подвалах, где было прохладно и благоприятные условия для созревания сваренного пива. Сейчас на месте многих таких подвалов открыты пабы на свежем воздухе, посреди леса. Итак, Покидаем Гайсфельд по улице Kellerweg (рядом с Brauerei Griess) и через 500 м. поворачиваем налево около её <a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">пивного сада</a><div class="hover-image2"><img src="{{ route.image_route10.url }}" alt="тропа"></div> - <a href="https://www.griesskeller.net/" target="_ blank" style="color: #deb994; padding: 4px; text-decoration: underline; text-decoration-color: #f2c79d;"> Griess Keller.</a> При желании посещаем этот пивной сад посреди леса, и двигаемся дальше по тропе. Есть два варианта: идти прямо до автодороги и далее следовать вдоль нее до Россдорфа или свернуть на развилке тропы налево, <a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">выйти из леса,</a><div class="hover-image2"><img src="{{ route.image_route11.url }}" alt="тропа"></div>пересечь ручей и примерно через 200м. свернуть направо и также двигаться по тропе до Россдорфа (второй вариант намного живописнее). Там нас ждет последняя 7 пивоварня –
+                        {% for brewery in breweries %}
+                        {% if "Sauer" in brewery.title %}
+                        <span><a class="hover-title2" href="{% url "route:route_descr_brewery" route.slug brewery.slug %}" style="color: #deb994;">{{brewery.title}},</a></span>
+                        {% endif %}
+                        {% endfor %}
+                        (с 11:00 до 22:00; Пн. - выходной). Есть гостиница, ресторан и пивной сад во дворе. Сорта пива: Россдорфер Urbräu (натуральное, мутное, нефильтрованное), Braunbier (коричневое), Pils, Weißbier. Фирменные блюда ресторана: пивоварный тарт фламбе (запеченный в солодовой муке), котлеты в панировке со сковороды, домашние грубые колбаски.<br>
+                        <figure class="leftfoto">
+                            <img id="myImg2" src="{{ route.image_route3.url }}" alt="Указатель пивной тропы" width="300" height="350" class="leftfoto">
+                            <figcaption style="width: 300px;">Указатель пивной тропы </figcaption>
+                        </figure>
+                        <div id="myModal2" class="modal2">
+                          <span class="close2">&#10006;</span>
+                          <img class="modal-content2" id="img03">
+                          <div id="caption2"></div>
+                        </div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;После посещения Brauerei Sauer идем по ул. Dorfstraße и далее 2 варианта: первый - доходим до ул. Zum Felsenkeller, поворачиваем не неё и идем до <a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">пивного сада</a><div class="hover-image2"><img src="{{ route.image_route12.url }}" alt="тропа"></div> - <a href="http://www.rossdorfer-felsenkeller.de/" target="_blank" style="color: #deb994; padding: 4px; text-decoration: underline; text-decoration-color: #f2c79d;">Rossdorfer Felsenkeller</a> при пивоварне Sauer. Это бывший каменный погреб пивоварни, которому более ста лет, где раньше пиво хранилось в старых дубовых бочках. Он неоднократно признавался самым деревенским и типичным каменным погребом во Франконии, посещаем пивной сад и возвращаемся назад; второй -  по ул. Dorfstraße доходим до Kleeanger, следуем по ней не сворачивая, до места<a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">где от неё отделяется</a><div class="hover-image2"><img src="{{ route.image_route13.url }}" alt="тропа"></div> благоустроенная тропа. Следуем не сворачивая по тропе примерно 800м. и на перекрестке поворачиваем направо и идем до развилки. Тропа уходящая чуть выше ведет к очередному <a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">пивному саду</a><div class="hover-image2"><img src="{{ route.image_route14.url }}" alt="тропа"></div> - <a href="https://maps.app.goo.gl/mXMM3pAt9fVewmEM8" target="_blank" style="color: #deb994; padding: 4px; text-decoration: underline; text-decoration-color: #f2c79d;">Almrausch-Hütte</a> при пивоварне <a href="http://www.brauerei-ott.de/" target="_blank" style="color: #deb994; padding: 4px; text-decoration: underline; text-decoration-color: #f2c79d;">Brauerei Gasthof Ott</a> из соседней общины Хайлигенштадт (Heiligenstadt), другая тропа (обозначенная указателем) ведет к автодороге. <a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title"> Пересекаем автодорогу,</a><div class="hover-image2"><img src="{{ route.image_route15.url }}" alt="автодорога"></div> следуем по тропе около 200 м. и поворачиваем налево, далее следуем по тропе до ж/домов и поворачиваем направо и движемся до подземного перехода через автотрассу. После выбираем левую тропу, которая идет от автотрассы, и доведет до окраин города Штрулендорф (Strullendorf), где расположился последний <a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">пивной сад</a><div class="hover-image2"><img src="{{ route.image_route16.url }}" alt="тропа"></div> - <a href="https://maps.app.goo.gl/4u135sJG42tTwmpt9" target="_blank" style="color: #deb994; padding: 4px; text-decoration: underline; text-decoration-color: #f2c79d;">Schwanenkeller</a> при пивоварне <a href="http://www.rittmayer.de/" target="_blank" style="color: #deb994; padding: 4px; text-decoration: underline; text-decoration-color: #f2c79d;">Brauerei Rittmayer</a>  из соседней общины Халлендорф (Hallerndorf). При желании посещаем пивной сад или движемся прямо не сворачивая по улице до церкви. Около неё поворачиваем направо и движемся до ул. Bahnhofstraße, поворачиваем налево на нее и достигаем ж/д станции Strullendorf. Маршрут окончен.<br>.</div>
+                  {% endif %}
+
+                  {% if "Ауфзес" in route.name %}
+                        <div class="route-desc">
+                        <figure class="leftfoto"> <img id="myImg" src="{{ route.image_route1.url }}" alt="Схема маршрута: {{route.name}}" width="500" height="350" class="leftfoto">
+                        <figcaption>Схема маршрута: {{route.name}} </figcaption>
                             </figure>
                         <div id="myModal" class="modal">
                           <span class="close">&#10006;</span>
@@ -72,7 +150,7 @@
                         <span><a class="hover-title2" href="{% url "route:route_descr_brewery" route.slug brewery.slug %}" style="color: #deb994;">{{brewery.title}}</a></span>
                         {% endif %}
                         {% endfor %}
-                        (работает с 10-22). Это самая крупная пивоварня из 4 в Ауфзесе, она располагает широким выбором пива от темных франконских лагеров до пилснеров, боков и фестивальных сортов пива (можно заказать экскурсию по пивоварне). В этой пивоварне или ресторане Rothenbach  (впрочем как и в любой другой пивоварне на маршруте), вы можете получить <a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">"пивной паспорт"</a><div class="hover-image1"><img src="{{ route.image_route4.url }}" alt="пивной паспор"></div>этого маршрута, и в каждой пивоварне ставить штамп, подтверждающий посещение ) ) ). Маршрут разделен на два длинных и два коротких участка между пивоварнями. Расстояние между пивоварней Aufsesser Brauerei (Rothenbach) в Ауфсесе и пивоварней Benedikt Stadter Brauerei в районе Sachsendorf составляет пять километров. Находим указатель пивоваренной тропы и следуем по схеме и указателям. Проходим мимо замков<a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">Unteraufseß</a><div class="hover-image2"><img src="{{ route.image_route6.url }}" alt="Unteraufseß"></div> и <a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">Oberaufseß</a><div class="hover-image2"><img src="{{ route.image_route7.url }}" alt="Oberaufseß"></div>, тропа петляет лесами, лугами и<a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">скальными образованиями</a><div class="hover-image2"><img src="{{ route.image_route8.url }}" alt="скальные образования"></div>, характерными для "франконской швейцарии" (в честь которых она так и названа), не забываем заглянуть на смотровую площадку <a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">Himmelssteuberer</a><div class="hover-image2"><img src="{{ route.image_route12.url }}" alt="Himmelssteuberer"></div>,и примерно через 1-1,5 часов чистой ходьбы добираемся до второй остановки - пивоварни
+                        (работает с 10-22). Фирменные блюда ресторана - Mälzerschnitzel (шницель из свиной корейки) и форель по-мельничски. Это самая крупная пивоварня из 4 в Ауфзесе, линейка сортов производимого пива: Aufsesser Seidla Hell, Zwickl (натуральное нефильтрованное), Pils, Dunkel, Hefeweizen, также производится легкое, естественно мутное пиво серии Wegseidla и радлер (пиво с лимонадом крепкостью 0,5 градусов) для велосипедистов, а также во время сбора хмеля  - Hopfentrunk: хмельной напиток со свежесобранным хмелем (с октября по конец года) и очень популярные виды лимонада – Gluggerla. В ресторане Rothenbach  (впрочем как и в любой другой пивоварне на маршруте), вы можете получить <a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">"пивной паспорт"</a><div class="hover-image1"><img src="{{ route.image_route4.url }}" alt="пивной паспот"></div>этого маршрута, и в каждой пивоварне ставить штамп, подтверждающий посещение ) ) ). Маршрут разделен на два длинных и два коротких участка между пивоварнями. Расстояние между пивоварней Aufsesser Brauerei (Rothenbach) в Ауфсесе и пивоварней Benedikt Stadter Brauerei в районе Sachsendorf составляет пять километров. Находим указатель пивоваренной тропы и следуем по схеме и указателям. Проходим мимо замков<a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">Unteraufseß</a><div class="hover-image2"><img src="{{ route.image_route6.url }}" alt="Unteraufseß"></div> и <a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">Oberaufseß</a><div class="hover-image2"><img src="{{ route.image_route7.url }}" alt="Oberaufseß"></div>, тропа петляет лесами, лугами и<a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">скальными образованиями</a><div class="hover-image2"><img src="{{ route.image_route8.url }}" alt="скальные образования"></div>, характерными для "франконской швейцарии" (в честь которых она так и названа), не забываем заглянуть на смотровую площадку <a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">Himmelssteuberer</a><div class="hover-image2"><img src="{{ route.image_route12.url }}" alt="Himmelssteuberer"></div>,и примерно через 1-1,5 часов чистой ходьбы добираемся до второй остановки - пивоварни
                         {% for brewery in breweries %}
                         {% comment %} {% if forloop.counter == 2 %} {% endcomment %}
                         {% if "Stadter" in brewery.title %}
@@ -89,26 +167,93 @@
                           <img class="modal-content2" id="img03">
                           <div id="caption2"></div>
                         </div>
-                        В пивоварне рекомендуем попробовать - Sachsendorfer Landbier.<br> Далее указатели ведут немного вверх по горе над высотами франконской швейцарии -  это еще один пятикилометровый участок соединяет пивоварни Benedikt Stadter Brauerei и Brauerei Reichold (Hochstahl).<a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">Пешая прогулка</a><div class="hover-image1"><img src="{{ route.image_route9.url }}" alt="Пешая прогулка"></div> занимает около 1-1,5 часов до ресторана гостиницы Brauereigasthof Reichold при пивоварне
+                        Пивоварня варит единственный сорт пива Stadter-Bräu (Landbier) - деревенское пиво янтарного цвета. Пивное сусло для Stadter-Bräu до сих пор варят в дровяных котлах, пиво не фильтруется, не подвергается кратковременному подогреву. Также в трактире подают ещё 2 сорта пива местных франконских производителей, и действительно домашнюю франконскую кухню, от закусок до жаренных блюд.<br> Далее указатели ведут немного вверх по горе над высотами франконской швейцарии -  это еще один пятикилометровый участок соединяет пивоварни Benedikt Stadter Brauerei и Brauerei Reichold (Hochstahl).<a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">Пешая прогулка</a><div class="hover-image1"><img src="{{ route.image_route9.url }}" alt="Пешая прогулка"></div> занимает около 1-1,5 часов до ресторана гостиницы Brauereigasthof Reichold при пивоварне
                         {% for brewery in breweries %}
                         {% comment %} {% if forloop.counter == 3 %} {% endcomment %}
                         {% if "Reichold" in brewery.title %}
                         <span><a href="{% url "route:route_descr_brewery" route.slug brewery.slug %}" style="color: #deb994;" class="hover-title2">{{brewery.title}}</a></span>
                         {% endif %}
                         {% endfor %}
-                        (работает с 9 – 23). Там можно сделать короткий отдых. В пивоварне подают блюда франконской кухни и пиво Zwickl (нефильтрованное), Lager (лагер) и Weizen (пшеничное). Отсюда чуть более двух километров до следующей остановки (примерно 35 мин) - пивоварня
+                        (работает с 9 – 23). Там можно сделать короткий отдых. Ассортимент пива включает четыре сорта пива: Hochstahler Lager (основной сорт - светлое, не такое сладкое, слегка охмеленное, очень питкое), Zwick'l (натуральное нефильтрованное, янтарного цвета), Dunkel (темное пиво, хорошо охмеленное) и Weizen (пшеничное). Отсюда чуть более двух километров до следующей остановки (примерно 35 мин) - пивоварня
                         {% for brewery in breweries %}
                         {% comment %} {% if forloop.counter == 4 %} {% endcomment %}
                         {% if "Kathi" in brewery.title %}
                         <span><a href="{% url "route:route_descr_brewery" route.slug brewery.slug %}" style="color: #deb994;" class="hover-title2">{{brewery.title}}</a></span>
                         {% endif %}
                         {% endfor %}
-                        (работает с 9-23). Пивоварня популярна среди<a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">немецких байкеров</a><div class="hover-image2"><img src="{{ route.image_route11.url }}" alt="байкеры"></div>, с большим пивным садом. В пивоварне рекомендуем попробовать - Dunkles Lager.<br> Последний участок пивной тропы также имеет длину около двух километров (25 мин<a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">вниз по склону</a><div class="hover-image2"><img src="{{ route.image_route10.url }}" alt="вниз по склону"></div>). Заканчиваем маршрут там же где и начинали – ресторан гостиницы Brauereigasthof Rothenbach при пивоварне Aufsesser Brauerei. Оттуда тем же путем едем обратно или остаемся в гостинице на ночлег. На всем пути маршрута по пивоварням Вас будут сопровождать прекрасные виды, свежий воздух, природа и хорошее настроение.<br>.</div>
-                      {% endif %}
-                      {% if "Фюнф" in route.name %}
-                        <div style="width: 1150px; font-size: 19.5px; Letter-spacing: 1.6px; text-align: justify; text-shadow: 1.2px 0 0 #000, 0 -1.2px 0 #000, 0 1.2px 0 #000, -1.2px 0 0 #000; margin-left: auto; margin-right: auto; margin-top: 5px;">
-                        <figure class="leftfoto"> <img id="myImg" src="{{ route.image_route1.url }}" alt="Схема маршрута: {{route.name}}" width="400" height="750" class="leftfoto">
+                        (работает с 9-23). Пивоварня популярна среди<a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">немецких байкеров</a><div class="hover-image2"><img src="{{ route.image_route11.url }}" alt="байкеры"></div>, с большим пивным садом. Пивоварня производит один основной и очень популярный сорт пива Dunkles Lager, также производятся сезонные сорта Bockbier (март-апрель), Kathi leicht (май-сентябрь). Кухня представлена в основном закусками и популярными среди посетителей десертами.<br> Последний участок пивной тропы также имеет длину около двух километров (25 мин<a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">вниз по склону</a><div class="hover-image2"><img src="{{ route.image_route10.url }}" alt="вниз по склону"></div>). Заканчиваем маршрут там же где и начинали – ресторан гостиницы Brauereigasthof Rothenbach при пивоварне Aufsesser Brauerei. Оттуда тем же путем едем обратно или остаемся в гостинице на ночлег. На всем пути маршрута по пивоварням Вас будут сопровождать прекрасные виды, свежий воздух, природа и хорошее настроение.<br>.</div>
+                  {% endif %}
+
+                  {% if "Фюнф" in route.name %}
+                        <div class="route-desc">
+                        <figure class="leftfoto"> <img id="myImg" src="{{ route.image_route1.url }}" alt="Схема маршрута: {{route.name}}" width="390" height="700" class="leftfoto">
                         <figcaption style="width: 400px;">Схема маршрута: {{route.name}}  </figcaption>
+                            </figure>
+                        <div id="myModal" class="modal">
+                          <span class="close">&#10006;</span>
+                          <img class="modal-content" id="img01">
+                          <div id="caption"></div>
+                        </div>
+                        Длина маршрута составляет около 19 км по пересеченной местности, т.е. с подъёмами и спусками. Время прохождения маршрута (не учитывая время, проведенное в 5 пивоварнях и осматривая местные достопримечательности) - около 5 часов. Часть пути от пивоварен Грефенберга (Gräfenberg) до Туисбрунна (Thuisbrunn) можно преодолеть на автобусе №229 «Trubachtal-Express» (курсирует с 1 мая по 11 ноября) или в обратную сторону от Туисбрунна на маршруте №226 (ходит очень редко). Расписание автобусов указано на остановках. Совет: пятница и суббота — единственные дни недели, когда открыты все 5 пивоварен вдоль маршрута. Фюнф-Зейдла-Штайг (Fünf-Seidla-Steig) – переводится с франконского как – «тропа 5 кружек» (старо-немецкое слово Seidel, означает кружку с ручкой сбоку).<a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title"> Fünf-Seidla-Steig® </a><div class="hover-image2"><img src="{{ route.image_route4.url }}" alt="Лейбл"></div> является зарегистрированной торговой маркой пивоваренных заводов Elch-Bräu, Brauerei Hofmann, Lindenbräu, Brauerei Friedmann и Klosterbrauerei Weißenohe).<br>
+                        До Грефенберга из Нюрнберга едем на региональном поезде RB21 Gräfenbergbahn, который отправляется раз в час (обычно в __:30) с ж/д станции <a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">Nürnberg Nordost</a><div class="hover-image2"><img src="{{ route.image_route5.url }}" alt="Вокзал"></div> (станция метро Nordostbahnhof). Поезд едет 41 мин. Выходим на конечной станции — Gräfenberg или предпоследней остановке— Weißenohe, в зависимости от того, откуда планируете начать маршрут. Вариантов три. На маршруте четыре поселения в которых расположены 5 пивоварен: <u>Thuisbrunn</u> - Elchbräu, <u>Gräfenberg</u> -  Brauerei Friedmann и Lindenbräu, <u>Hohenschwärz</u> - Brauerei Hofmann и <u>Weißenohe</u> - Klosterbrauerei Weißenohe. <u>1 вариант</u> – выйти на предпоследней станции Weißenohe и проделать кольцевой 19 км. маршрут закончив его в этой же точке. <u>2 вариант</u> – выйти на конечной станции Gräfenberg и пройти укороченный кольцевой 16 км маршрут и закончить его также в Weißenohe. <u>3 вариант</u> – выйти на конечной станции Gräfenberg, сесть на автобусе №229 «Trubachtal-Express» и доехать до последнего поселения на маршруте – Thuisbrunn и оттуда пройти прямым 10 км. маршрутом до станции Weißenohe и сесть на обратный поезд, также посетив все 5 пивоварен. Также есть и <u>4 вариант: </u> в Lindenbräu и Elchbräu имеются гостиницы и можно разбить маршрут на два дня. <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Оптимальный <u>2 вариант.</u>  Выходим на конечной станции в Грефенберге и отправляемся вверх по склону по Bahnhofstraße в более крупную пивоварню
+                        {% for brewery in breweries %}
+                        {% if "Lindenbräu" in brewery.title %}
+                        <span><a class="hover-title2" href="{% url "route:route_descr_brewery" route.slug brewery.slug %}" style="color: #deb994;">{{brewery.title}}</a></span>
+                        {% endif %}
+                        {% endfor %}
+                        (работает с 10-22). Основные сорта пива: Fritzle (Zwickl холодного охмеления), Vollbier (пиво плотностью до 14%), Pils, Weizen (пшеничное). Фирменные блюда ресторана:  холодец, зельцы, солодовый шницель (с солодом вместо панировочных сухарей). В этой пивоварне (впрочем как и в любой другой пивоварне на маршруте), вы можете получить <a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">"пивной паспорт"</a><div class="hover-image1"><img src="{{ route.image_route13.url }}" alt="пивной паспорт"></div>этого маршрута, и в каждой пивоварне ставить штамп, подтверждающий посещение ) ) ). Вторую пивоварню Грефенберга и её пивной сад, расположенный на склоне, лучше посетить на обратном пути кольцевого маршрута. Весь пешеходный маршрут хорошо обозначен указателями <a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">«Fünf-Seidla-Steig»</a><div class="hover-image2"><img src="{{ route.image_route6.url }}" alt="Указатель"></div> или <a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">«Frankenweg»</a><div class="hover-image2"><img src="{{ route.image_route7.url }}" alt="Лейбл"></div>(“Франконская тропа” – старая тропа между поселениями). Придерживаясь этих указателей, заблудиться невозможно. Выйдя из Lindenbräu осматриваем по пути соседнюю историческую рыночную площадь (Marktpl. 1) с ее «Рыцарским фонтаном Вирнта» и исторической ратушей. Покидая площадь через арку, нужно повернуть направо, (основная дорога Egloffsteiner Str. идет налево), и поднятся по узкому переулку впереди. Когда переулок повернёт налево, будет указатель Frankenweg в дальнем конце. Далее направляемся по улочкам (идущим паралельно основной дороги Egloffsteiner Str.) следуя указателям, проходим через лесной массив, пока не достигаем дороги (не доходя пожарной станции), поворачиваем направо и тропа приводит к подземному переходу под автомагистралью (2191).
+                        <figure class="rightfoto">
+                            <img id="myImg1" src="{{ route.image_route2.url }}" alt="Туристы на пивной тропе" width="300" height="350" class="leftfoto">
+                            <figcaption style="width: 300px;">Туристы на пивной тропе </figcaption>
+                        </figure>
+                        <div id="myModal1" class="modal1">
+                          <span class="close1">&#10006;</span>
+                          <img class="modal-content1" id="img02">
+                          <div id="caption1"></div>
+                        </div>
+                        После небольшого туннеля сразу поворачиваем налево, и через 100 м. пересекаем другую тропу и поворачиваем по ней на право, и маршрут ведет нас вверх по <a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">открытому полю</a><div class="hover-image2"><img src="{{ route.image_route8.url }}" alt="Поле"></div> к небольшому лесу, и примерно через 1 км. достигаем перекрестка лесных троп, поворачиваем направо и доходим до автомагистрали (2191), пересекаем ее и продолжаем путь <a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">через лес</a><div class="hover-image2"><img src="{{ route.image_route9.url }}" alt="Лес"></div>до Хоэншварц (Hohenschwärz). В Хоэншварц переходим дорогу и через 50 м поворачиваем направо, и доходим до пивоварни Brauerei Hofmann. Этот участок пути около 5 км. и занимает 1-1,5 часа.<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brauerei
+                        {% for brewery in breweries %}
+                        {% if "Hofmann" in brewery.title %}
+                        <span><a class="hover-title2" href="{% url "route:route_descr_brewery" route.slug brewery.slug %}" style="color: #deb994;">{{brewery.title}}</a></span>
+                        {% endif %}
+                        {% endfor %}
+                        работает (Ср, Пт, Суб и Вск с 10:00 до 21:00). Ассортимент пива: Dunkel (темное), Export (дортмундское), Helles (светлое нефильтрованное, непастеризованное) – все доступно в розлив. В ресторане подают блюда франконской кухни, фирменное блюдо – колбаски. После посещения Brauerei Hofmann возвращаемся назад на главную тропу, и нас ждет следующий 1,5 км. участок (20-30 мин). Следуем по тропе в направлении Туисбрунн (Thuisbrunn) вниз через красивый пейзаж полей, придерживаясь правой стороны. В Туисбрунн на первом перекрестке поворачиваем налево и прямо по дороге попадаем в самую молодую пивоварню
+                        {% for brewery in breweries %}
+                        {% if "Elch-Bräu" in brewery.title %}
+                        <span><a class="hover-title2" href="{% url "route:route_descr_brewery" route.slug brewery.slug %}" style="color: #deb994;">{{brewery.title}}</a></span>
+                        {% endif %}
+                        {% endfor %}
+                        работает (Вт, Пт-Вс с 10:00 до 21:00). Ассортимент пива (франконское естественно-мутное): Dunkel, Pils, Weizen, Nix Amore (светлое погребное пиво) и специальные сорта «Brunos Schwarze Acht» и др. Фирменные блюда ресторана: блюда из дичи и свежая рыба из собственного пруда. После посещения «Elch-Bräu» можно насладится видом руин замка<a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">Thuisbrunn Castle</a><div class="hover-image2"><img src="{{ route.image_route10.url }}" alt="Замок"></div> и обойти замковую гору вокруг (голубая линия на схеме), посетить его невозможно, замок – частная собственность. Затем отправляемся назад в Грефенберг – это самый длинный 6,5 км участок маршрута (около 1,5 ч может более). На схеме участок обозначен темно-зеленой линией “Variante” в направлении Нойслес (Neusles) и также полностью обозначен указателями. Покидаем Туисбрунн и пройдя последние дома, поворачиваем налево на перекрестке, и через несколько метров поворачиваем направо на тропу до Нойслес, которая пролегает сначала через лес, затем <a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">по полю</a><div class="hover-image2"><img src="{{ route.image_route11.url }}" alt="Поле"></div>. Пройдя Нойслес, поворачиваем налево в лес, далее тропа доведет до пожарной части, где через дорогу ступаем на первоначальный маршрут.
+                        <figure class="leftfoto">
+                            <img id="myImg2" src="{{ route.image_route3.url }}" alt="Указатель пивной тропы" width="300" height="350" class="leftfoto">
+                            <figcaption style="width: 300px;">Указатель пивной тропы </figcaption>
+                        </figure>
+                        <div id="myModal2" class="modal2">
+                          <span class="close2">&#10006;</span>
+                          <img class="modal-content2" id="img03">
+                          <div id="caption2"></div>
+                        </div>
+                        В Грефенберге направляемся во вторую пивоварню
+                        {% for brewery in breweries %}
+                        {% if "Friedmann" in brewery.title %}
+                        <span><a class="hover-title2" href="{% url "route:route_descr_brewery" route.slug brewery.slug %}" style="color: #deb994;">{{brewery.title}}</a></span>
+                        {% endif %}
+                        {% endfor %}
+                        с фирменным рестораном «Friedmann's Bräustüberl» (Пн, Чт-Вск с 11:00 до 22:00) и обязательно в пивной сад «Bergschlösschen» (прямо за пивоварней), расположенный на склоне, и имеющий <a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">прекрасный вид</a><div class="hover-image2"><img src="{{ route.image_route12.url }}" alt=" Bergschlösschen"></div>на окрестности (вплоть до северных окраин Нюрнберга). Линейка сортов пива: Friedmann Landbier Hell (светлое нефильтрованное), Friedmann Pils, Gräfenberger Weisse (пшеничное), Sigi's Lager (kellerbier - франконское естественно-мутное, нефильтрованное) Ritter Wirnt Trunk (рыцарское) темное.<br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Завершает маршрут 3 км. участок до Вайссеноэ (Weißenohe). Покидаем Гафенберг пройдя от Brauerei Friedmann до перекрестка с трассой В2 и далее вверх и резко на право на Sollenberger Str. и продолжаем идти по ней следуя указателям, пока не свернем налево в поля и далее через лес доходим до Mönchsbergstraße и спускаемся к аббатству <a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">Weissenohe Abbey</a><div class="hover-image2"><img src="{{ route.image_route14.url }}" alt="Abbey"></div>, где расположена последняя и одна из самых крупных пивоварен на маршруте
+                        {% for brewery in breweries %}
+                        {% if "Weißenohe" in brewery.title %}
+                        <span><a class="hover-title2" href="{% url "route:route_descr_brewery" route.slug brewery.slug %}" style="color: #deb994;">{{brewery.title}}</a></span>
+                        {% endif %}
+                        {% endfor %}
+                        Пивоварня работает с Пн-Пт: с 08 -17ч. Суб: 08 -12ч., прекраснейший ресторан при пивоварне временно закрыт. В общей сложности произвоитсят 21 сорт пива, вот основные: Altfränkisch Klosterbier (kellerbier), Weissenoher Pils, Kloster-Sud, Glocken Hell Vollbier, Bonifatius Dunkel, Eucharius Märzen. Из пивоварни направляемся на станцию Вайссеноэ и едем обратно в Нюрнберг. </div>
+                  {% endif %}
+                  {% if "дикое" in route.name %}
+                        <div class="route-desc">
+                        <figure class="leftfoto"> <img id="myImg" src="{{ route.image_route1.url }}" alt="Схема маршрута: {{route.name}}" width="500" height="350" class="leftfoto">
+                        <figcaption>Схема маршрута: {{route.name}} </figcaption>
                             </figure>
                         <div id="myModal" class="modal">
                           <span class="close">&#10006;</span>
@@ -117,8 +262,8 @@
                         </div>
                         Длина маршрута составляет около 14 км с разнообразным ландшафтом. Время прохождения маршрута (не учитывая время, проведенное в пивоварнях и осматривая местные достопримечательности - около 4 часов). Часть пути от Aufsesser Brauerei до Benedikt Stadter Brauerei или до Brauerei Reichold (в зависимости от направления движения автобуса по расписанию) можно преодолеть на<a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">маршруте №230.</a><div class="hover-image2"><img src="{{ route.image_route14.url }}" alt="Расписание автобуса №230"></div>Общине Ауфзес с 2001 года принадлежит почётный рекорд в Книге рекордов Гиннесса: здесь на 1500 жителей трудится 4 пивоварни - место с наибольшей концентрацией пивоваренных заводов в мире. Нигде нет такого количества производителей пива на душу населения.<br> До Ауфзеса из Нюрнберга или Бамберга сначала едем на городской электричке до г.Форхайм (20 мин), далее пересадка на короткую региональную электричку до городка Еберманштад (20 мин). Оттуда с ж/д вокзала (ост.Ebermannstadt Bahnhof) до Ауфзеса ходит автобус №230 (15 мин).<a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">Схема</a><div class="hover-image2"><img src="{{ route.image_route13.url }}" alt="Расписание автобуса №230"></div>маршрута и расписание автобуса <a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">приложены.</a><div class="hover-image1"><img src="{{ route.image_route5.url }}" alt="Расписание автобуса №230"></div>В Ауфзесе выходим на ост. Aufseß Brücke, с нее начнется маршрут по 4 пивоварням Ауфзеса.
                         <figure class="rightfoto">
-                            <img id="myImg1" src="{{ route.image_route2.url }}" alt="Туристы на пивной тропе" width="300" height="350" class="leftfoto">
-                            <figcaption style="width: 300px;">Туристы на пивной тропе </figcaption>
+                            <img id="myImg1" src="{{ route.image_route2.url }}" alt="Туристы на пивной тропе Ауфзеса" width="500" height="350" class="leftfoto">
+                            <figcaption>Продолжение маршрута: {{route.name}} </figcaption>
                         </figure>
                         <div id="myModal1" class="modal1">
                           <span class="close1">&#10006;</span>
@@ -132,7 +277,7 @@
                         <span><a class="hover-title2" href="{% url "route:route_descr_brewery" route.slug brewery.slug %}" style="color: #deb994;">{{brewery.title}}</a></span>
                         {% endif %}
                         {% endfor %}
-                        (работает с 10-22). Это самая крупная пивоварня из 4 в Ауфзесе, она располагает широким выбором пива от темных франконских лагеров до пилснеров, боков и фестивальных сортов пива (можно заказать экскурсию по пивоварне). В этой пивоварне или ресторане Rothenbach  (впрочем как и в любой другой пивоварне на маршруте), вы можете получить <a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">"пивной паспорт"</a><div class="hover-image1"><img src="{{ route.image_route4.url }}" alt="пивной паспор"></div>этого маршрута, и в каждой пивоварне ставить штамп, подтверждающий посещение ) ) ). Маршрут разделен на два длинных и два коротких участка между пивоварнями. Расстояние между пивоварней Aufsesser Brauerei (Rothenbach) в Ауфсесе и пивоварней Benedikt Stadter Brauerei в районе Sachsendorf составляет пять километров. Находим указатель пивоваренной тропы и следуем по схеме и указателям. Проходим мимо замков<a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">Unteraufseß</a><div class="hover-image2"><img src="{{ route.image_route6.url }}" alt="Unteraufseß"></div> и <a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">Oberaufseß</a><div class="hover-image2"><img src="{{ route.image_route7.url }}" alt="Oberaufseß"></div>, тропа петляет лесами, лугами и<a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">скальными образованиями</a><div class="hover-image2"><img src="{{ route.image_route8.url }}" alt="скальные образования"></div>, характерными для "франконской швейцарии" (в честь которых она так и названа), не забываем заглянуть на смотровую площадку <a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">Himmelssteuberer</a><div class="hover-image2"><img src="{{ route.image_route12.url }}" alt="Himmelssteuberer"></div>,и примерно через 1-1,5 часов чистой ходьбы добираемся до второй остановки - пивоварни
+                        (работает с 10-22). Фирменные блюда ресторана - Mälzerschnitzel (шницель из свиной корейки) и форель по-мельничски. Это самая крупная пивоварня из 4 в Ауфзесе, линейка сортов производимого пива: Aufsesser Seidla Hell, Zwickl (натуральное нефильтрованное), Pils, Dunkel, Hefeweizen, также производится легкое, естественно мутное пиво серии Wegseidla и радлер (пиво с лимонадом крепкостью 0,5 градусов) для велосипедистов, а также во время сбора хмеля  - Hopfentrunk: хмельной напиток со свежесобранным хмелем (с октября по конец года) и очень популярные виды лимонада – Gluggerla. В ресторане Rothenbach  (впрочем как и в любой другой пивоварне на маршруте), вы можете получить <a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">"пивной паспорт"</a><div class="hover-image1"><img src="{{ route.image_route4.url }}" alt="пивной паспот"></div>этого маршрута, и в каждой пивоварне ставить штамп, подтверждающий посещение ) ) ). Маршрут разделен на два длинных и два коротких участка между пивоварнями. Расстояние между пивоварней Aufsesser Brauerei (Rothenbach) в Ауфсесе и пивоварней Benedikt Stadter Brauerei в районе Sachsendorf составляет пять километров. Находим указатель пивоваренной тропы и следуем по схеме и указателям. Проходим мимо замков<a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">Unteraufseß</a><div class="hover-image2"><img src="{{ route.image_route6.url }}" alt="Unteraufseß"></div> и <a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">Oberaufseß</a><div class="hover-image2"><img src="{{ route.image_route7.url }}" alt="Oberaufseß"></div>, тропа петляет лесами, лугами и<a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">скальными образованиями</a><div class="hover-image2"><img src="{{ route.image_route8.url }}" alt="скальные образования"></div>, характерными для "франконской швейцарии" (в честь которых она так и названа), не забываем заглянуть на смотровую площадку <a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">Himmelssteuberer</a><div class="hover-image2"><img src="{{ route.image_route12.url }}" alt="Himmelssteuberer"></div>,и примерно через 1-1,5 часов чистой ходьбы добираемся до второй остановки - пивоварни
                         {% for brewery in breweries %}
                         {% comment %} {% if forloop.counter == 2 %} {% endcomment %}
                         {% if "Stadter" in brewery.title %}
@@ -141,30 +286,30 @@
                         {% endfor %}
                         (уточните часы работы в день Вашего похода).
                         <figure class="leftfoto">
-                            <img id="myImg2" src="{{ route.image_route3.url }}" alt="Указатель пивной тропы" width="300" height="350" class="leftfoto">
-                            <figcaption style="width: 300px;">Указатель пивной тропы </figcaption>
+                            <img id="myImg2" src="{{ route.image_route3.url }}" alt="Указатель пивной тропы Ауфзеса" width="500" height="350" class="leftfoto">
+                            <figcaption>Завершение маршрута: {{route.name}} </figcaption>
                         </figure>
                         <div id="myModal2" class="modal2">
                           <span class="close2">&#10006;</span>
                           <img class="modal-content2" id="img03">
                           <div id="caption2"></div>
                         </div>
-                        В пивоварне рекомендуем попробовать - Sachsendorfer Landbier.<br> Далее указатели ведут немного вверх по горе над высотами франконской швейцарии -  это еще один пятикилометровый участок соединяет пивоварни Benedikt Stadter Brauerei и Brauerei Reichold (Hochstahl).<a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">Пешая прогулка</a><div class="hover-image1"><img src="{{ route.image_route9.url }}" alt="Пешая прогулка"></div> занимает около 1-1,5 часов до ресторана гостиницы Brauereigasthof Reichold при пивоварне
+                        Пивоварня варит единственный сорт пива Stadter-Bräu (Landbier) - деревенское пиво янтарного цвета. Пивное сусло для Stadter-Bräu до сих пор варят в дровяных котлах, пиво не фильтруется, не подвергается кратковременному подогреву. Также в трактире подают ещё 2 сорта пива местных франконских производителей, и действительно домашнюю франконскую кухню, от закусок до жаренных блюд.<br> Далее указатели ведут немного вверх по горе над высотами франконской швейцарии -  это еще один пятикилометровый участок соединяет пивоварни Benedikt Stadter Brauerei и Brauerei Reichold (Hochstahl).<a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">Пешая прогулка</a><div class="hover-image1"><img src="{{ route.image_route9.url }}" alt="Пешая прогулка"></div> занимает около 1-1,5 часов до ресторана гостиницы Brauereigasthof Reichold при пивоварне
                         {% for brewery in breweries %}
                         {% comment %} {% if forloop.counter == 3 %} {% endcomment %}
                         {% if "Reichold" in brewery.title %}
                         <span><a href="{% url "route:route_descr_brewery" route.slug brewery.slug %}" style="color: #deb994;" class="hover-title2">{{brewery.title}}</a></span>
                         {% endif %}
                         {% endfor %}
-                        (работает с 9 – 23). Там можно сделать короткий отдых. В пивоварне подают блюда франконской кухни и пиво Zwickl (нефильтрованное), Lager (лагер) и Weizen (пшеничное). Отсюда чуть более двух километров до следующей остановки (примерно 35 мин) - пивоварня
+                        (работает с 9 – 23). Там можно сделать короткий отдых. Ассортимент пива включает четыре сорта пива: Hochstahler Lager (основной сорт - светлое, не такое сладкое, слегка охмеленное, очень питкое), Zwick'l (натуральное нефильтрованное, янтарного цвета), Dunkel (темное пиво, хорошо охмеленное) и Weizen (пшеничное). Отсюда чуть более двух километров до следующей остановки (примерно 35 мин) - пивоварня
                         {% for brewery in breweries %}
                         {% comment %} {% if forloop.counter == 4 %} {% endcomment %}
                         {% if "Kathi" in brewery.title %}
                         <span><a href="{% url "route:route_descr_brewery" route.slug brewery.slug %}" style="color: #deb994;" class="hover-title2">{{brewery.title}}</a></span>
                         {% endif %}
                         {% endfor %}
-                        (работает с 9-23). Пивоварня популярна среди<a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">немецких байкеров</a><div class="hover-image2"><img src="{{ route.image_route11.url }}" alt="байкеры"></div>, с большим пивным садом. В пивоварне рекомендуем попробовать - Dunkles Lager.<br> Последний участок пивной тропы также имеет длину около двух километров (25 мин<a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">вниз по склону</a><div class="hover-image2"><img src="{{ route.image_route10.url }}" alt="вниз по склону"></div>). Заканчиваем маршрут там же где и начинали – ресторан гостиницы Brauereigasthof Rothenbach при пивоварне Aufsesser Brauerei. Оттуда тем же путем едем обратно или остаемся в гостинице на ночлег. На всем пути маршрута по пивоварням Вас будут сопровождать прекрасные виды, свежий воздух, природа и хорошее настроение.<br>.</div>
-                      {% endif %}
+                        (работает с 9-23). Пивоварня популярна среди<a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">немецких байкеров</a><div class="hover-image2"><img src="{{ route.image_route11.url }}" alt="байкеры"></div>, с большим пивным садом. Пивоварня производит один основной и очень популярный сорт пива Dunkles Lager, также производятся сезонные сорта Bockbier (март-апрель), Kathi leicht (май-сентябрь). Кухня представлена в основном закусками и популярными среди посетителей десертами.<br> Последний участок пивной тропы также имеет длину около двух километров (25 мин<a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">вниз по склону</a><div class="hover-image2"><img src="{{ route.image_route10.url }}" alt="вниз по склону"></div>). Заканчиваем маршрут там же где и начинали – ресторан гостиницы Brauereigasthof Rothenbach при пивоварне Aufsesser Brauerei. Оттуда тем же путем едем обратно или остаемся в гостинице на ночлег. На всем пути маршрута по пивоварням Вас будут сопровождать прекрасные виды, свежий воздух, природа и хорошее настроение.<br>.</div>
+                  {% endif %}
                     <div style="position: absolute; bottom: 0;"><img class="svg" src="{% static 'img/svg/бариноф3.svg' %}" alt="узор" width="1000" height="70"></div>
                   </div>
                 </div>
@@ -172,79 +317,6 @@
             </div>
           </div>
         </div>
-        {% comment %} <div id="carouselExampleCaptions" class="carousel slide carousel-fade">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 6"></button>
-          </div>
-          <div class="carousel-inner my-carousel-route">
-            <div class="carousel-item active">
-              {% if route.image_route1 %}
-                <img src="{{ route.image_route1.url }}" class="d-block mx-auto d-block" alt="{{ route.name }}">
-              {% else %}
-                <img src="{% static "img/100.jpeg" %}" class="d-block mx-auto d-block" alt="дефолтная картинка">
-              {% endif %}
-            </div>
-            <div class="carousel-item" id="bus">
-              {% if route.image_route2 %}
-              <img src="{{ route.image_route2.url }}" id="bus" class="d-block mx-auto d-block" alt="{{ route.name }}">
-              {% else %}
-                <img src="{% static "img/100.jpeg" %}" class="d-block mx-auto d-block" alt="дефолтная картинка">
-              {% endif %}
-            </div>
-            <div class="carousel-item">
-              {% if route.image_route3 %}
-              <img src="{{ route.image_route3.url }}" class="d-block mx-auto d-block" alt="{{ route.name }}">
-              {% else %}
-                <img src="{% static "img/100.jpeg" %}" class="d-block mx-auto d-block" alt="дефолтная картинка">
-              {% endif %}
-            </div>
-            <div class="carousel-item">
-              {% if route.image_route4 %}
-              <img src="{{ route.image_route4.url }}" class="d-block mx-auto d-block" alt="{{ route.name }}">
-              {% else %}
-                <img src="{% static "img/100.jpeg" %}" class="d-block mx-auto d-block" alt="дефолтная картинка">
-              {% endif %}
-            </div>
-            <div class="carousel-item">
-              {% if route.image_route5 %}
-              <img src="{{ route.image_route5.url }}" class="d-block mx-auto d-block" alt="{{ route.name }}">
-              {% else %}
-                <img src="{% static "img/100.jpeg" %}" class="d-block mx-auto d-block" alt="дефолтная картинка">
-              {% endif %}
-            </div>
-            <div class="carousel-item">
-              {% if route.image_route6 %}
-              <img src="{{ route.image_route6.url }}" class="d-block mx-auto d-block" alt="{{ route.name }}">
-              {% else %}
-                <img src="{% static "img/100.jpeg" %}" class="d-block mx-auto d-block" alt="дефолтная картинка">
-              {% endif %}
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div> {% endcomment %}
-        <!-- <div class="container-fluid p-0 m-0">
-          <div class="row">
-            <div class="col">
-            </div>
-            <div class="text-little col-9">
-              <h3 class="text-third4">Ауфзес — маленький городок в Баварии, в знаменитой области Франкония, которая славится своими красивыми пейзажами и традиционной культурой. Это идеальное место для тех, кто хочет насладиться тихой и спокойной атмосферой, насыщенной историей и красивыми видами. Имеется исторический замок Ауфзес, построенный в 14 веке</h3>
-            </div>
-            <div class="col">
-            </div>
-          </div>
-        </div> -->
       </section>
       <div class="line" style="border-bottom: solid 5px #8e4c0a;"></div>
 {% endblock content %}

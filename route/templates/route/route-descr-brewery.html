@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-      <section class="brewery" id="brewery">
+      <section class="breweries">
         <div class="breadcrumblittle">
           <div class="container-fluid">
             <div class="row">
@@ -25,7 +25,7 @@
                         </button>
                       </h2>
                       <div id="flush-collapseOne" class="accordion-collapse text-center collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body"><p class="col-12 text-center"> <span>Адрес пивоварни:</span> <a href="https://maps.app.goo.gl/PMqvGEzBtSMAWh4d9">Im Tal 70B, 91347 Aufseß, Германия</a><a href="./route-description.html">  (показать на карте)</a>. <span>Часы работы:</span> с 07:00 до 15:30; Сб.Вск- выходной.  <span>Сайт пивоварни:</span> <a href="https://aufsesser.de/"> https://aufsesser.de/</a><br> Старинный  пивоваренный завод с 1886 года. Выпускает традиционные для франконии сорта пива: hell, kellerbier (zwickl), dunkel, hefe weizen, bock. Есть ресторан франконской кухни (работает до вечера), известный своим жареным мясом по старинным рецептам и свежей форелью, а также тенистый пивной сад. При пивоварне есть гостиница, можно заказать туры на производство. Для коллекционеров продаются сувенирные стаканы</p></div>
+                        <div class="accordion-body"><p class="col-12 text-center"><big>Адрес пивоварни:</big> <em>{{brewery.address}}</em> <a href="{{brewery.map_link}}" target="_ blank">(показать на карте)</a>. <big>Часы работы:</big>  <em>{{brewery.working_hours}}</em> &nbsp;<big>Сайт пивоварни:</big> <a href="{{brewery.sait_link}}" target="_ blank"> {{brewery.sait_link}}</a><br> {{brewery.descript_full | safe}}</p></div>
                       </div>
                     </div>
                   </div>

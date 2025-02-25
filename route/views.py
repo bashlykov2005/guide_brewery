@@ -12,8 +12,8 @@ def route_index(request, route_slug):
     route = Route.objects.get(slug=route_slug)
 
     route_dark = range(1, 6)
-    route_light = range(6, 62)
-    route_disabled = range(62, 100)
+    route_light = range(6, 70)
+    route_disabled = range(70, 100)
 
     context = {
         "title": "Маршрут",

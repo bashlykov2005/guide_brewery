@@ -6,7 +6,7 @@
       <div class="container-fluid center p-0 m-0">
         <div class="row center">
           <div class="col-12">
-              <h1 class="text-center text-main"><img class="svg" src="img/svg/бариноф левый.svg" alt="узор" width="60" height="40">  О сайте  <img class="svg" src="img/svg/бариноф правый.svg" alt="узор" width="60" height="40"></h1>
+              <h1 class="text-center text-uppercase color1 text-second"><img class="svg" src="{% static "img/svg/бариноф левый.svg" %}" alt="узор" width="60" height="40">  О сайте  <img class="svg" src="{% static "img/svg/бариноф правый.svg" %}" alt="узор" width="60" height="40"></h1>
           </div>
         </div>
       </div>
@@ -20,7 +20,29 @@
       <div class="container-fluid center p-0 m-0">
         <div class="row center">
           <div class="col-12">
-            <p> Сайт предназначен для.... На сайте в свободном доступе представлена подробная информация о 5 пивных маршрутах (с указанием информации о транспорте, основных городах и достопримечательностях,  часах работы пивоварен и ассортименте пива, схем маршрутов и многое другое), а также представлена общая информация о более чем 60 пивных маршрутах по городам и регионам Германии, Европы и России. Для более подробной и детальной информации об этих маршрутах необходимо написать в личном сообщении автору сайта. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil dolorum sunt incidunt iure eligendi. Quae sequi ducimus facere dicta voluptate sapiente maiores corporis sint voluptatem repudiandae ipsum, id, perspiciatis blanditiis cupiditate, et ut impedit nam tempora inventore at exercitationem rem esse necessitatibus! Aspernatur, accusamus eligendi? Voluptates vitae necessitatibus, doloremque in dolorem dolor adipisci, voluptatum vero placeat autem nisi nulla aliquam? Error cum dolorem accusamus dicta voluptatem explicabo facere officia labore quas aliquid, eaque repudiandae corporis reiciendis nostrum corrupti. Esse tenetur voluptatibus animi temporibus a amet, aut tempora quisquam, porro expedita facilis quo enim omnis distinctio corporis rerum aspernatur eos vitae!</p>
+            <div class="route-desc">
+            <figure class="leftfoto"> <img id="myImg" src="{% static "img/Route1.png" %}" alt="Схемы маршрутов по пивоварням" width="500" height="350" class="leftfoto">
+            <figcaption>Схемы маршрутов по пивоварням </figcaption>
+                </figure>
+            <div id="myModal" class="modal">
+              <span class="close">&#10006;</span>
+              <img class="modal-content" id="img01">
+              <div id="caption"></div>
+            </div>
+            Сайт-путеводитель предназначен для людей, интересующихся историей появления пивоварен в городах Европы, разнообразием сортов и видов пива, а также процессами их производства и культурой потребления пива. Для людей, которым интересны новые нетрадиционные туристические маршруты, позволяющие познакомиться с обычаями и особенностями страны, через посещение традиционных исторических пивных заведений и небольших ресторанов при старых пивоварнях, где здание пивоварни зачастую само является историческим памятником. Информация представленная на сайте <b>—</b> это не призыв к популяризации потребления пива! Это путеводитель по традиционным регионам Европы, где потребление местными жителями пива является частью их культуры и быта. Путешествуя по традиционным пивоварням и пивным заведениям в таких регионах, можно увидеть людей, носящих в совершенно обычные дни их национальную одежду, познакомится с местной кухней,<a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">национальным фольклором</a><div class="hover-image2"><img src="{% static "img/Route3.jpg" %}" alt="национальным фольклором"></div> и колоритом. <br>
+            Сайт представляет информацию о готовых спланированных пешеходных маршрутах по историческим пивоварням и пивным заведениям Германии, а также стран Европы с богатыми пивными традициями. Первоначально на сайте планировалось размещать маршруты исключительно по не крупным аутентичным историческим пивоварням, возрастом не менее 50-70 лет. И поэтому сайт имеет соответствующее название, и часть маршрутов составлена именно по таким пивоварням. Но в последствии, за включение пивоварни в маршрут принимались следующие основные критерии: наличие на пивоварне<a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">ресторана, магазина или top-room</a><div class="hover-image2"><img src="{% static "img/Route4.jpg" %}" alt="ресторана, магазина или top-room"></div>- для дегустации производимого пива, а также наличие сувенирного магазина для возможности приобрести сувенирный стакан или другую фирменную атрибутику. Поэтому основная часть представленных на сайте маршрутов включает не только старые пивоварни, с небольшим объемом производства пива, но и молодые независимые крафтовые пивоварни, а также крупные пивоварни и пивоваренные группы, на которых есть возможность продегустировать выпускаемое пиво и приобрести фирменный стакан. Для некоторых крупных городов, где количество пивоварен и других пивных заведений велико, может быть несколько разных маршрутов: по районам нахождения пивоварен или по другим признакам (по стилям выпускаемого пива или по культовости заведения и т.д.)<br>
+            <figure class="rightfoto">
+                <img id="myImg1" src="{% static "img/Route2.jpg" %}" alt="Пивоварни Франконии" width="500" height="350" class="leftfoto">
+                <figcaption>Пивоварни Франконии </figcaption>
+            </figure>
+            <div id="myModal1" class="modal1">
+              <span class="close1">&#10006;</span>
+              <img class="modal-content1" id="img02">
+              <div id="caption1"></div>
+            </div>
+            Большее количество маршрутов представлено по городам и округам Германии, в частности по исторической области Франкония. Во Франконии сосредоточено около трёх сотен пивоварен, большинство из которых небольшие, семейные предприятия, передаваемые по наследству из поколения в поколение, сохраняющие старинные ремесленные традиции пивоварения. Свою продукцию они обычно реализуют в своих же пивных ресторанах и биргартенах при пивоварнях, а некоторые настолько малы, что даже не разливают пиво в бутылки. Плотность пивоварен на единицу площади территории или на 100 тысяч населения во Франконии самая высокая в мире. <br>
+            Маршруты составлены с учетом их прохождения за 1 день, и включают для посещения не менее 4 и не более 7 – 10 пивоварен или других пивных заведений за 1 пеший поход. Чтобы добраться до удаленных пивоварен (или если часть маршрута можно преодолеть на<a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">общественном транспорте</a><div class="hover-image2"><img src="{% static "img/Route6.jpg" %}" alt="общественном транспорте"></div>) предлагается информация о времени отправления, количестве остановок и номерах городских автобусов или электричек. Для каждого маршрута представлена информация о городе, где лучше остановится, снять гостиницу и начать маршрут, рассказывается основная информация о пивоварнях на трассе маршрута, времени их работы и выходных днях, лучшее время для посещения и конечно представлена схема и подробнейшая информация о направлении движения с фотоприложением поворотных точек и знаковых мест по курсу пешеходного маршрута. <br>
+            На сайте в открытом - свободном доступе представлена подробнейшая информация только о нескольких пивных маршрутах (с указанием схемы пешего маршрута по пивоварням, фотоотчётом и описанием трассы, информации о необходимых передвижениях на транспорте, часах работы пивоварен и ассортименте пива, и многое другое). По остальным более чем 70 маршрутам маршрутам<a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">(в том числе и по России),</a><div class="hover-image2"><img src="{% static "img/Route5.jpg" %}" alt="(в том числе и по России)"></div>представлена общая информация, дающая представление о регионе или городе нахождения пивоваренного маршрута. Для получения более подробной и детальной информации об этих маршрутах необходимо написать в личном сообщении автору сайта. На сайте переодически происходит добавление новых маршрутов, в том числе и в открытом доступе. В частности планируется пополнение новых маршрутов по России, а также Англии и т.д.<br></div>
           </div>
         </div>
       </div>
@@ -30,196 +52,38 @@
       <div class="container-fluid center p-0 m-0">
         <div class="row center">
           <div class="col-12">
-            <h1 class="text-center text-main"><img class="svg" src="img/svg/бариноф левый.svg" alt="узор" width="60" height="40">  О себе  <img class="svg" src="img/svg/бариноф правый.svg" alt="узор" width="60" height="40"></h1>
+            <h1 class="text-center text-uppercase color1 text-second"><img class="svg" src="{% static "img/svg/бариноф левый.svg" %}" alt="узор" width="60" height="40">  О себе  <img class="svg" src="{% static "img/svg/бариноф правый.svg" %}" alt="узор" width="60" height="40"></h1>
           </div>
         </div>
       </div>
-      <div class="bigscreen">
-        <div class="container-fluid p-0 m-0">
-          <div class="row">
-            <div class="col-2">
+      <div class="container-fluid center p-0 m-0">
+        <div class="row center">
+          <div class="col-12">
+            <div class="route-desc">
+            <figure class="leftfoto"> <img id="myImg2" src="{% static "img/Glass2.png" %}" alt="Коллекция пивных бокаллов" width="500" height="350" class="leftfoto">
+            <figcaption>Коллекция пивных бокаллов</figcaption>
+                </figure>
+            <div id="myModal2" class="modal2">
+              <span class="close2">&#10006;</span>
+              <img class="modal-content2" id="img03">
+              <div id="caption2"></div>
             </div>
-            <div class="col-3">
-              <div id="carouselExample" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2600">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="img/main-carousel/1.jpg" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/main-carousel/2.jpg" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/main-carousel/3.jpg" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/main-carousel/4.jpg" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/main-carousel/5.jpg" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/main-carousel/6.jpg" class="d-block w-100" alt="...">
-                  </div>
-                </div>
-              </div>
+            Идея сделать сайт-путеводитель по пивоварням возникла давно. Путешествуя по Германии и другим странам Европы, всегда старался включить в туристический маршрут (план путешествия) посещение местных исторических пивоварен и культовых пивных заведений. Особенно, если это было не разрекламированная туристическая ресторация! В таких местах будто бы переносишься во времени: <br>
+            - во Франконии, в деревенских тавернах при пивоварнях, многие местные в самый обычный день одеты в <a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">национальные костюмы,</a><div class="hover-image2"><img src="{% static "img/about1.jpg" %}" alt="национальные костюмы"></div> и не в те, которые мы видим на праздниках - яркие и красочные, а в обыкновенные – практичные и будничные; <br>
+            - в городе Байрот в Баварии, местные завсегдатаи, заходя в питейное заведение здороваются со всеми кто там находится, включая незнакомых им людей и туристов, постукивая по каждому столу с посетителями и барной стойке - костяшками пальцев в знак приветствия; <br>
+            - в Праге, в знаменитой пивной <a href="#" style="color: #d2cac2; padding: 8px;" class="hover-title">"U Сerneho vola"</a><div class="hover-image2"><img src="{% static "img/about2.jpg" %}" alt="U Černého vola"></div>(У чёрного вола), если прийти в неё в будни к открытию, то можно увидеть, что с утра местные жители как обычно заходят в неё выпить кружечку темного пива "Kozel" и почитать свежую прессу, которую хозяин заведения заранее приготовил. <br>
+            Атмосфера в таких местах сильно отличается от стандартных современных городских баров с коммерческими лагерами в ассортименте. Но каждый раз планируя посещение таких пивоварен сталкиваешься с целым рядом трудностей: это проблемы с логистикой и нужным общественным транспортом, чтобы до них добраться; совпадением времени работы всех пивоварен на маршруте в назначенный день – зависящим от дня недели или времени года и т.д. В интернете отсутствуют соответствующие сайты и ресурсы, помогающие спланировать такой маршрут. <br>
+            <figure class="rightfoto">
+              <img id="myImg3" src="{% static "img/Glass1.png" %}" alt="Коллекция пивных бокаллов" width="500" height="350" class="leftfoto">
+              <figcaption>Коллекция пивных бокаллов</figcaption>
+            </figure>
+            <div id="myModal3" class="modal3">
+              <span class="close3">&#10006;</span>
+              <img class="modal-content3" id="img04">
+              <div id="caption3"></div>
             </div>
-            <div class="col-2">
-            </div>
-            <div class="col-3">
-              <div id="carouselExample2" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3250">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="img/main-carousel2/1.png" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/main-carousel2/2.JPG" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/main-carousel2/3.jpg" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/main-carousel2/4.jpg" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/main-carousel2/5.jpg" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/main-carousel2/6.jpg" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/main-carousel2/7.JPG" class="d-block w-100" alt="...">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-2">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="mediumscreen">
-        <div class="container-fluid p-0 m-0">
-          <div class="row">
-            <div class="col">
-            </div>
-            <div class="col-4">
-              <div id="carouselExample3" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2600">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="img/main-carousel/1.jpg" class="d-block" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/main-carousel/2.jpg" class="d-block" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/main-carousel/3.jpg" class="d-block" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/main-carousel/4.jpg" class="d-block" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/main-carousel/5.jpg" class="d-block" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/main-carousel/6.jpg" class="d-block" alt="...">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-            </div>
-            <div class="col-4">
-              <div id="carouselExample4" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3250">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="img/main-carousel2/1.png" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/main-carousel2/2.JPG" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/main-carousel2/3.jpg" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/main-carousel2/4.jpg" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/main-carousel2/5.jpg" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/main-carousel2/6.jpg" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/main-carousel2/7.JPG" class="d-block w-100" alt="...">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="littlescreen">
-        <div class="container-fluid p-0 m-0">
-          <div class="row">
-            <div class="col">
-            </div>
-            <div class="col-5">
-              <div id="carouselExample3" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2600">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="img/main-carousel/1.jpg" class="d-block" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/main-carousel/2.jpg" class="d-block" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/main-carousel/3.jpg" class="d-block" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/main-carousel/4.jpg" class="d-block" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/main-carousel/5.jpg" class="d-block" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/main-carousel/6.jpg" class="d-block" alt="...">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-            </div>
-            <div class="col-5">
-              <div id="carouselExample4" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3250">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="img/main-carousel2/1.png" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/main-carousel2/2.JPG" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/main-carousel2/3.jpg" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/main-carousel2/4.jpg" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/main-carousel2/5.jpg" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/main-carousel2/6.jpg" class="d-block w-100" alt="...">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="img/main-carousel2/7.JPG" class="d-block w-100" alt="...">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-            </div>
+            За время путешествий по сотням таких пивоварен, накопилось много полезного материала (расписание транспорта, оптимальные маршруты и схемы движения, базовые города для остановок, наилучшее время посещения пивоварен и т.д.). Из накопленного материала получилось скомплектовать около 80 готовых маршрутов по пивоварням, в основном по Германии, а также Бельгии, Чехии, России и другим европейским странам. По мере развития сайта маршруты планируется пополнять новыми направлениями. <br>
+            Отдельно по каждой пивоварне представлена информация о наличии возможности приобрести коллекционный пивной бокал или кружку с её логотипом, а также другую сувенирную продукцию. В самом начале, планируя и совершая первые маршруты по пивоварням, цели покупать коллекционные бокалы не было. Но в последствии, идея того, что подтверждением посещения пивоварни, особенно старинной и удаленной (находящейся в сельской местности), будет являться бокал с её названием – породило главное хобби: коллекционирование пивных бокалов, а также сопутствующих интересных вещей, связанных с пивоварнями. Сейчас в коллекции накопилось около 400 бокалов и кружек, большая часть из Германии, а также от других крупных наций пивоваров, и не только (часть из низ представлена на фото), организованна экспозиция с ними, планируются новые маршруты и новые приобретения для коллекции.</div>
           </div>
         </div>
       </div>
@@ -229,7 +93,7 @@
       <div class="container-fluid center p-0 m-0">
         <div class="row center">
           <div class="col-12">
-              <h1 class="text-center text-main"><img class="svg" src="img/svg/свиток.svg" alt="узор" width="45" height="40">  Написать нам  <img class="svg" src="img/svg/свиток.svg" alt="узор" width="45" height="40"></h1>
+              <h1 class="text-center text-uppercase color1 text-second"><img class="svg" src="{% static "img/svg/свиток.svg" %}" alt="узор" width="45" height="40">  Написать нам  <img class="svg" src="{% static "img/svg/свиток.svg" %}" alt="узор" width="45" height="40"></h1>
           </div>
         </div>
       </div>

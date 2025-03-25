@@ -225,7 +225,7 @@
 
                  {% for route in routes %}
                   {% if route.id in route_dark %}
-                    <h2 class="d-inline-block route-block dark"><img class="svg" src="{% static 'img/svg/1-3.svg' %}" alt="узор" width="50" height="40"><a href="{% url "route:route_index" route.slug %}" class="route-name color1" data-bs-toggle="tooltip" data-bs-placement="top" title="{{route.id}} - {{route.link}}">{{route.name}}</a></h2>
+                    <h2 class="d-inline-block route-block dark"><img class="svg color2" src="{% static 'img/svg/1-3.svg' %}" alt="узор" width="50" height="40"><a href="{% url "route:route_index" route.slug %}" class="route-name color2" data-bs-toggle="tooltip" data-bs-placement="top" title="{{route.id}} - {{route.link}}">{{route.name}}</a></h2>
                   {% endif %}
                   {% if route.id in route_light %}
                     <h2 class="d-inline-block route-block light"><img class="svg" src="{% static 'img/svg/1-3.svg' %}" alt="узор" width="50" height="40"><a href="{% url "route:route_index" route.slug %}" class="route-name color1" data-bs-toggle="tooltip" title="{{route.id}} - {{route.link}}">{{route.name}}</a></h2>

@@ -24,7 +24,10 @@ body {
     color: #edb176;
 }
 .color2 {
-    color: #C78547;
+    color: #ce8642;
+}
+.color22 {
+    color: #bb7d44;
 }
 .color3 {
     color: #A46526;
@@ -51,6 +54,9 @@ section {
 section>#route {
     padding: 0 0 30px 0;
 }
+section>.site .about .write {
+    padding: 0 0 30px 0;
+}
 
 a {
     text-decoration: none;
@@ -58,10 +64,10 @@ a {
 }
 
 .dark a:hover {
-    color: #784919;
+    color: #905b26;
 }
 a:hover {
-    color: #C78547;
+    color: #bb7d44;
     transition: transform 5.0s ease;
 }
 /* Дезактивировали ссылки в разработке */
@@ -357,9 +363,11 @@ li>.d-inline-block {
 
 .site {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34' height='44' viewBox='0 0 34 44'%3E%3Cg fill='%23894c0f' fill-opacity='0.19'%3E%3Cpath fill-rule='evenodd' d='M1 6.2C.72 5.55.38 4.94 0 4.36v13.28c.38-.58.72-1.2 1-1.84A12.04 12.04 0 0 0 7.2 22 12.04 12.04 0 0 0 1 28.2c-.28-.65-.62-1.26-1-1.84v13.28c.38-.58.72-1.2 1-1.84A12.04 12.04 0 0 0 7.2 44h21.6a12.05 12.05 0 0 0 5.2-4.36V26.36A12.05 12.05 0 0 0 28.8 22a12.05 12.05 0 0 0 5.2-4.36V4.36A12.05 12.05 0 0 0 28.8 0H7.2A12.04 12.04 0 0 0 1 6.2zM17.36 23H12a10 10 0 1 0 0 20h5.36a11.99 11.99 0 0 1 0-20zm1.28-2H24a10 10 0 1 0 0-20h-5.36a11.99 11.99 0 0 1 0 20zM12 1a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 14a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-3.46-2a2 2 0 1 0-3.47 2 2 2 0 0 0 3.47-2zm0-4a2 2 0 1 0-3.47-2 2 2 0 0 0 3.47 2zM12 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3.46 2a2 2 0 1 0 3.47-2 2 2 0 0 0-3.47 2zm0 4a2 2 0 1 0 3.47 2 2 2 0 0 0-3.47-2zM24 43a10 10 0 1 0 0-20 10 10 0 0 0 0 20zm0-14a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3.46 2a2 2 0 1 0 3.47-2 2 2 0 0 0-3.47 2zm0 4a2 2 0 1 0 3.47 2 2 2 0 0 0-3.47-2zM24 37a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-3.46-2a2 2 0 1 0-3.47 2 2 2 0 0 0 3.47-2zm0-4a2 2 0 1 0-3.47-2 2 2 0 0 0 3.47 2z'/%3E%3C/g%3E%3C/svg%3E");
+    height: auto;
 }
 .about {
     background-image: url("data:image/svg+xml,%3Csvg width='60' height='48' viewBox='0 0 60 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='Page-1' fill='none' fill-rule='evenodd'%3E%3Cg id='fancy-rectangles' fill='%23894c0f' fill-opacity='0.19'%3E%3Cpath d='M6 12h6v12H6V12zm12 0h6v12h-6V12zm6-12h6v12h-6V0zM12 0h6v12h-6V0zm0 24h6v12h-6V24zM0 0h6v12H0V0zm6 36h6v12H6V36zm12 0h6v12h-6V36zm12-12h6v12h-6V24zM42 0h6v12h-6V0zm-6 12h6v12h-6V12zm12 0h6v12h-6V12zM36 36h6v12h-6V36zm12 0h6v12h-6V36zm-6-12h6v12h-6V24zm12 0h6v12h-6V24z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    height: auto;
 }
 .write {
     background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle%3Ehoundstooth%3C/title%3E%3Cg fill='%23894c0f' fill-opacity='0.19' fill-rule='evenodd'%3E%3Cpath d='M0 18h6l6-6v6h6l-6 6H0M24 18v6h-6M24 0l-6 6h-6l6-6M12 0v6L0 18v-6l6-6H0V0'/%3E%3C/g%3E%3C/svg%3E");
@@ -1097,8 +1105,8 @@ body:not(.mobile) .hover-title:hover+.hover-image2 {
 .modal-content {
     margin: auto;
     display: block;
-    width: 85%;
-    max-width: 950px;
+    width: 90%;
+    max-width: 1200px;
 }
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
@@ -1201,7 +1209,7 @@ body:not(.mobile) .hover-title:hover+.hover-image2 {
     margin: auto;
     display: block;
     width: 85%;
-    max-width: 950px;
+    max-width: 1000px;
 }
 
 /* Caption of Modal Image (Image Text) - Same Width as the Image */
@@ -1362,6 +1370,108 @@ body:not(.mobile) .hover-title:hover+.hover-image2 {
 
 .close2:hover,
 .close2:focus {
+    color: #bbb;
+    text-decoration: none !important;
+    cursor: pointer;
+}
+/* увеличение изобоажения 3 в описании маршрута*/
+#myImg3 {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg3:hover {
+    opacity: 0.7;
+}
+
+/* The Modal (background) */
+.modal3 {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 90px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content3 {
+    margin: auto;
+    display: block;
+    width: 85%;
+    max-width: 950px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption3 {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 850px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content3,
+#caption3 {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {
+        -webkit-transform: scale(0)
+    }
+
+    to {
+        -webkit-transform: scale(1)
+    }
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+/* The Close Button */
+.close3 {
+    position: absolute;
+    top: 50px;
+    right: 25px;
+    color: #f1f1f1;
+    font-size: 50px;
+    font-weight: bold;
+    text-decoration: none !important;
+    transition: 0.3s;
+}
+
+.close3:hover,
+.close3:focus {
     color: #bbb;
     text-decoration: none !important;
     cursor: pointer;

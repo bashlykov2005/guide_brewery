@@ -9,6 +9,8 @@ from route.models import Route
 
 def route_index(request, route_slug):
 
+    routes = Route.objects.all()
+
     route = Route.objects.get(slug=route_slug)
 
     route_dark = range(1, 6)
@@ -17,6 +19,7 @@ def route_index(request, route_slug):
 
     context = {
         "title": "Маршрут",
+        "routes": routes,
         "route": route,
         "route_dark": route_dark,
         "route_light": route_light,

@@ -8,6 +8,9 @@ def uuid_url():
 
 
 class Route(models.Model):
+
+    """Модель для создания маршрутов"""
+
     class Meta:
         db_table = "routes"
         verbose_name = "Маршруты"
@@ -135,7 +138,7 @@ class Route(models.Model):
         upload_to="route_images/city", blank=True, null=True, default="100.jpeg"
     )
     def get_absolute_url(self):
-        return reverse("route", kwargs={"route_slug": self.slug})
+        return reverse("route:route_index", kwargs={"route_slug": self.slug})
 
     def __repr__(self):
         return f"<{self.name}>"

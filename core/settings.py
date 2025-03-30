@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "route",
     "country",
     "brewery",
+    "feedback",
 ]
 
 MIDDLEWARE = [
@@ -133,7 +134,6 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
@@ -144,3 +144,18 @@ MEDIA_ROOT = BASE_DIR / "media"
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 DATA_UPLOAD_MAX_NUMBER_FIELDS = None
+
+# Email settings
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = "587"
+EMAIL_USE_TLS = True
+
+EMAIL_HOST_USER = "bashlykov2005@gmail.com"
+EMAIL_HOST_PASSWORD = "zhmg kgcb putd rtpa"
+
+EMAIL_SERVER = EMAIL_HOST_USER
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+EMAIL_ADMIN = ["bashlykov2005@mail.ru"]

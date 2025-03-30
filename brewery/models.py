@@ -6,6 +6,9 @@ from country.models import Сountry
 from route.models import Route
 
 class Brewery(models.Model):
+
+    """Модель для создания пивоварен"""
+
     class Meta:
         db_table = "breweries"
         verbose_name = "Пивоварни"

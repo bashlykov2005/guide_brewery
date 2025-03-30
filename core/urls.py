@@ -28,6 +28,7 @@ urlpatterns = [
     path("route/", include("route.urls", namespace="route")),
     path("brewery/", include("brewery.urls", namespace="brewery")),
     path("country/", include("country.urls", namespace="country")),
+    path("feedback/", include("feedback.urls", namespace="feedback")),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += staticfiles_urlpatterns()
 

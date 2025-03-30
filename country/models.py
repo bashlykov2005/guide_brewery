@@ -5,6 +5,9 @@ from django.core.validators import FileExtensionValidator
 from route.models import Route
 
 class Сountry(models.Model):
+
+    """Модель для создания стран"""
+
     class Meta:
         db_table = "countries"
         verbose_name = "Страны"

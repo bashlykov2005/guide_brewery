@@ -46,16 +46,16 @@ Frontend: <u>**HTML5, CSS3, Bootstrap 5, JavaScript**</u>
 Дополнительно: <u>**Django Debug Toolbar**</u>  
 
 ### 📂 Структура проекта  
-guide_brewery
-├─ core
-├─ brewery
-├─ country
-├─ feedback
-├─ main
-├─ route
-├─ media
-├─ static
-├─ templates
-├─ data.json
-├─ manage.py
+guide_brewery  
+├─ core  
+├─ brewery  
+├─ country  
+├─ feedback  
+├─ main  
+├─ route  
+├─ media  
+├─ static  
+├─ templates  
+├─ data.json  
+├─ manage.py  
 └─ requirements.txt

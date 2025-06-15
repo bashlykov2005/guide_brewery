@@ -87,7 +87,7 @@
 - Frontend:  
 <u>**HTML5**</u>, <u>**CSS3**</u>, <u>**Bootstrap 5**</u>, <u>**JavaScript**</u>  
 - Инфраструктура:  
-<u>**Nginx**</u>, <u>**Let’s Encrypt (HTTPS)**</u> 
+<u>**Nginx + Gunicorn**</u>, <u>**Let’s Encrypt (HTTPS)**</u> 
 - Инструменты:  
 <u>**Django Debug Toolbar**</u>  
 

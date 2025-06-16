@@ -1,0 +1,273 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block content %}
+      <section class="route scroll-margin" id="route">
+        <div class="container-fluid center">
+          <div class="row center">
+            <nav class="breadcrumb-arrow" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="{% url "main:index" %}">Главная</a></li>
+                  <li class="breadcrumb-item"><a href="{% url "main:index" %}#country">Страны</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Маршруты по странам</li>
+              </ol>
+            </nav>
+            <div class="col-12 center">
+              <div class="largescreen_sity">
+                <h1 class="text-center text-second2">
+                  {% if "Германия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/brandenburg_gate.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Бельгия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/manneken_pis.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Австрия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/mountain1.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Чехия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/charles_bridge.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Россия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/kremlin2.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Испания" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/sagrada_familia.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Голландия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/windmill.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Хорватия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/croatian.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Словакия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/download.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Италия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/coliseum.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Польша" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/poland.svg'%}" alt="узор">
+                  {% comment %} <img class="svg7" src="{% static 'img/svg/символ/poland1.svg'%}" alt="узор"> {% endcomment %}
+                  {% endif %}
+                  {% if "Англия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/double_bus.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Шотландия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/bagpipes2.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Ирландия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/scotland2.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Венгрия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/hungary2.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Дания" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/viking.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Швеция" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/herring.svg'%}" alt="узор">
+                  {% endif %}
+                    {{ country }} - Пивоваренные маршруты
+                  {% if "Германия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/brandenburg_gate.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Бельгия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/manneken_pis.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Австрия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/mountain1.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Чехия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/charles_bridge.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Россия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/kremlin2.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Испания" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/sagrada_familia.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Голландия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/windmill.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Хорватия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/croatian.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Словакия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/download.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Италия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/coliseum.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Польша" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/poland.svg'%}" alt="узор">
+                  {% comment %} <img class="svg7" src="{% static 'img/svg/символ/poland1.svg'%}" alt="узор"> {% endcomment %}
+                  {% endif %}
+                  {% if "Англия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/double_bus.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Шотландия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/bagpipes2.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Ирландия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/scotland2.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Венгрия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/hungary2.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Дания" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/viking.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Швеция" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/herring.svg'%}" alt="узор">
+                  {% endif %}
+                </h1>
+              </div>
+              <div class="smallcreen_sity">
+                <h1 class="text-center text-second2">
+                  {% if "Германия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/brandenburg_gate.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Бельгия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/manneken_pis.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Австрия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/mountain1.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Чехия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/charles_bridge.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Россия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/kremlin2.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Испания" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/sagrada_familia.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Голландия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/windmill.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Хорватия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/croatian.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Словакия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/download.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Италия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/coliseum.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Польша" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/poland.svg'%}" alt="узор">
+                  {% comment %} <img class="svg7" src="{% static 'img/svg/символ/poland1.svg'%}" alt="узор"> {% endcomment %}
+                  {% endif %}
+                  {% if "Англия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/double_bus.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Шотландия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/bagpipes2.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Ирландия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/scotland2.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Венгрия" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/hungary2.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Дания" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/viking.svg'%}" alt="узор">
+                  {% endif %}
+                  {% if "Швеция" in country.name %}
+                  <img class="svg8" src="{% static 'img/svg/символ/herring.svg'%}" alt="узор">
+                  {% endif %}
+                    {{ country }} - Пивоваренные маршруты
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12">
+              <ol class="breadcrumb">
+                {% for route in routes %}
+                  {% if "СТРАНИЦА В РАЗРАБОТКЕ" in route.link %}
+                    <h2 class="d-inline-block route-block">
+                      <span tabindex="0" data-bs-toggle="tooltip" title="{{route.sort_order}} - {{route.link}}"><img class="svg" src="{% static 'img/svg/1-3.svg' %}" alt="узор" width="50" height="40">
+                        <a href="#" class="route-name color1 disabled">
+                          {{route.name}}
+                        </a>
+                      </span>
+                    </h2>
+
+                  {% elif route.route_desc %}
+                    <h2 class="d-inline-block route-block dark"><img class="svg" src="{% static 'img/svg/1-3.svg' %}" alt="узор" width="50" height="40"><a href="{% url "route:route_index" route.slug %}" class="route-name color2" data-bs-toggle="tooltip" data-bs-placement="top" title="{{route.sort_order}} - {{route.link}}">{{route.name}}</a></h2>
+
+                  {% else %}
+                    <h2 class="d-inline-block route-block light"><img class="svg" src="{% static 'img/svg/1-3.svg' %}" alt="узор" width="50" height="40"><a href="{% url "route:route_index" route.slug %}" class="route-name color1" data-bs-toggle="tooltip" title="{{route.sort_order}} - {{route.link}}">{{route.name}}</a></h2>
+                  {% endif %}
+                {% endfor %}
+            </div>
+          </div>
+        </div>
+          <!-- Пагинация -->
+
+        {% if routes.paginator.num_pages > 1 or routes.paginator.count >= 20 %}
+          <nav aria-label="Page navigation example">
+            <ul class="pagination pagination-sm justify-content-center mt-5 mb-0 pb-0">
+              <div style="text-shadow: none; border-width: 0; border-radius: 20%; border-color: #894c0f;" class="d-flex">
+                {% if not routes.has_previous %}
+                  <li class="page-item disabled">
+                      <a style="background: rgb(207, 190, 190); border: 2px solid #C78547;" class="page-link color3"
+                      href="{% if routes.has_previous %}?page={{ routes.previous_page_number }}#route
+                      {% else %}
+                      #
+                      {% endif %}">Предыдущая</a>
+                  </li>
+                {% else %}
+                  <li class="page-item">
+                    <a style="border: 2px solid #C78547; background: #f0c396; color: #A46526;" onpointerenter="this.setAttribute('style', 'color: #894c0f; background: #d2a276')"
+                    onpointerleave="this.setAttribute('style', 'border: 2px solid #C78547; color: #A46526; background: #f0c396')" class="page-link"
+                    href="{% if routes.has_previous %}?page={{ routes.previous_page_number }}#route
+                      {% else %}
+                      #
+                      {% endif %}">Предыдущая</a>
+                  </li>
+                {% endif %}
+
+                {% for page in routes.paginator.page_range %}
+                  {% if page >= routes.number|add:-2 and page <= routes.number|add:2 %}
+                    {% if routes.number == page %}
+                      <li class="page-item active"><a style="background: #C78547; border: 2px solid #C78547;" class="page-link"
+                        href="?page={{ page }}#route">{{ page }}</a>
+                      </li>
+                    {% else %}
+                      <li class="page-item"><a style="border: 2px solid #C78547; background: #FFE5CC; color: #A46526;" onpointerenter="this.setAttribute('style', 'color: #894c0f; background: #d2a276')"
+                        onpointerleave="this.setAttribute('style', 'border: 2px solid #C78547; color: #A46526; background: #FFE5CC')" class="page-link"
+                        href="?page={{ page }}#route">{{ page }}</a>
+                      </li>
+                    {% endif %}
+                  {% endif %}
+                {% endfor %}
+
+                {% if not routes.has_next %}
+                  <li class="page-item disabled">
+                      <a style="background: rgb(207, 190, 190); border: 2px solid #C78547;" class="page-link color3"
+                      href="{% if routes.has_next %}?page={{ routes.next_page_number }}#route
+                      {% else %}
+                      #
+                      {% endif %}">Следующая</a>
+                  </li>
+                {% else %}
+                  <li class="page-item">
+                    <a style="border: 2px solid #C78547; background: #f0c396; color: #A46526;" onpointerenter="this.setAttribute('style', 'color: #894c0f; background: #d2a276')"
+                    onpointerleave="this.setAttribute('style', 'border: 2px solid #C78547; color: #A46526; background: #f0c396')" class="page-link"
+                    href="{% if routes.has_next %}?page={{ routes.next_page_number }}#route
+                      {% else %}
+                      #
+                      {% endif %}">Следующая</a>
+                  </li>
+                {% endif %}
+              </div>
+            </ul>
+          </nav>
+        {% endif %}
+      </section>
+      <div class="line" style="border-bottom: solid 5px #8e4c0a;"></div>
+{% endblock content %}

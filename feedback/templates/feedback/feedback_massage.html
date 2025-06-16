@@ -1,0 +1,22 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="write1">
+  <div style="max-width: 100%; min-height: 50px;"></div>
+  <div class="mx-auto col-6 col-sm-6 col-md-8 col-lg-8 col-xl-6 w-50 rounded-sm" style="background: #edb176; border-radius: 10px;">
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li class="{{ message.tags }}"><i class="icon-{{ message.tags }}"></i> {{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <div class="d-grid gap-2 col-6 mx-auto">
+        {% comment %} <button type="button" class="button-input my-3" onclick="history.go(-2)">Назад</button> {% endcomment %}
+        <a href="{% url 'route:route_index' route_slug=request.session.last_route_slug %}" class="button-input my-3 text-center">Назад к маршруту</a>
+    </div>
+  </div>
+  </div>
+</section>
+{% endblock %}

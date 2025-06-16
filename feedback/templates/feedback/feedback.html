@@ -1,0 +1,66 @@
+
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block content %}
+    <section class="write" id="write" style="height: 850px;">
+      <div class="card mx-auto border-0 col-6 col-sm-6 col-md-8 col-lg-8 col-xl-6 w-50" style="background: #edb176;">
+        <div class="card-body" style="color: #955515; text-shadow: none; font-weight: 500; font-size: 16px;">
+            <div class="card-title">
+                <h4 style="color: #855526;">Контактная форма</h4>
+                <p>Пивоваренный маршрут находится в ограниченном доступе. Для получения детальной информации по интересующему маршруту, отправьте сообщение с его названием и другой нужной информацией администратору сайта.</p>
+            </div>
+            <form method="post" action="{% url 'feedback:feedbackcreateview' %}">
+                {% csrf_token %}
+
+                <!-- Рендерим полей, кроме чекбокса и капчи -->
+                {% for field in form %}
+                    {% if field.name != 'captcha' and field.name != 'agree_to_terms' %}
+                        <div class="mb-3">
+                            {{ field.label_tag }}
+                            {{ field }}
+                            {% if field.help_text %}
+                                <small class="form-text text-muted">{{ field.help_text }}</small>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                {% endfor %}
+                                <!-- Капча с обработкой ошибок -->
+                <div class="mb-3">
+                    <label for="{{ form.captcha.id_for_label }}" class="form-label1">
+                        {{ form.captcha.label }}
+                    </label>
+                    {{ form.captcha }}
+                    {% if form.captcha.errors %}
+                        <div class="alert alert-danger mt-1">
+                            {% for error in form.captcha.errors %}
+                                {{ error }}
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                    {% comment %} <small class="form-text text-muted">Для обновления капчи перезагрузите страницу</small> {% endcomment %}
+                </div>
+
+                <!-- Чекбокс согласия -->
+                <div class="form-check mb-3">
+                    {{ form.agree_to_terms }}
+                    <label for="{{ form.agree_to_terms.id_for_label }}" class="form-check-label">
+                        Я согласен с<a href="{% url 'main:privacy' %}" target="_blank">политикой конфиденциальности</a>и<a href="{% url 'main:oferta' %}" target="_blank">договором-офертой</a>
+                    </label>
+                </div>
+
+                <!-- Кнопки -->
+                <div class="d-grid gap-2 d-md-block mt-2 me-2">
+                    <button type="submit" class="button-input">Отправить письмо</button>
+                    <button type="button" class="button-delete" onclick="window.history.back()">Отмена</button>
+                </div>
+            </form>
+        </div>
+      </div>
+    </section>
+{% endblock content %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <!-- Подключение шрифтовых иконок, можно получить на fontawesome.com -->
+    <script src="https://kit.fontawesome.com/fce9a50d02.js" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -149,7 +149,7 @@ DATABASES = {
 }
 
 ADMINS = [
-    ('Bashlykov A.V.', 'bashlykov2005@mail.ru'),
+    ('', ''),
 ]
 
 
@@ -211,15 +211,15 @@ EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = "587"
 EMAIL_USE_TLS = True
 
-EMAIL_HOST_USER = "bashlykov2005@gmail.com"
-EMAIL_HOST_PASSWORD = "zhmg kgcb putd rtpa"
+EMAIL_HOST_USER = ""
+EMAIL_HOST_PASSWORD = ""
 
 EMAIL_SERVER = EMAIL_HOST_USER
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-EMAIL_ADMIN = ["bashlykov2005@mail.ru"]
+EMAIL_ADMIN = [""]
 
-ADMIN_PRE_PASSWORD = "Da081111"  # для двухэтапного входа в админ-панель
+ADMIN_PRE_PASSWORD = ""  # для двухэтапного входа в админ-панель
 
 
-# RECAPTCHA_PUBLIC_KEY = "6Le62zUrAAAAAFETgxI4BSVshpVhzDFkczMUGXoI"
-# RECAPTCHA_PRIVATE_KEY = "6Le62zUrAAAAALKnkvdyMcjO44OeK0Rdzcebnuq4"
+# RECAPTCHA_PUBLIC_KEY = ""
+# RECAPTCHA_PRIVATE_KEY = ""

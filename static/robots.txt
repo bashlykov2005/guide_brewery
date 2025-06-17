@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /accounts/
+Allow: /accounts/api-token/
+Disallow: /admin/
+Disallow: /search/
+Disallow: /profile/
+Sitemap: https://guide-brewery.ru/sitemap.xml

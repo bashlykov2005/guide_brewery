@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Rubens Modern';
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src:
+        url('../rubens/Rubens_Modern.ttf') format('truetype');
+}

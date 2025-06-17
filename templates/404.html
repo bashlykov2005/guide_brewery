@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница не найдена | 404</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, -apple-system, sans-serif;
+        }
+
+        body {
+            background: #edb176;
+            color: #855526;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .error-container {
+            background: #edb176;
+            border-radius: 10px;
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 4px 15px rgba(149, 85, 21, 0.2);
+        }
+
+        .error-animation {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 30px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .error-digit {
+            position: absolute;
+            font-size: 120px;
+            font-weight: 800;
+            color: #855526;
+            opacity: 0.8;
+            transition: all 0.5s ease;
+        }
+
+        .digit-4-1 {
+            left: 0;
+            top: 0;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .digit-0 {
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            animation: pulse 2s ease infinite;
+        }
+
+        .digit-4-2 {
+            right: 0;
+            bottom: 0;
+            animation: float 3s ease-in-out infinite reverse;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #855526;
+            text-shadow: none;
+            font-weight: 500;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            color: #955515;
+            font-weight: 500;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .button-input, .button-delete {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 2px 5px rgba(133, 85, 38, 0.2);
+        }
+
+        .button-input {
+            background: #855526;
+            color: white;
+        }
+
+        .button-input:hover {
+            background: #955515;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(133, 85, 38, 0.3);
+        }
+
+        .button-delete {
+            background: transparent;
+            color: #855526;
+            border: 1px solid #855526;
+        }
+
+        .button-delete:hover {
+            background: rgba(133, 85, 38, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(133, 85, 38, 0.2);
+        }
+
+        /* Анимации */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.1); }
+        }
+
+        /* Эффект при клике на 404 */
+        .rotate-animation {
+            animation: rotate 1.5s ease;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(15deg); }
+            50% { transform: rotate(-15deg); }
+            75% { transform: rotate(5deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .error-container {
+                padding: 30px 20px;
+            }
+
+            .error-animation {
+                width: 150px;
+                height: 150px;
+            }
+
+            .error-digit {
+                font-size: 90px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .btn-container {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .button-input, .button-delete {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-animation">
+            <div class="error-digit digit-4-1">4</div>
+            <div class="error-digit digit-0">0</div>
+            <div class="error-digit digit-4-2">4</div>
+        </div>
+
+        <h1>Страница не найдена</h1>
+        <p>Запрашиваемая вами страница не существует или была перемещена. Пожалуйста, проверьте URL или вернитесь на главную страницу.</p>
+
+        <div class="btn-container">
+            <a href="/" class="button-input">На главную</a>
+        </div>
+    </div>
+
+    <script>
+        // Интерактивная анимация при клике
+        const errorAnimation = document.querySelector('.error-animation');
+
+        errorAnimation.addEventListener('click', function() {
+            this.classList.add('rotate-animation');
+
+            // Удаляем класс после завершения анимации
+            setTimeout(() => {
+                this.classList.remove('rotate-animation');
+            }, 1500);
+        });
+
+        // Дополнительный эффект для кнопок
+        const buttons = document.querySelectorAll('.button-input, .button-delete');
+
+        buttons.forEach(button => {
+            button.addEventListener('mousedown', () => {
+                button.style.transform = 'translateY(1px)';
+            });
+
+            button.addEventListener('mouseup', () => {
+                button.style.transform = 'translateY(-3px)';
+            });
+        });
+    </script>
+</body>
+</html>

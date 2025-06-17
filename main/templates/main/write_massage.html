@@ -1,0 +1,21 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="write">
+  <div style="max-width: 100%; min-height: 50px;"></div>
+  <div class="mx-auto col-6 col-sm-6 col-md-8 col-lg-8 col-xl-6 w-50 rounded-sm" style="background: #edb176; border-radius: 10px;">
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li class="{{ message.tags }}"><i class="icon-{{ message.tags }}"></i> {{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <button type="button" class="button-input my-3" onclick="location.href='/'">Назад</button>
+        </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

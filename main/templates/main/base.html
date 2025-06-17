@@ -1,0 +1,164 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="{% static 'css/ebbe.css' %}">
+    <link rel="stylesheet" href="{% static 'css/rubens.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontello.css' %}">
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/media.css' %}">
+
+    <title>{{ title }}</title>
+
+  </head>
+  <body>
+      <nav class="navbar navbar-expand-lg sticky" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{% url "main:index" %}">Главная</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Каталог
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item top-menu" href="{% url "main:index" %}#route">Маршруты</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item top-menu" href="{% url 'main:index' %}#country">Страны</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item top-menu" href="{% url 'main:index' %}#brewery">Пивоварни</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Сайт
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{% url 'main:about' %}#site">О сайте</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="{% url 'main:about' %}#about">О себе</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Информация
+                  </a>
+                  <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="{% url 'main:feedbackcreateview' %}#write">Написать нам</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="{% url 'main:oferta' %}" target="_blank">Договор-оферта</a></li>
+                      <li><a class="dropdown-item" href="{% url 'main:privacy' %}" target="_blank">Политика конфиденциальности</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="{% url 'main:admin_prelogin' %}">Войти (Админ)</a></li>
+                  </ul>
+              </li>
+              {% comment %} <li class="nav-item">
+                <a class="nav-link" href="{% url 'admin:index' %}">Войти</a>
+              </li> {% endcomment %}
+              {% comment %} <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Мой профиль
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Личный кабинет</a></li>
+                  <li><a class="dropdown-item" href="{% url 'admin:index' %}">Админ панель</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Выйти</a></li>
+                </ul>
+              </li> {% endcomment %}
+            </ul>
+            <form class="d-flex" role="search" action="{% url "main:search" %}#route" method="get">
+              <input class="form-control me-2" type="search" name="q" placeholder="Поиск" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Поиск</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+      {% block content %}{% endblock content %}
+
+          <!-- Модальное окно подтверждения возраста -->
+
+          <div class="modal-overlay" id="ageModalOverlay">
+              <div class="age-modal">
+                  <h4 style="color: #855526;">Внимание! Возрастное ограничение</h4>
+                <p>Содержимое данного сайта предназначено только<strong> для лиц старше 18 лет</strong>.
+                <br>
+                  <div class="button-group">
+                      <button class="age-button confirm-btn" onclick="handleConfirmation(true)">Да, мне есть 18</button>
+                      <button class="age-button deny-btn" onclick="handleConfirmation(false)">Нет, мне меньше 18</button>
+                  </div>
+              </div>
+          </div>
+
+          <!-- JavaScript -->
+      <script>
+                // Проверка куки при загрузке страницы
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!getCookie('ageVerified')) {
+                showModal();
+            }
+        });
+
+        // Функции для работы с куками
+        function setCookie(name, value, days) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            const expires = "expires=" + date.toUTCString();
+            document.cookie = name + "=" + value + ";" + expires + ";path=/";
+        }
+
+        function getCookie(name) {
+            const cookieName = name + "=";
+            const decodedCookie = decodeURIComponent(document.cookie);
+            const cookies = decodedCookie.split(';');
+            for(let i = 0; i < cookies.length; i++) {
+                let cookie = cookies[i];
+                while (cookie.charAt(0) === ' ') {
+                    cookie = cookie.substring(1);
+                  }
+                if (cookie.indexOf(cookieName) === 0) {
+                    return cookie.substring(cookieName.length, cookie.length);
+                }
+            }
+            return "";
+        }
+        // Обработка подтверждения
+        function handleConfirmation(confirmed) {
+            if (confirmed) {
+                setCookie('ageVerified', 'true', 5);
+                hideModal();
+            } else {
+                window.location.href = 'https://www.google.ru'; // Замените на свой URL
+            }
+        }
+        // Управление модальным окном
+        function showModal() {
+            document.getElementById('ageModalOverlay').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function hideModal() {
+            document.getElementById('ageModalOverlay').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+      </script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+      {% comment %} <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script> {% endcomment %}
+      <script type="text/javascript" src="{% static 'js/your_script.js' %}"></script>
+      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  </body>
+</html>

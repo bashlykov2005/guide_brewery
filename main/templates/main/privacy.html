@@ -1,0 +1,30 @@
+{% extends "main/base.html" %}
+
+{% block content %}
+<section class="write" id="write">
+    <div class="card mx-auto border-0 col-10 col-md-8 col-lg-8" style="background: #edb176; color: #955515;">
+        <div class="card-body" style="text-shadow: none; font-weight: 500; font-size: 16px;">
+            <h1 style="color: #855526;">ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</h1>
+
+            <h2 class="mt-4" style="color: #855526; text-shadow: none;">1. Общие положения</h2>
+            <p>1.1. Настоящая Политика определяет порядок обработки персональных данных пользователей сайта guide-brewery.ru.</p>
+
+            <h2 class="mt-4" style="color: #855526; text-shadow: none;">2. Состав персональных данных</h2>
+            <p>2.1. Мы собираем только необходимые данные: имя, электронная почта, IP-адрес.</p>
+
+            <h2 class="mt-4" style="color: #855526; text-shadow: none;">3. Цели обработки</h2>
+            <p>3.1. Обработка заказов и обратной связи.</p>
+            <p>3.2. Отправка платного контента и уведомлений.</p>
+
+            <h2 class="mt-4" style="color: #855526; text-shadow: none;">4. Защита данных</h2>
+            <p>4.1. Данные не передаются третьим лицам без согласия пользователя.</p>
+            <p>4.2. Применяются организационные и специальные (технические меры) защиты на сайте.</p>
+
+            <h2 class="mt-4" style="color: #855526; text-shadow: none;">5. Согласие на обработку</h2>
+            <p>5.1. Отправляя любую форму на сайте, вы даете согласие на обработку данных.</p>
+
+            <p class="mt-4"><strong>Дата актуальности:</strong> {% now "d.m.Y" %}</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,96 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block content %}
+    <section class="write" id="write" style="height: 780px;">
+      <div class="container-fluid center p-0 m-0">
+        <div class="row center">
+          <div class="col-12">
+              <h1 class="text-center text-uppercase color1 text-second" style="padding: 17px 0 0 0;"><img class="svg" src="{% static "img/svg/свиток.svg" %}" alt="узор" width="45" height="40">  Написать нам  <img class="svg" src="{% static "img/svg/свиток.svg" %}" alt="узор" width="45" height="40"></h1>
+          </div>
+        </div>
+      </div>
+      <div class="card mx-auto border-0 col-6 col-sm-6 col-md-8 col-lg-8 col-xl-6 w-50" style="background: #edb176;">
+        <div class="card-body" style="color: #955515; text-shadow: none; font-weight: 500; font-size: 16px;">
+            <div class="card-title" >
+                <h4 style="color: #855526;">Контактная форма</h4>
+                <p>Если у вас есть какие-то вопросы или предложения - заполните форму ниже и отправьте сообщение администратору сайта.</p>
+            </div>
+            <form method="post" action="{% url 'main:feedbackcreateview' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="d-grid gap-2 d-md-block mt-2 me-2">
+                <button type="submit" class="button-input">Отправить письмо</button>
+                <button type="button" class="button-delete" onclick="location.href='/'">Отмена</button>
+             </div>
+            </form>
+        </div>
+      </div>
+      {% comment %} <div class="container-fluid p-0 m-0">
+        <div class="row p-0 m-0">
+          <div class="col-12 p-0 m-0">
+            <!-- Контейнер выравнивает по ширине и по центру -->
+            <div class="container">
+              <!-- content содержит содержимое формы -->
+              <div class="content">
+                <!-- Левая колонка: адрес, телефоны, email. Можете добавить свое -->
+                <!-- <div class="left-side">
+                  <div class="address details">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="topic">Адрес</div>
+                    <div class="text-one">г. Москва</div>
+                    <div class="text-two">Пресненская наб., 8 стр. 1</div>
+                  </div>
+                  <div class="phone details">
+                    <i class="fas fa-phone-alt"></i>
+                    <div class="topic">Телефон</div>
+                    <div class="text-one">8-800-000-00-00</div>
+                    <div class="text-two">8-900-000-00-00</div>
+                  </div>
+                  <div class="email details">
+                    <i class="fas fa-envelope"></i>
+                    <div class="topic">Email</div>
+                    <div class="text-one">support@site.com</div>
+                    <div class="text-two">admin@site.com</div>
+                  </div>
+                </div> -->
+
+                <!-- Правая колонка: сама форма -->
+                <div class="right-side">
+                  <div class="topic-text">Отправить нам сообщение</div>
+                  <p class="topic-text2">
+                    Если у вас есть какие-то вопросы или предложения -
+                    заполните форму ниже
+                  </p>
+                  <!-- Форма обратной связи -->
+                  <form action="#">
+                    <!-- Каждый input для выравнивания вкладываем в блок input-box -->
+                    <div class="input-box">
+                      <input type="text" placeholder="Ваше имя" />
+                    </div>
+                    <div class="input-box">
+                      <input type="text" placeholder="Введите email" />
+                    </div>
+                    <div class="input-box">
+                      <input type="text" placeholder="Введите телефон" />
+                    </div>
+                    <div class="input-box message-box">
+                      <textarea placeholder="Сообщение"></textarea>
+                    </div>
+                    <div class="button">
+                      <input type="button" value="Отправить" />
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> {% endcomment %}
+    </section>
+{% endblock content %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <!-- Подключение шрифтовых иконок, можно получить на fontawesome.com -->
+    <script src="https://kit.fontawesome.com/fce9a50d02.js" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div>
+            <div class="card age-modal">
+                <div class="card-header bg-danger text-white">
+                    <h4>Доступ только для администраторов</h4>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="mb-3 password-field">
+                            <label for="pre_password" class="form-label">Админ-пароль:</label>
+                            <input type="password" class="form-control" id="pre_password"
+                                   name="pre_password" required>
+                            <div class="show-password">
+                                <input type="checkbox" id="show-password">
+                                <label for="show-password">Показать пароль</label>
+                            </div>
+                        </div>
+                        {% if messages %}
+                            <ul class="messages">
+                                {% for message in messages %}
+                                <li class="{{ message.tags }}"><i class="icon-{{ message.tags }}"></i> {{ message }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                        <button type="submit" class="age-button confirm-btn">Продолжить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const passwordInput = document.getElementById('pre_password');
+        const showPasswordCheckbox = document.getElementById('show-password');
+
+        showPasswordCheckbox.addEventListener('change', function() {
+            passwordInput.type = this.checked ? 'text' : 'password';
+        });
+    });
+</script>
+
+<style>
+    .password-field {
+        position: relative;
+    }
+
+    .show-password {
+        margin-top: 8px;
+        display: flex;
+        align-items: center;
+    }
+
+    .show-password input[type="checkbox"] {
+        margin-right: 8px;
+        width: 16px;
+        height: 16px;
+    }
+
+    .show-password label {
+        margin-bottom: 0;
+        cursor: pointer;
+        user-select: none;
+    }
+</style>
+{% endblock %}
